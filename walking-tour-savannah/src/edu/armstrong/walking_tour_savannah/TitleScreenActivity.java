@@ -1,9 +1,11 @@
 package edu.armstrong.walking_tour_savannah;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Button;
 
 public class TitleScreenActivity extends Activity {
@@ -15,6 +17,16 @@ public class TitleScreenActivity extends Activity {
 		setContentView(R.layout.activity_title_screen);
 		bt = (Button)findViewById(R.id.buttonTours);
 		bt.getBackground().setColorFilter(0xFF00FF00, PorterDuff.Mode.MULTIPLY); //change hex values to create new colors
+	
+		bt.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent HubActivityIntent = new Intent(TitleScreenActivity.this, HubActivity.class);
+				startActivity(HubActivityIntent);
+			}
+		});
 	}
 
 	@Override
