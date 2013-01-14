@@ -1,15 +1,21 @@
-package edu.armstrong.walking_tour_savannah;
+package edu.armstrong.manager;
 
 import java.util.HashMap;
 
+import edu.armstrong.util.HistoricSite;
+
 public class HistoricSiteManager {
 	public static HistoricSiteManager hsm;
-	
+
 	private HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
 
-	HistoricSiteManager(){
+	public HistoricSiteManager() {
 		hsm = this;
-//		listOfSites.put("someSite", new HistoricSite("String", **geocode**));
+	}
+	
+	public HistoricSiteManager(HashMap<String, HistoricSite> listOfSites){
+		hsm = this;
+		hsm.setListOfSites(listOfSites);
 	}
 
 	public static HistoricSiteManager getInstanceOf() {
