@@ -1,18 +1,29 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayoutTitleScreen"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/dig_sav_logo"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TitleScreen" >
-
-    <Button
-        android:id="@+id/buttonTours"
-        android:layout_width="fill_parent"
+    <ImageSwitcher
+        android:id="@+id/ImageSwitcher01"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableLeft="@android:drawable/ic_menu_mylocation"
-        android:drawablePadding="-155sp"
-        android:text="Tours" />
+        android:layout_centerInParent="true"
+        android:background="@drawable/dig_sav_logo" >
+    </ImageSwitcher>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <Button
+            android:id="@+id/buttonTours"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:alpha=".7"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:drawablePadding="-155sp"
+            android:text="@string/Tours" />
+    </LinearLayout>
+</RelativeLayout>
