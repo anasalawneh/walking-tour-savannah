@@ -6,18 +6,12 @@
     android:orientation="vertical"
     tools:context=".TitleScreen" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_weight="1"
-        android:src="@drawable/sav_titlesplash" />
-
     <Button
         android:id="@+id/buttonTours"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/ic_menu_mylocation"
+        android:drawablePadding="-155sp"
         android:text="Tours" />
 
 </LinearLayout>
