@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites>
+    <site>
+        <name>Battlefield Park</name>
+        <lat>32.074696</lat>
+        <lon>-81.09729</lon>
+    </site>
+    <site>
+        <name>Madison Square</name>
+        <lat>32.073575</lat>
+        <lon>-81.093877</lon>
+    </site>
+</sites>

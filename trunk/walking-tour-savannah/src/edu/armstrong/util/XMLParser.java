@@ -33,6 +33,7 @@ public class XMLParser {
 	public Document getDomElement(String xml){
         Document doc = null;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        
         try {
  
             DocumentBuilder db = dbf.newDocumentBuilder();
