@@ -1,5 +1,6 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.io.InputStream;
 import java.util.HashMap;
 
 import org.w3c.dom.Document;
@@ -56,7 +57,8 @@ public class TitleScreenActivity extends Activity {
 	private void populateSites(){
 		HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
 		XMLParser parser = new XMLParser();
-		String xml = parser.getXmlFromFile("/res/xml/sites.xml"); // getting XML
+		InputStream is = this.getResources().openRawResource(R.xml.sites);
+		String xml = parser.getXmlFromFile(is); // getting XML
 		Document doc = parser.getDomElement(xml); // getting DOM element
 		
 		NodeList nl = doc.getElementsByTagName("site");

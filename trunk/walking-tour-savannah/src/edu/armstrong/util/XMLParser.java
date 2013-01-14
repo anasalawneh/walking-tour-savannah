@@ -3,6 +3,7 @@ package edu.armstrong.util;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
@@ -72,15 +73,11 @@ public class XMLParser {
 	    return this.getElementValue(n.item(0));
 	}
 	
-	public String getXmlFromFile(String fileName){
+	public String getXmlFromFile(InputStream is){
 		String xml = null;
-		try {
-			Scanner scan = new Scanner(new File(fileName));
-			scan.useDelimiter("//A");
-			xml = scan.next();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		Scanner scan = new Scanner(is);
+		scan.useDelimiter("//A");
+		xml = scan.next();
 		
 		return xml;	
 	}
