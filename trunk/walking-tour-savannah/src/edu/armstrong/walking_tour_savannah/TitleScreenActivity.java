@@ -59,9 +59,10 @@ public class TitleScreenActivity extends Activity {
 		XMLParser parser = new XMLParser();
 		InputStream is = this.getResources().openRawResource(R.xml.sites);
 		String xml = parser.getXmlFromFile(is); // getting XML
+		Log.d("xml", xml);
 		Document doc = parser.getDomElement(xml); // getting DOM element
 		
-		NodeList nl = doc.getElementsByTagName("site");
+		NodeList nl = doc.getElementsByTagName("sites");
 	    
 		// looping through all sites
 	    for (int i = 0; i < nl.getLength(); i++) {

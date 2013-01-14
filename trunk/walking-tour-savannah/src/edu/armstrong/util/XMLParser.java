@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
@@ -74,12 +75,8 @@ public class XMLParser {
 	}
 	
 	public String getXmlFromFile(InputStream is){
-		String xml = null;
-		Scanner scan = new Scanner(is);
-		scan.useDelimiter("//A");
-		xml = scan.next();
-		
-		return xml;	
+		java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
+	    return s.hasNext() ? s.next() : "";
 	}
 	 
 	public String getXmlFromUrl(String url) {
