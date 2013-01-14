@@ -54,15 +54,16 @@ public class TitleScreenActivity extends Activity {
 		return true;
 	}
 	
+	
 	private void populateSites(){
 		HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
 		XMLParser parser = new XMLParser();
-		InputStream is = this.getResources().openRawResource(R.xml.sites);
+		InputStream is = this.getResources().openRawResource(R.raw.sites); //resource must be stored in raw to work
 		String xml = parser.getXmlFromFile(is); // getting XML
 		Log.d("xml", xml);
 		Document doc = parser.getDomElement(xml); // getting DOM element
 		
-		NodeList nl = doc.getElementsByTagName("sites");
+		NodeList nl = doc.getElementsByTagName("site");
 	    
 		// looping through all sites
 	    for (int i = 0; i < nl.getLength(); i++) {
