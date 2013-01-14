@@ -1,4 +1,4 @@
-package edu.armstrong.walking_tour_savannah;
+package edu.armstrong.util;
 
 import com.google.android.maps.GeoPoint;
 
@@ -6,7 +6,7 @@ public class HistoricSite {
 	private String name;
 	private GeoPoint gp;
 
-	HistoricSite(String name, GeoPoint gp){
+	public HistoricSite(String name, GeoPoint gp){
 		this.name = name;
 		this.gp = gp;
 	}
