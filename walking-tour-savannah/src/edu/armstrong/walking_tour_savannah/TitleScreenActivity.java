@@ -21,10 +21,17 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * 
+ * @author Dakota Brown, Sean Clapp
+ * @since 01/14/13
+ * 
+ * Title screen activity that transitions to the different sections of the app.
+ * It is also responsible for parsing the .xml file containing archaeological
+ * locations
+ */
 public class TitleScreenActivity extends Activity {
 
-	// HistoricSiteManager hsm; dont need this if it's static class, we should
-	// be able to view it everywhere
 	Button btnTours;
 
 	@Override
@@ -32,10 +39,9 @@ public class TitleScreenActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_title_screen);
 
-		// TODO: Create list of sites from the xml file in raw (list of all the
-		// sites for the tours)
 		populateSites();
 
+		//"Tours" Button definition
 		btnTours = (Button) findViewById(R.id.buttonTours);
 		btnTours.getBackground().setColorFilter(0xFF00FF00,
 				PorterDuff.Mode.MULTIPLY);
@@ -43,9 +49,9 @@ public class TitleScreenActivity extends Activity {
 		btnTours.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent HubActivityIntent = new Intent(TitleScreenActivity.this,
+				Intent hubActivityIntent = new Intent(TitleScreenActivity.this,
 						HubActivity.class);
-				startActivity(HubActivityIntent);
+				startActivity(hubActivityIntent);
 			}
 		});
 	}
@@ -57,28 +63,38 @@ public class TitleScreenActivity extends Activity {
 		return true;
 	}
 
+	/**
+	 * Parses .xml file containing dig sites and adds them to a hash map
+	 */
 	private void populateSites() {
 		HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
+		
+		//reads the .xml file into a string
 		XMLParser parser = new XMLParser();
 		InputStream is = this.getResources().openRawResource(R.raw.sites);
 		String xml = parser.getXmlFromFile(is); // getting XML
-		Log.d("xml", xml);
+		
+		//sets xml up to be read by tags
 		Document doc = parser.getDomElement(xml); // getting DOM element
 
+		//get all tags named "site"
 		NodeList nl = doc.getElementsByTagName("site");
 
 		// looping through all sites
 		for (int i = 0; i < nl.getLength(); i++) {
 			Element e = (Element) nl.item(i);
 
+			//children tag values
 			String name = parser.getValue(e, "name");
 			double lat = Double.parseDouble(parser.getValue(e, "lat"));
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
 
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new GeoPoint(
-					(int) (lat * 1E6), (int) (lon * 1E6))));
+			listOfSites.put(name, new HistoricSite(name, 
+					new GeoPoint((int)(lat * 1E6), (int)(lon * 1E6))));
 		}
+		
+		//populate for use throughout the app
 		new HistoricSiteManager(listOfSites);
 	}
 }

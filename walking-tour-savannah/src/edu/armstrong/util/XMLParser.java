@@ -1,13 +1,9 @@
 package edu.armstrong.util;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
-import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -28,8 +24,21 @@ import org.xml.sax.SAXException;
 
 import android.util.Log;
 
+/**
+ * 
+ * @author Dakota
+ * @since 01/14/13
+ * 
+ * Utility class to aid in retrieving and parsing .xml content from a file or URL
+ */
 public class XMLParser {
 
+	/**
+	 * Takes XML string and converts to examinable Document
+	 * 
+	 * @param xml - XML content as a string
+	 * @return Document object that can be parsed by XML tag
+	 */
 	public Document getDomElement(String xml){
         Document doc = null;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
@@ -56,7 +65,8 @@ public class XMLParser {
             return doc;
     }
 	
-	public final String getElementValue( Node elem ) {
+	
+	public final String getElementValue(Node elem) {
 	         Node child;
 	         if( elem != null){
 	             if (elem.hasChildNodes()){
@@ -70,16 +80,34 @@ public class XMLParser {
 	         return "";
 	  }
 	
+	/**
+	 * 
+	 * @param item - Element
+	 * @param str - Tag that is searched for in the Element
+	 * @return Value of tag if present
+	 */
 	public String getValue(Element item, String str) {
 	    NodeList n = item.getElementsByTagName(str);
 	    return this.getElementValue(n.item(0));
 	}
 	
+	/**
+	 * Reads InputStream and returns String of .xml
+	 * 
+	 * @param is - InputStream of file
+	 * @return String representation of .xml file
+	 */
 	public String getXmlFromFile(InputStream is){
 		java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
 	    return s.hasNext() ? s.next() : "";
 	}
-	 
+	
+	/**
+	 * Accesses URL then returns String of XML
+	 * 
+	 * @param url - Location of the XML
+	 * @return String representation of XML
+	 */
 	public String getXmlFromUrl(String url) {
         String xml = null;
  
