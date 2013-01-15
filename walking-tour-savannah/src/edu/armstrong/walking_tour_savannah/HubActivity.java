@@ -1,5 +1,6 @@
 package edu.armstrong.walking_tour_savannah;
 
+import edu.armstrong.view.SiteView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,14 +14,14 @@ public class HubActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hub_layout);
-		btnSites = (Button)findViewById(R.id.buttonSites);
 		
+		btnSites = (Button)findViewById(R.id.buttonSites);
 		btnSites.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent SiteViewIntent = new Intent(HubActivity.this, SiteView.class);
+				Intent SiteViewIntent = new Intent(HubActivity.this, SiteActivity.class);
 				startActivity(SiteViewIntent);
 			}
 		});
