@@ -2,6 +2,14 @@ package edu.armstrong.util;
 
 import com.google.android.maps.GeoPoint;
 
+/**
+ * 
+ * @author Sean Clapp
+ * @since 01/14/13
+ * 
+ * Holds the name and GeoPoint of a dig site
+ * 
+ */
 public class HistoricSite {
 	private String name;
 	private GeoPoint gp;
