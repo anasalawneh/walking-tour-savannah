@@ -1,4 +1,4 @@
-package edu.armstrong.walking_tour_savannah;
+package edu.armstrong.view;
 
 import android.content.Context;
 import android.view.View;
