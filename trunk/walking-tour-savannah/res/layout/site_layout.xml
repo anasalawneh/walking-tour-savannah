@@ -4,11 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <edu.armstrong.view.SiteView
-        android:id="@+id/siteView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:apiKey="AIzaSyAf17wSbrMVyUBoYCnF" >
-    </edu.armstrong.view.SiteView>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </TableRow>
 
 </LinearLayout>
