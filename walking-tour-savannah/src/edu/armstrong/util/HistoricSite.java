@@ -1,22 +1,22 @@
 package edu.armstrong.util;
 
-import com.google.android.maps.GeoPoint;
+import com.google.android.gms.maps.model.LatLng;
 
 /**
  * 
- * @author Sean Clapp
- * @since 01/14/13
+ * @author Sean Clapp, Dakota Brown
+ * @since 01/16/13
  * 
  * Holds the name and GeoPoint of a dig site
  * 
  */
 public class HistoricSite {
 	private String name;
-	private GeoPoint gp;
+	private LatLng ll;
 
-	public HistoricSite(String name, GeoPoint gp){
+	public HistoricSite(String name, LatLng ll){
 		this.name = name;
-		this.gp = gp;
+		this.ll = ll;
 	}
 
 	public String getName() {
@@ -27,11 +27,11 @@ public class HistoricSite {
 		this.name = name;
 	}
 
-	public GeoPoint getGp() {
-		return gp;
+	public LatLng getGp() {
+		return ll;
 	}
 
-	public void setGp(GeoPoint gp) {
-		this.gp = gp;
+	public void setGp(LatLng ll) {
+		this.ll = ll;
 	}
 }

@@ -7,6 +7,10 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
+    
+    <uses-feature
+  		android:glEsVersion="0x00020000"
+  		android:required="true"/>
 
     <permission
         android:name="edu.armstrong.permission.MAPS_RECEIVE"
@@ -58,8 +62,4 @@
             android:value="AIzaSyAf17wSbrMVyUBoYCnF_iTbKmki3_50ZPU" />
     </application>
     
-    <uses-feature
-  		android:glEsVersion="0x00020000"
-  		android:required="true"/>
-
-</manifest>
+    </manifest>
