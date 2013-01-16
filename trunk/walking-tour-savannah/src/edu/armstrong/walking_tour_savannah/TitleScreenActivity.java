@@ -7,6 +7,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.maps.GeoPoint;
 
 import edu.armstrong.manager.HistoricSiteManager;
@@ -124,8 +125,7 @@ public class TitleScreenActivity extends Activity {
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
 
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new GeoPoint(
-					(int) (lat * 1E6), (int) (lon * 1E6))));
+			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon)));
 		}
 
 		// populate for use throughout the app

@@ -1,20 +1,18 @@
 package edu.armstrong.walking_tour_savannah;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.HashMap;
 
-import android.graphics.drawable.Drawable;
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.maps.MapActivity;
-import com.google.android.maps.Overlay;
-import com.google.android.maps.OverlayItem;
 
 import edu.armstrong.manager.HistoricSiteManager;
-import edu.armstrong.overlay.SiteOverlay;
 import edu.armstrong.util.HistoricSite;
-import edu.armstrong.view.SiteView;
 
 /**
  * This activity will hold the map of downtown Savannah with all the points of
@@ -23,49 +21,47 @@ import edu.armstrong.view.SiteView;
  * @author Sean Clapp, Dakota Brown
  * 
  */
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapOfHistoricPointsActivity extends MapActivity {
 
-	SiteView sv;
+	GoogleMap map;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 
-		
-		
-		 Collection<HistoricSite> listOfSites = HistoricSiteManager
-		 .getInstanceOf().getListOfSites().values();
-		
-		 sv = (SiteView) findViewById(R.id.siteView1);
-		 sv.setBuiltInZoomControls(true);
-		
-		 List<Overlay> mapOverlays = sv.getOverlays();
-		 Drawable drawable = this.getResources().getDrawable(
-		 R.drawable.ic_launcher);
-		
-		 SiteOverlay itemizedOverlay = new SiteOverlay(drawable, this);
-		
-		 for (HistoricSite hs : listOfSites) {
-		 itemizedOverlay.addOverlay(new OverlayItem(hs.getGp(), "Test",
-		 "Testing"));
-		 }
-		
-		 mapOverlays.add(itemizedOverlay);
+		//Requires API 11- NEED TO DECIDE!!!
+		setUpMapIfNeeded();
+		 
 	}
-
-	//
-	// @Override
-	// public boolean onCreateOptionsMenu(Menu menu) {
-	// // Inflate the menu; this adds items to the action bar if it is present.
-	// getMenuInflater().inflate(R.menu.activity_map, menu);
-	// return true;
-	// }
 
 	@Override
 	protected boolean isRouteDisplayed() {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	private void setUpMapIfNeeded() {
+	    // Do a null check to confirm that we have not already instantiated the map.
+	    if (map == null) {
+	        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
+	                            .getMap();
+	        // Check if we were successful in obtaining the map.
+	        if (map != null) {
+	            // The Map is verified. It is now safe to manipulate the map.
+	        	map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+	        	
+	        	HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
+	    		listOfSites = HistoricSiteManager.getInstanceOf().getListOfSites();
+	    		
+	    		for(HistoricSite hs : listOfSites.values()){
+	    			map.addMarker(new MarkerOptions()
+	    	        .position(hs.getGp())
+	    	        .title(hs.getName()));
+	    		}
 
+	        }
+	    }
+	}
 }
