@@ -27,7 +27,7 @@
             android:name="edu.armstrong.walking_tour_savannah.HubActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-         <activity
+        <activity
             android:name="edu.armstrong.walking_tour_savannah.SiteActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
@@ -35,7 +35,6 @@
         <uses-library
             android:name="com.google.android.maps"
             android:required="true" />
-        <uses-permission android:name="android.permission.INTERNET"/>
     </application>
 
 </manifest>
