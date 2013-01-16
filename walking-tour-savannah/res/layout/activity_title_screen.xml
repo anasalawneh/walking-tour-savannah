@@ -24,5 +24,21 @@
             android:drawableLeft="@android:drawable/ic_menu_mylocation"
             android:drawablePadding="-155sp"
             android:text="@string/Tours" />
+        <Button
+            android:id="@+id/buttonSites"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:alpha=".7"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:drawablePadding="-155sp"
+            android:text="@string/Sites" />
+        <Button
+            android:id="@+id/buttonMap"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:alpha=".7"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:drawablePadding="-155sp"
+            android:text="@string/Map" />
     </LinearLayout>
 </RelativeLayout>
