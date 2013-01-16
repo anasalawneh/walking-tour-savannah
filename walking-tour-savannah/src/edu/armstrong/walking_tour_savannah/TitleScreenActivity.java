@@ -26,13 +26,13 @@ import android.widget.Button;
  * @author Dakota Brown, Sean Clapp
  * @since 01/14/13
  * 
- * Title screen activity that transitions to the different sections of the app.
- * It is also responsible for parsing the .xml file containing archaeological
- * locations
+ *        Title screen activity that transitions to the different sections of
+ *        the app. It is also responsible for parsing the .xml file containing
+ *        archaeological locations
  */
 public class TitleScreenActivity extends Activity {
 
-	Button btnTours;
+	Button btnToursList, btnSitesList, btnMap;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +41,51 @@ public class TitleScreenActivity extends Activity {
 
 		populateSites();
 
-		//"Tours" Button definition
-		btnTours = (Button) findViewById(R.id.buttonTours);
-		btnTours.getBackground().setColorFilter(0xFF00FF00,
+		// Button definitions
+		btnToursList = (Button) findViewById(R.id.buttonTours);
+		btnSitesList = (Button) findViewById(R.id.buttonSites);
+		btnMap = (Button) findViewById(R.id.buttonMap);
+
+		btnToursList.getBackground().setColorFilter(0xFF00FF00,
 				PorterDuff.Mode.MULTIPLY);
-		// On click open the HubActivity
-		btnTours.setOnClickListener(new View.OnClickListener() {
+		btnSitesList.getBackground().setColorFilter(0xFF00FF00,
+				PorterDuff.Mode.MULTIPLY);
+		btnMap.getBackground().setColorFilter(0xFF00FF00,
+				PorterDuff.Mode.MULTIPLY);
+
+		// On click open the ToursListActivity, a list of all the available
+		// tours
+		btnToursList.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent hubActivityIntent = new Intent(TitleScreenActivity.this,
-						HubActivity.class);
-				startActivity(hubActivityIntent);
+				Intent toursActivityIntent = new Intent(
+						TitleScreenActivity.this, ToursListActivity.class);
+				startActivity(toursActivityIntent);
+			}
+		});
+
+		// on click open the SiteListActivity, a list of all the sites
+		btnSitesList.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent siteListActivityIntent = new Intent(
+						TitleScreenActivity.this, SiteListActivity.class);
+				startActivity(siteListActivityIntent);
+			}
+		});
+
+		// on click open the MapActivity, a map of savannah with points of
+		// interest.
+		btnMap.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,
+						MapOfHistoricPointsActivity.class);
+				startActivity(mapActivityIntent);
 			}
 		});
 	}
@@ -68,33 +102,33 @@ public class TitleScreenActivity extends Activity {
 	 */
 	private void populateSites() {
 		HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
-		
-		//reads the .xml file into a string
+
+		// reads the .xml file into a string
 		XMLParser parser = new XMLParser();
 		InputStream is = this.getResources().openRawResource(R.raw.sites);
 		String xml = parser.getXmlFromFile(is); // getting XML
-		
-		//sets xml up to be read by tags
+
+		// sets xml up to be read by tags
 		Document doc = parser.getDomElement(xml); // getting DOM element
 
-		//get all tags named "site"
+		// get all tags named "site"
 		NodeList nl = doc.getElementsByTagName("site");
 
 		// looping through all sites
 		for (int i = 0; i < nl.getLength(); i++) {
 			Element e = (Element) nl.item(i);
 
-			//children tag values
+			// children tag values
 			String name = parser.getValue(e, "name");
 			double lat = Double.parseDouble(parser.getValue(e, "lat"));
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
 
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, 
-					new GeoPoint((int)(lat * 1E6), (int)(lon * 1E6))));
+			listOfSites.put(name, new HistoricSite(name, new GeoPoint(
+					(int) (lat * 1E6), (int) (lon * 1E6))));
 		}
-		
-		//populate for use throughout the app
+
+		// populate for use throughout the app
 		new HistoricSiteManager(listOfSites);
 	}
 }
