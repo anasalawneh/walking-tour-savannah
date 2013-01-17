@@ -4,10 +4,13 @@
         <name>Battlefield Park</name>
         <lat>32.074696</lat>
         <lon>-81.09729</lon>
+        <img>battlefieldpark</img>
     </site>
     <site>
         <name>Madison Square</name>
         <lat>32.073575</lat>
         <lon>-81.093877</lon>
+        <img>madisonsquare</img>
+        
     </site>
 </sites>
