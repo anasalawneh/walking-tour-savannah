@@ -11,6 +11,17 @@
         <lat>32.073575</lat>
         <lon>-81.093877</lon>
         <img>madisonsquare</img>
-        
+    </site>
+    <site>
+        <name>Lafayette Square</name>
+        <lat>32.073084</lat>
+        <lon>-81.091912</lon>
+		<img>lafayettesquare</img>
+    </site>
+    <site>
+        <name>Emmet Park</name>
+        <lat>32.079447</lat>
+        <lon>-81.085002</lon>
+       	<img>emmetpark</img>
     </site>
 </sites>

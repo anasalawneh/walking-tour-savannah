@@ -14,8 +14,10 @@ int attr useViewLifecycle 0x7f01000c
 int attr zOrderOnTop 0x7f01000d
 int drawable battlefieldpark 0x7f020000
 int drawable dig_sav_logo 0x7f020001
-int drawable ic_launcher 0x7f020002
-int drawable madisonsquare 0x7f020003
+int drawable emmetpark 0x7f020002
+int drawable ic_launcher 0x7f020003
+int drawable lafayettesquare 0x7f020004
+int drawable madisonsquare 0x7f020005
 int id ImageSwitcher01 0x7f050006
 int id RelativeLayout1 0x7f050005
 int id buttonMap 0x7f050009
