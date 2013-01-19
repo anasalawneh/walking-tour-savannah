@@ -124,9 +124,10 @@ public class TitleScreenActivity extends Activity {
 			double lat = Double.parseDouble(parser.getValue(e, "lat"));
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
 			String img = parser.getValue(e, "img");
-
+			String desc = parser.getValue(e, "desc");
+			
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), img));
+			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), img, desc));
 		}
 
 		// populate for use throughout the app
