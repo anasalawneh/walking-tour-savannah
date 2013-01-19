@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import edu.armstrong.util.HistoricSite;
  * 
  */
 public class SiteListActivity extends Activity {
+
 	TableLayout tableLayoutSiteList;
 
 	@SuppressWarnings("deprecation")
@@ -31,7 +33,7 @@ public class SiteListActivity extends Activity {
 		setContentView(R.layout.site_table_row_layout);
 
 		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayout1);
-
+		
 		/**
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
@@ -85,7 +87,6 @@ public class SiteListActivity extends Activity {
 			});
 
 			tableLayoutSiteList.addView(siteListItem);
-
 		}
 	}
 }
