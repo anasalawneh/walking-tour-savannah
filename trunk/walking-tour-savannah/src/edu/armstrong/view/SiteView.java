@@ -1,17 +1,16 @@
 package edu.armstrong.view;
 
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.maps.MapView;
-
-import android.app.Fragment;
+import android.R;
 import android.content.Context;
-import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import edu.armstrong.util.HistoricSite;
 
+public class SiteView extends View {
 
-public class SiteView extends MapFragment{
-
-	public SiteView(Context context, AttributeSet as) {
-		super();
+	public SiteView(Context context, HistoricSite hs) {
+		super(context);
+//		LayoutInflater myInflater = new LayoutInflater();
+//		View myView = myInflater.inflate(R.layout.site_layout, parent, false);
 	}
-
 }

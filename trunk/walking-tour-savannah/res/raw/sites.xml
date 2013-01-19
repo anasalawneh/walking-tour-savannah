@@ -5,23 +5,27 @@
         <lat>32.074696</lat>
         <lon>-81.09729</lon>
         <img>battlefieldpark</img>
+        <desc>THIS IS A DESC OF BATTLEFIELDS PARKDS</desc>
     </site>
     <site>
         <name>Madison Square</name>
         <lat>32.073575</lat>
         <lon>-81.093877</lon>
         <img>madisonsquare</img>
+        <desc>THIS IS A DESCRIPTION OF MADISON SQUARE</desc>
     </site>
     <site>
         <name>Lafayette Square</name>
         <lat>32.073084</lat>
         <lon>-81.091912</lon>
 		<img>lafayettesquare</img>
+		<desc>THIS IS A DESCRIPTION OF Lafayette SQUARE</desc>
     </site>
     <site>
         <name>Emmet Park</name>
         <lat>32.079447</lat>
         <lon>-81.085002</lon>
        	<img>emmetpark</img>
+        <desc>THIS IS A DESCRIPTION OF Emmet PARK!</desc>
     </site>
 </sites>
