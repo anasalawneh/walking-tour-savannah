@@ -10,5 +10,6 @@
     <string name="Sites">Sites</string>
     <string name="Map">Map</string>
     <string name="title_activity_testtt">TestttActivity</string>
+    <string name="title_activity_image_switcher_test">ImageSwitcherTest</string>
 
 </resources>
