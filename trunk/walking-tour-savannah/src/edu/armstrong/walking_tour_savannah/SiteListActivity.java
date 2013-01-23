@@ -1,6 +1,7 @@
 package edu.armstrong.walking_tour_savannah;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -75,7 +76,10 @@ public class SiteListActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
-					// TODO Auto-generated method stub
+					Intent toursActivityIntent = new Intent(
+							SiteListActivity.this, ImageSwitcherTest.class);
+					startActivity(toursActivityIntent);
+					
 					String test = new String("you clicked " + hs.getName());
 					Toast toast = Toast.makeText(
 							tableLayoutSiteList.getContext(), test, 50);
