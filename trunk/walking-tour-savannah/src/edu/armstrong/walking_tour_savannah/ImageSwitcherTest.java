@@ -1,7 +1,14 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.util.HistoricSite;
+
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +20,33 @@ import android.widget.Gallery;
 import android.widget.Gallery.LayoutParams;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 public class ImageSwitcherTest extends Activity implements
 		AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory {
-
+	private List<Drawable> mThumbIds; 
+	private List<Drawable> mImageIds;
+	private List<String> mDescs;
+	
+	private TextView tv;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+		
+		String siteName = getIntent().getStringExtra("site");
+		HistoricSite hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
+		mImageIds =  hs.getEvImgs();
+		mThumbIds =  hs.getEvImgs();
+		mDescs = hs.getEvDesc();
+		
 		setContentView(R.layout.activity_image_switcher_test);
 
 		mSwitcher = (ImageSwitcher) findViewById(R.id.switcher);
+		tv = (TextView) findViewById(R.id.imageSwitcherTextView);
+		
 		mSwitcher.setFactory(this);
 		mSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,
 				android.R.anim.fade_in));
@@ -40,7 +60,8 @@ public class ImageSwitcherTest extends Activity implements
 
 	public void onItemSelected(AdapterView<?> parent, View v, int position,
 			long id) {
-		mSwitcher.setImageResource(mImageIds[position]);
+		mSwitcher.setImageDrawable(mImageIds.get(position));
+		tv.setText(mDescs.get(position));
 	}
 
 	public void onNothingSelected(AdapterView<?> parent) {
@@ -63,7 +84,7 @@ public class ImageSwitcherTest extends Activity implements
 		}
 
 		public int getCount() {
-			return mThumbIds.length;
+			return mThumbIds.size();
 		}
 
 		public Object getItem(int position) {
@@ -77,7 +98,7 @@ public class ImageSwitcherTest extends Activity implements
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView i = new ImageView(mContext);
 
-			i.setImageResource(mThumbIds[position]);
+			i.setImageDrawable(mThumbIds.get(position));
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
@@ -89,13 +110,7 @@ public class ImageSwitcherTest extends Activity implements
 
 	}
 
-	private Integer[] mThumbIds = {
-			R.drawable.battlefieldpark, R.drawable.emmetpark, R.drawable.lafayettesquare, R.drawable.madisonsquare
-	};
 
-	private Integer[] mImageIds = {
-			R.drawable.battlefieldpark, R.drawable.emmetpark, R.drawable.lafayettesquare, R.drawable.madisonsquare
-	};
 	// private Integer[] mThumbIds = {
 	// R.drawable.sample_thumb_0, R.drawable.sample_thumb_1,
 	// R.drawable.sample_thumb_2, R.drawable.sample_thumb_3,
