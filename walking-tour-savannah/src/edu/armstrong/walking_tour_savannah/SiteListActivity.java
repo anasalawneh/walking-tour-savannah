@@ -1,10 +1,13 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
@@ -78,6 +81,7 @@ public class SiteListActivity extends Activity {
 				public void onClick(View v) {
 					Intent toursActivityIntent = new Intent(
 							SiteListActivity.this, ImageSwitcherTest.class);
+					toursActivityIntent.putExtra("site", hs.getName());
 					startActivity(toursActivityIntent);
 					
 					String test = new String("you clicked " + hs.getName());

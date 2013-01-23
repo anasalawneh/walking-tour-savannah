@@ -1,5 +1,6 @@
 package edu.armstrong.util;
 
+import java.io.Serializable;
 import java.util.List;
 
 import android.graphics.drawable.Drawable;
@@ -14,7 +15,7 @@ import com.google.android.gms.maps.model.LatLng;
  *        Holds the name and LatLng of a dig site
  * 
  */
-public class HistoricSite {
+public class HistoricSite{
 	private String name;
 	private LatLng ll;
 	private Drawable img;
