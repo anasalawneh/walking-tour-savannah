@@ -39,8 +39,11 @@ public class ImageSwitcherTest extends Activity implements
 		String siteName = getIntent().getStringExtra("site");
 		HistoricSite hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
 		mImageIds =  hs.getEvImgs();
+		mImageIds.add(0, hs.getImg());
 		mThumbIds =  hs.getEvImgs();
+		mThumbIds.add(0, hs.getImg());
 		mDescs = hs.getEvDesc();
+		mDescs.add(0, hs.getDesc());
 		
 		setContentView(R.layout.activity_image_switcher_test);
 
