@@ -1,7 +1,9 @@
 package edu.armstrong.walking_tour_savannah;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -15,7 +17,9 @@ import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.XMLParser;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -118,16 +122,42 @@ public class TitleScreenActivity extends Activity {
 		// looping through all sites
 		for (int i = 0; i < nl.getLength(); i++) {
 			Element e = (Element) nl.item(i);
+			
+			Resources res = getResources();
+			int resID;
 
+			
 			// children tag values
 			String name = parser.getValue(e, "name");
 			double lat = Double.parseDouble(parser.getValue(e, "lat"));
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
-			String img = parser.getValue(e, "img");
+			
+			String mainImgName = parser.getValue(e, "img");
+		    resID = res.getIdentifier(mainImgName, "drawable", getPackageName());
+			Drawable mainImg = res.getDrawable(resID);
+			
 			String desc = parser.getValue(e, "desc");
 			
+			//evidence images
+			NodeList ei = e.getElementsByTagName("evImg");
+			List<Drawable> evImgs = new ArrayList<Drawable>();
+			for(int j = 0; j < ei.getLength(); j++){
+				String imgName = parser.getElementValue(ei.item(j));
+				resID = res.getIdentifier(imgName, "drawable", getPackageName());
+				Drawable drawable = res.getDrawable(resID);
+				evImgs.add(drawable);
+			}
+			
+			//evidence descriptions
+			NodeList ed = e.getElementsByTagName("evDesc");
+			List<String> evDesc = new ArrayList<String>();
+			for(int j = 0; j < ed.getLength(); j++){
+				String d = parser.getElementValue(ed.item(j));
+				evDesc.add(d);
+			}
+			
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), img, desc));
+			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), mainImg, desc, evImgs, evDesc));
 		}
 
 		// populate for use throughout the app

@@ -1,5 +1,9 @@
 package edu.armstrong.util;
 
+import java.util.List;
+
+import android.graphics.drawable.Drawable;
+
 import com.google.android.gms.maps.model.LatLng;
 
 /**
@@ -13,24 +17,19 @@ import com.google.android.gms.maps.model.LatLng;
 public class HistoricSite {
 	private String name;
 	private LatLng ll;
-	private String img;
+	private Drawable img;
 	private String desc;
+	private List<Drawable> evImgs;
+	private List<String> evDesc;
 
-
-
-	public HistoricSite(String name, LatLng ll, String img, String desc) {
+	public HistoricSite(String name, LatLng ll, Drawable mainImg,
+			String desc, List<Drawable> evImgs, List<String> evDesc) {
 		this.name = name;
 		this.ll = ll;
-		this.img = img;
+		this.img = mainImg;
 		this.desc = desc;
-	}
-	
-	public String getDesc() {
-		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
+		this.evImgs = evImgs;
+		this.evDesc = evDesc;
 	}
 
 	public String getName() {
@@ -41,20 +40,43 @@ public class HistoricSite {
 		this.name = name;
 	}
 
-	public LatLng getGp() {
+	public LatLng getLl() {
 		return ll;
 	}
 
-	public void setGp(LatLng ll) {
+	public void setLl(LatLng ll) {
 		this.ll = ll;
 	}
 
-	public String getImg() {
+	public Drawable getImg() {
 		return img;
 	}
 
-	public void setImg(String img) {
+	public void setImg(Drawable img) {
 		this.img = img;
 	}
 
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public List<Drawable> getEvImgs() {
+		return evImgs;
+	}
+
+	public void setEvImgs(List<Drawable> evImgs) {
+		this.evImgs = evImgs;
+	}
+
+	public List<String> getEvDesc() {
+		return evDesc;
+	}
+
+	public void setEvDesc(List<String> evDesc) {
+		this.evDesc = evDesc;
+	}
 }
