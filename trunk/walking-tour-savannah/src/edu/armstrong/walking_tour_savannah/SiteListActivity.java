@@ -60,11 +60,8 @@ public class SiteListActivity extends Activity {
 			 * Update the image of the tablerow to the image of the historic
 			 * site
 			 */
-			Resources res = getResources();
-			String imgName = hs.getImg();
-			int resID = res
-					.getIdentifier(imgName, "drawable", getPackageName());
-			Drawable drawable = res.getDrawable(resID);
+			
+			Drawable drawable = hs.getImg();
 			ImageView ivSite = (ImageView) siteListItem
 					.findViewById(R.id.imageViewSiteListImg);
 			ivSite.setImageDrawable(drawable);

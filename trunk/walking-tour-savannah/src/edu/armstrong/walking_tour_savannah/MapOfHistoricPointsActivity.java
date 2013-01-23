@@ -70,7 +70,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						.getListOfSites();
 
 				for (HistoricSite hs : listOfSites.values()) {
-					map.addMarker(new MarkerOptions().position(hs.getGp())
+					map.addMarker(new MarkerOptions().position(hs.getLl())
 							.title(hs.getName()));
 				}
 
@@ -90,10 +90,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						HistoricSite hs = HistoricSiteManager.getInstanceOf()
 								.getListOfSites().get(title);
 						
-						Resources res = getResources();
-						String imgName = hs.getImg();
-						int resID = res.getIdentifier(imgName, "drawable", getPackageName());
-						Drawable drawable = res.getDrawable(resID);
+						Drawable drawable = hs.getImg();
 						
 						ImageView iv = ((ImageView) markerInfo.findViewById(R.id.ivInfoWindowMain));
 					    iv.setImageDrawable(drawable);
@@ -113,8 +110,8 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 							txtTitle.setText("");
 						}
 
-						TextView txtType = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowEventType));
-						txtType.setText("We'll put more details laterrr!");
+						TextView txtType = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowDesc));
+						txtType.setText(hs.getDesc());
 
 						return markerInfo;
 					}
