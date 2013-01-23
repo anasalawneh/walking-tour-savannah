@@ -13,10 +13,10 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:layout_width="match_parent" 
-    android:layout_height="match_parent"> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left" >
     
     <ImageSwitcher
         android:id="@+id/switcher"
@@ -39,15 +39,15 @@
 
     <TextView
         android:id="@+id/imageSwitcherTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/gallery"
-        android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="false"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="20dp"
         android:gravity="left"
-        android:text="Medium Text"
+        android:text="@string/noEvidence"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

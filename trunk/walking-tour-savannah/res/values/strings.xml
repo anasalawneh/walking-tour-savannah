@@ -11,5 +11,6 @@
     <string name="Map">Map</string>
     <string name="title_activity_testtt">TestttActivity</string>
     <string name="title_activity_image_switcher_test">ImageSwitcherTest</string>
+    <string name="noEvidence">No evidence</string>
 
 </resources>
