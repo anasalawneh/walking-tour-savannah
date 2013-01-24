@@ -22,14 +22,14 @@
             android:layout_height="fill_parent"
             android:layout_marginLeft="20dp"
             android:layout_weight="2"
-            android:background="@android:color/darker_gray"
+            android:background="#FF40FF40"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/textViewSiteName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF00FF00"
+                android:background="#FF00A600"
                 android:text="BADDD"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/darker_gray"
@@ -40,7 +40,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@android:color/darker_gray"
                 android:paddingLeft="10dp"
                 android:text="You shouldn&apos;t be seeing this"
                 android:textColor="@android:color/black"
