@@ -5,43 +5,49 @@
         <lat>32.074696</lat>
         <lon>-81.09729</lon>
         <img>battlefieldpark</img>
-        <desc>THIS IS A DESC OF BATTLEFIELDS PARK</desc>
-        <evImg>battlefieldev1</evImg>
-        <evImg>battlefieldev2</evImg>
-        <evImg>battlefieldev3</evImg>
-        <evDesc>Evidence description # 1</evDesc>
-        <evDesc>Evidence description # 2</evDesc>
-        <evDesc>Evidence description # 3</evDesc>
+        <desc>The site of the bloodiest battle of the American Revolution</desc>
+        
+        <!-- Image followed by description -->
+        <evImg>battlefield_ev1</evImg>
+        <evDesc>Brass barrel band from a Charleville pistol</evDesc>
     </site>
     <site>
         <name>Madison Square</name>
         <lat>32.073575</lat>
         <lon>-81.093877</lon>
         <img>madisonsquare</img>
-        <desc>THIS IS A DESCRIPTION OF MADISON SQUARE</desc>
-        <evImg>maddisonev1</evImg>
-        <evImg>maddisonev2</evImg>
-        <evImg>maddisonev3</evImg>
-        <evImg>maddisonev4</evImg>
-        <evDesc>Evidence description # 1</evDesc>
-        <evDesc>Evidence description # 2</evDesc>
-        <evDesc>Evidence description # 3</evDesc>
-        <evDesc>Evidence description # 4</evDesc>
+        <desc>Location of a military ditch dug by British forces in 1779</desc>
+		
+        <evImg>maddison_ev1</evImg>
+        <evDesc>Archaeologists excavating in Madison Square.</evDesc>
+        
+        <evImg>maddison_ev2</evImg>
+        <evDesc>Military button found in Madison Square excavation, note the faint “V”.</evDesc>
+    
+    	<evImg>maddison_ev3</evImg>
+    	<evDesc>Guncock from a British Brown Bess musket recovered from the Madison Square excavation.</evDesc>    	    
     </site>
     <site>
         <name>Lafayette Square</name>
         <lat>32.073084</lat>
         <lon>-81.091912</lon>
 		<img>lafayettesquare</img>
-		<desc>THIS IS A DESCRIPTION OF Lafayette SQUARE</desc>
+		<desc>Historical maps suggest this is the location of the East-Central redoubt</desc>
+		
+		<evImg>lafayette_ev1</evImg>
+		<evDesc>Archaeologists digging, mapping, screening for artifacts, and talking to students from St. Vincent’s Academy in Lafayette Square.</evDesc>
     </site>
     <site>
         <name>Emmet Park</name>
         <lat>32.079447</lat>
         <lon>-81.085002</lon>
        	<img>emmetpark</img>
-        <desc>THIS IS A DESCRIPTION OF Emmet PARK!</desc>
-        <evImg>emmetev1</evImg>
-        <evDesc>Evidence description # 1</evDesc>
+        <desc>The site of many forts due to strategic position over the Savannah River</desc>
+        
+        <evImg>emmet_ev1</evImg>
+        <evDesc>Small shovel test pits help us find archaeological sites.</evDesc>
+    	
+    	<evImg>emmet_ev2</evImg>
+    	<evDesc>Close-up of artifacts in the screen from digging a shovel test pit. The oyster shell was left by Native Americans living here. </evDesc>
     </site>
 </sites>
