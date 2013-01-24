@@ -51,14 +51,15 @@ public class SiteListActivity extends Activity {
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
 
-			TextView tvDesc = ((TextView) siteListItem
-					.findViewById(R.id.textViewSiteDesc));
+			TextView tvName = ((TextView) siteListItem.findViewById(R.id.textViewSiteName));
+			TextView tvDesc = ((TextView) siteListItem.findViewById(R.id.textViewSiteDesc));
 
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the
 			 * info
 			 */
-			tvDesc.setText("" + hs.getDesc()); 
+			tvName.setText(hs.getName());
+			tvDesc.setText(hs.getDesc()); 
 
 			/**
 			 * Update the image of the tablerow to the image of the historic
