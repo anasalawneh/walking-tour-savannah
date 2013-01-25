@@ -24,7 +24,7 @@ import edu.armstrong.util.HistoricSite;
  * the site highlighted. (Or another activity with more info about the site,
  * whichever works better for the app)
  * 
- * @author Sean Clapp, Dakota Brown
+ * @author Sean Clapp, Dakota Brown 
  * 
  */
 public class SiteListActivity extends Activity {
