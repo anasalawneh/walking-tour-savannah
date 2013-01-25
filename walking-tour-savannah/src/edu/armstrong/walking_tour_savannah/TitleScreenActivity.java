@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -54,11 +55,11 @@ public class TitleScreenActivity extends Activity {
 		btnSitesList = (Button) findViewById(R.id.buttonSites);
 		btnMap = (Button) findViewById(R.id.buttonMap);
 
-		btnToursList.getBackground().setColorFilter(0xFF00FF00,
+		btnToursList.getBackground().setColorFilter(Color.parseColor("#d76969"),
 				PorterDuff.Mode.MULTIPLY);
-		btnSitesList.getBackground().setColorFilter(0xFF00FF00,
+		btnSitesList.getBackground().setColorFilter(Color.parseColor("#4ea956"),
 				PorterDuff.Mode.MULTIPLY);
-		btnMap.getBackground().setColorFilter(0xFF00FF00,
+		btnMap.getBackground().setColorFilter(Color.parseColor("#4887ab"),
 				PorterDuff.Mode.MULTIPLY);
 
 		// On click open the ToursListActivity, a list of all the available

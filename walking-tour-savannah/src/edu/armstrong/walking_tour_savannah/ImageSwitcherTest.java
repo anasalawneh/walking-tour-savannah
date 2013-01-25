@@ -22,7 +22,6 @@ import android.widget.Gallery.LayoutParams;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewSwitcher;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
@@ -132,6 +131,7 @@ public class ImageSwitcherTest extends Activity implements
 				return true; // Left to right
 			}
 
+			//if up or down swipe use this.
 			if (e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE
 					&& Math.abs(velocityY) > SWIPE_THRESHOLD_VELOCITY) {
 				return false; // Bottom to top
@@ -164,7 +164,6 @@ public class ImageSwitcherTest extends Activity implements
 
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView i = new ImageView(mContext);
-
 			i.setImageDrawable(mThumbIds.get(position));
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
