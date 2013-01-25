@@ -65,6 +65,10 @@
             android:name="edu.armstrong.walking_tour_savannah.ImageSwitcherTest"
             android:label="@string/title_activity_image_switcher_test" >
         </activity>
+        <activity
+            android:name="edu.armstrong.walking_tour_savannah.ImageSwitcher"
+            android:label="@string/title_activity_image_switcher" >
+        </activity>
     </application>
 
 </manifest>
