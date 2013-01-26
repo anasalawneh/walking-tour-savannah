@@ -13,5 +13,8 @@
     <string name="title_activity_image_switcher_test">ImageSwitcherTest</string>
     <string name="noEvidence">No evidence</string>
     <string name="title_activity_image_switcher">ImageSwitcher</string>
+    <string name="dig_sav_title_desc">Dig Savannah</string>
+    <string name="title_activity_site_image_switcher">SiteImageSwitcher</string>
+    <string name="title_activity_site_description">SiteDescriptionActivity</string>
 
 </resources>

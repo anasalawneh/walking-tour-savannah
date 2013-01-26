@@ -24,7 +24,10 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
-    <application>
+    <application
+        android:icon="@drawable/dig_sav_logo"
+        android:logo="@drawable/dig_sav_logo"
+        android:theme="@style/AppBaseTheme" >
         <activity
             android:name="edu.armstrong.walking_tour_savannah.TitleScreenActivity"
             android:label="@string/app_name"
@@ -68,6 +71,14 @@
         <activity
             android:name="edu.armstrong.walking_tour_savannah.ImageSwitcher"
             android:label="@string/title_activity_image_switcher" >
+        </activity>
+        <activity
+            android:name="edu.armstrong.walking_tour_savannah.SiteImageSwitcher"
+            android:label="@string/title_activity_site_image_switcher" >
+        </activity>
+        <activity
+            android:name="edu.armstrong.walking_tour_savannah.SiteDescriptionActivity"
+            android:label="@string/title_activity_site_description" >
         </activity>
     </application>
 
