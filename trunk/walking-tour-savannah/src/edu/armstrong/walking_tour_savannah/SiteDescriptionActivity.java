@@ -1,0 +1,129 @@
+package edu.armstrong.walking_tour_savannah;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
+import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.util.HistoricSite;
+
+/**
+ * This will hold the information about each site. There will be an image
+ * switcher at the top and a description of the site at the bottom. These will
+ * be created dynmaically as each one is selected by the user to view. (from the
+ * SiteListActivity).
+ * 
+ * @author Sean Clapp, Dakota Brown
+ * 
+ */
+@SuppressWarnings("deprecation")
+public class SiteDescriptionActivity extends Activity implements
+		AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory {
+
+	private List<Drawable> myThumbIds = null;
+	private List<Drawable> myImageIds = null;
+	private List<String> mDescs = null;
+	private HistoricSite hs = null;
+	private TextView tv = null;
+	Gallery g = null;
+
+	private int currentPosition;
+
+	private Context mContext;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_site_description);
+
+		String siteName = getIntent().getStringExtra("site");
+		hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
+		populateLists();
+
+		tv = (TextView) findViewById(R.id.imageSwitcherTextView);
+
+		g = (Gallery) findViewById(R.id.gallerySiteDesc);
+		g.setAdapter(new ImageAdapter(this));
+		g.setOnItemSelectedListener(this);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.activity_site_description, menu);
+		return true;
+	}
+
+	@Override
+	public void onItemSelected(AdapterView<?> arg0, View v, int position,
+			long id) {
+		tv.setText(mDescs.get(position));
+	}
+
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0) {
+		
+	}
+
+	@Override
+	public View makeView() {
+		return null;
+	}
+
+	public class ImageAdapter extends BaseAdapter {
+		public ImageAdapter(Context c) {
+			mContext = c;
+		}
+
+		public int getCount() {
+			return myImageIds.size();
+		}
+
+		public Object getItem(int position) {
+			return position;
+		}
+
+		public long getItemId(int position) {
+			return position;
+		}
+
+		public View getView(int position, View convertView, ViewGroup parent) {
+			ImageView i = new ImageView(mContext);
+			i.setImageDrawable(myImageIds.get(position));
+			i.setAdjustViewBounds(true);
+			i.setLayoutParams(new Gallery.LayoutParams(
+					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+			i.setBackgroundColor(0xFF000000);
+			
+			return i;
+		}
+	}// ImageAdapter
+
+	
+	private void populateLists() {
+		myImageIds = new ArrayList<Drawable>();
+		myImageIds.add(hs.getImg());
+		myImageIds.addAll(hs.getEvImgs());
+
+		myThumbIds = new ArrayList<Drawable>();
+		myThumbIds.add(hs.getImg());
+		myThumbIds.addAll(hs.getEvImgs());
+
+		mDescs = new ArrayList<String>();
+		mDescs.add(hs.getDesc());
+		mDescs.addAll(hs.getEvDesc());
+	}
+}

@@ -81,7 +81,7 @@ public class SiteListActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					Intent toursActivityIntent = new Intent(
-							SiteListActivity.this, ImageSwitcherTest.class);
+							SiteListActivity.this, SiteDescriptionActivity.class);
 					toursActivityIntent.putExtra("site", hs.getName());
 					startActivity(toursActivityIntent);
 					
