@@ -16,5 +16,6 @@
     <string name="dig_sav_title_desc">Dig Savannah</string>
     <string name="title_activity_site_image_switcher">SiteImageSwitcher</string>
     <string name="title_activity_site_description">SiteDescriptionActivity</string>
+    <string name="more_info">More Info</string>
 
 </resources>
