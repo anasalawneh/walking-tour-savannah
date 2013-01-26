@@ -10,14 +10,14 @@
         android:id="@+id/ImageSwitcher01"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bricks31" >
+        android:background="@drawable/bricks31bw" >
     </ImageSwitcher>
 
     <RelativeLayout
         android:id="@+id/RelativeLayoutTitleScreenTop"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:alpha=".8"
+        android:layout_height="160dp"
+        android:alpha=".7"
         android:background="@drawable/bgblack"
         android:visibility="visible" >
 
