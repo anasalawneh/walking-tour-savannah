@@ -1,20 +1,14 @@
 package edu.armstrong.walking_tour_savannah;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
 
@@ -31,10 +25,9 @@ public class SiteListActivity extends Activity {
 
 	TableLayout tableLayoutSiteList;
 
-	@SuppressWarnings("deprecation")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.site_table_row_layout);
+		setContentView(R.layout.activity_site_list);
 
 		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayout1);
 		
@@ -46,7 +39,7 @@ public class SiteListActivity extends Activity {
 				.getListOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
-					R.layout.site_layout, null);
+					R.layout.site_table_row, null);
 			siteListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
@@ -85,10 +78,10 @@ public class SiteListActivity extends Activity {
 					toursActivityIntent.putExtra("site", hs.getName());
 					startActivity(toursActivityIntent);
 					
-					String test = new String("you clicked " + hs.getName());
-					Toast toast = Toast.makeText(
-							tableLayoutSiteList.getContext(), test, 50);
-					toast.show();
+//					String test = new String("you clicked " + hs.getName());
+//					Toast toast = Toast.makeText(
+//							tableLayoutSiteList.getContext(), test, 50);
+//					toast.show();
 				}
 			});
 

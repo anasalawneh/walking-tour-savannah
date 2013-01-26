@@ -33,14 +33,14 @@ import edu.armstrong.util.HistoricSite;
 public class SiteDescriptionActivity extends Activity implements
 		AdapterView.OnItemSelectedListener, ViewSwitcher.ViewFactory {
 
-	private List<Drawable> myThumbIds = null;
+	/**
+	 * Lists to hold the images and descriptions
+	 */
 	private List<Drawable> myImageIds = null;
 	private List<String> mDescs = null;
 	private HistoricSite hs = null;
-	private TextView tv = null;
+	private TextView tvSiteDesc = null;
 	Gallery g = null;
-
-	private int currentPosition;
 
 	private Context mContext;
 
@@ -53,7 +53,7 @@ public class SiteDescriptionActivity extends Activity implements
 		hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
 		populateLists();
 
-		tv = (TextView) findViewById(R.id.imageSwitcherTextView);
+		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
@@ -70,12 +70,12 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
-		tv.setText(mDescs.get(position));
+		tvSiteDesc.setText(mDescs.get(position));
 	}
 
 	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
-		
+
 	}
 
 	@Override
@@ -83,6 +83,9 @@ public class SiteDescriptionActivity extends Activity implements
 		return null;
 	}
 
+	/**
+	 * Image adapter for the gallery.
+	 */
 	public class ImageAdapter extends BaseAdapter {
 		public ImageAdapter(Context c) {
 			mContext = c;
@@ -100,6 +103,9 @@ public class SiteDescriptionActivity extends Activity implements
 			return position;
 		}
 
+		/**
+		 * Create a view to hold the images in and be used for the gallery
+		 */
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView i = new ImageView(mContext);
 			i.setImageDrawable(myImageIds.get(position));
@@ -107,20 +113,18 @@ public class SiteDescriptionActivity extends Activity implements
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 			i.setBackgroundColor(0xFF000000);
-			
 			return i;
 		}
 	}// ImageAdapter
 
 	
+	/**
+	 * poopulate the lists with info from the historic site manager
+	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Drawable>();
 		myImageIds.add(hs.getImg());
 		myImageIds.addAll(hs.getEvImgs());
-
-		myThumbIds = new ArrayList<Drawable>();
-		myThumbIds.add(hs.getImg());
-		myThumbIds.addAll(hs.getEvImgs());
 
 		mDescs = new ArrayList<String>();
 		mDescs.add(hs.getDesc());
