@@ -78,6 +78,17 @@
             android:drawablePadding="-155sp"
             android:text="@string/Map"
             android:textSize="22sp" />
+        
+        <Button
+            android:id="@+id/buttonMoreInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/buttonMap"
+            android:alpha=".9"
+            android:drawableLeft="@android:drawable/ic_menu_mylocation"
+            android:drawablePadding="-155sp"
+            android:text="@string/more_info"
+            android:textSize="22sp" />
 
     </RelativeLayout>
 

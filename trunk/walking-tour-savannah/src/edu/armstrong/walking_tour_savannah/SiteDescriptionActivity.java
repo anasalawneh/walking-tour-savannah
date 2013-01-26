@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Gallery;
@@ -47,11 +48,12 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_site_description);
-
 		String siteName = getIntent().getStringExtra("site");
 		hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
 		populateLists();
+		
+		setTitle("" + siteName);
+		setContentView(R.layout.activity_site_description);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
 
@@ -63,7 +65,7 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_site_description, menu);
+		//getMenuInflater().inflate(R.menu.activity_site_description, menu);
 		return true;
 	}
 
@@ -113,6 +115,7 @@ public class SiteDescriptionActivity extends Activity implements
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 			i.setBackgroundColor(0xFF000000);
+			
 			return i;
 		}
 	}// ImageAdapter
