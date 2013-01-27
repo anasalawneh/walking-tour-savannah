@@ -77,11 +77,6 @@ public class SiteListActivity extends Activity {
 							SiteListActivity.this, SiteDescriptionActivity.class);
 					toursActivityIntent.putExtra("site", hs.getName());
 					startActivity(toursActivityIntent);
-					
-//					String test = new String("you clicked " + hs.getName());
-//					Toast toast = Toast.makeText(
-//							tableLayoutSiteList.getContext(), test, 50);
-//					toast.show();
 				}
 			});
 
