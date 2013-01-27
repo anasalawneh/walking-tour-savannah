@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +26,7 @@ import edu.armstrong.util.HistoricSite;
 /**
  * This will hold the information about each site. There will be an image
  * switcher at the top and a description of the site at the bottom. These will
- * be created dynmaically as each one is selected by the user to view. (from the
+ * be created dynamically as each one is selected by the user to view. (from the
  * SiteListActivity).
  * 
  * @author Sean Clapp, Dakota Brown
@@ -41,6 +43,7 @@ public class SiteDescriptionActivity extends Activity implements
 	private List<String> mDescs = null;
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
+	private Button mapButton = null;
 	Gallery g = null;
 
 	private Context mContext;
@@ -56,6 +59,18 @@ public class SiteDescriptionActivity extends Activity implements
 		setContentView(R.layout.activity_site_description);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
+		mapButton = (Button) findViewById(R.id.mapButton);
+		/*mapButton.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent mapActivityIntent = new Intent(SiteDescriptionActivity.this,
+						MapOfHistoricPointsActivity.class);
+				startActivity(mapActivityIntent);
+				
+			}	
+		});
+		*/
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));

@@ -3,6 +3,7 @@ package edu.armstrong.walking_tour_savannah;
 import java.util.HashMap;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -37,6 +38,7 @@ import edu.armstrong.util.HistoricSite;
 public class MapOfHistoricPointsActivity extends MapActivity {
 
 	GoogleMap map;
+	HashMap<String, Marker> markerMap = new HashMap<String,Marker>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 
 		// Requires API 11- NEED TO DECIDE!!!
 		setUpMapIfNeeded();
+		
+		
 
 	}
 
@@ -70,10 +74,25 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						.getListOfSites();
 
 				for (HistoricSite hs : listOfSites.values()) {
-					map.addMarker(new MarkerOptions().position(hs.getLl())
-							.title(hs.getName()));
+					Marker m = 
+					map.addMarker(new MarkerOptions()
+					.position(hs.getLl())
+					.title(hs.getName()));
+					markerMap.put(m.getTitle(), m);
 				}
 
+				map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
+
+					@Override
+					public void onInfoWindowClick(Marker m) {
+						Intent toursActivityIntent = new Intent(
+						MapOfHistoricPointsActivity.this, SiteDescriptionActivity.class);
+						toursActivityIntent.putExtra("site", m.getTitle());
+						startActivity(toursActivityIntent);
+					}
+				});
+					
+				
 				map.setInfoWindowAdapter(new InfoWindowAdapter() {
 
 					private final View markerInfo = getLayoutInflater()
