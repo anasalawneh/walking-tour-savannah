@@ -86,7 +86,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					@Override
 					public void onInfoWindowClick(Marker m) {
 						Intent toursActivityIntent = new Intent(
-						MapOfHistoricPointsActivity.this, SiteDescriptionActivity.class);
+						MapOfHistoricPointsActivity.this, SiteDescriptionNoMapActivity.class);
 						toursActivityIntent.putExtra("site", m.getTitle());
 						startActivity(toursActivityIntent);
 					}
