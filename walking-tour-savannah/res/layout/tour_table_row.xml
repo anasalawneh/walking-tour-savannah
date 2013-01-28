@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/TableRowSiteList1"
+    android:id="@+id/TableRowTour"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFFFF"
     android:orientation="horizontal" >
 
     <LinearLayout
-        android:id="@+id/LinearLayoutSiteTableRow1"
+        android:id="@+id/TableRowLinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/black_white_gradient"
         android:orientation="vertical" >
 
         <LinearLayout
-            android:id="@+id/LinearLayoutSiteTableRow11"
+            android:id="@+id/TableRowLinearLayout11"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="#FFFFFFFF"
@@ -23,14 +23,14 @@
             android:weightSum="1" >
 
             <ImageView
-                android:id="@+id/imageViewSiteTableRowImg"
+                android:id="@+id/imageViewTourListImg1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight=".7"
                 android:background="#FFFFFFFF" />
 
             <LinearLayout
-                android:id="@+id/LinearLayoutSiteTableRow111"
+                android:id="@+id/TableRowLinearLayout111"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="20dp"
@@ -39,7 +39,7 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textViewSiteTableRowName"
+                    android:id="@+id/textViewTourName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#FFFFFFFF"
@@ -51,7 +51,7 @@
                     android:typeface="serif" />
 
                 <TextView
-                    android:id="@+id/textViewSiteTableRowDesc"
+                    android:id="@+id/textViewTourDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -65,7 +65,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageViewSiteTableRowShadow1"
+            android:id="@+id/imageViewTourTableRowShadow1"
             android:layout_width="match_parent"
             android:layout_height="10dp"
             android:background="@drawable/black_white_gradient" />

@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -51,6 +50,7 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		String siteName = getIntent().getStringExtra("site");
 		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
 		populateLists();
