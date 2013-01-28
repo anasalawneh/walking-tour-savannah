@@ -141,6 +141,7 @@ public class TitleScreenActivity extends Activity {
 			Drawable mainImg = res.getDrawable(resID);
 			
 			String desc = parser.getValue(e, "desc");
+			String longDesc = parser.getValue(e, "longDesc");
 			
 			//evidence images
 			NodeList ei = e.getElementsByTagName("evImg");
@@ -161,7 +162,7 @@ public class TitleScreenActivity extends Activity {
 			}
 			
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), mainImg, desc, evImgs, evDesc));
+			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), mainImg, desc, longDesc, evImgs, evDesc));
 		}
 
 		// populate for use throughout the app
