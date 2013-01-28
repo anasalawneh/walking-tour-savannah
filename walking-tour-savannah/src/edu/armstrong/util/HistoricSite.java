@@ -20,17 +20,27 @@ public class HistoricSite{
 	private LatLng ll;
 	private Drawable img;
 	private String desc;
+	private String longDesc;
 	private List<Drawable> evImgs;
 	private List<String> evDesc;
 
 	public HistoricSite(String name, LatLng ll, Drawable mainImg,
-			String desc, List<Drawable> evImgs, List<String> evDesc) {
+			String desc, String longDesc, List<Drawable> evImgs, List<String> evDesc) {
 		this.name = name;
 		this.ll = ll;
 		this.img = mainImg;
 		this.desc = desc;
+		this.longDesc = longDesc;
 		this.evImgs = evImgs;
 		this.evDesc = evDesc;
+	}
+
+	public String getLongDesc() {
+		return longDesc;
+	}
+
+	public void setLongDesc(String longDesc) {
+		this.longDesc = longDesc;
 	}
 
 	public String getName() {

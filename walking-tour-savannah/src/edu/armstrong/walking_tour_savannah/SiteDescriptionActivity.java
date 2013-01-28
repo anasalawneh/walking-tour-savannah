@@ -145,7 +145,7 @@ public class SiteDescriptionActivity extends Activity implements
 		myImageIds.addAll(hs.getEvImgs());
 
 		mDescs = new ArrayList<String>();
-		mDescs.add(hs.getDesc());
+		mDescs.add(hs.getLongDesc());
 		mDescs.addAll(hs.getEvDesc());
 	}
 }

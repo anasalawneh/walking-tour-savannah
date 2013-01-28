@@ -6,6 +6,22 @@
         <lon>-81.09729</lon>
         <img>battlefieldpark</img>
         <desc>The site of the bloodiest battle of the American Revolution</desc>
+        <longDesc>
+            Battlefield Park is the site of the bloodiest battle of the American Revolution. You are standing where
+the Colonial and French Allies attacked the Spring Hill Redoubt on October 9, 1779. Fourteen redoubts,
+or small forts, connected by an abatis wall surrounded British-held Savannah during the American
+Revolution. The Allied casualties numbered approximately 800, while the British only 50. The Allies
+retreated in chaos, losing the battle but eventually winning the war.
+
+Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about ¾ its original size.
+A few hundred feet down Louisville Road, a memorial marks the remains of the original Spring Hill
+Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques around
+the park that give a detailed history of the battle and a column of stones commemorating the Allies’
+casualties.
+
+After the Revolutionary War, houses and small business sprung up including a distillery and meat-
+packing industries. In the 1830s, the area changed drastically again with the founding of the Central of
+Georgia Railroad.</longDesc>
         
         <!-- Image followed by description -->
         <evImg>battlefield_ev1</evImg>
@@ -17,7 +33,15 @@
         <lon>-81.093877</lon>
         <img>madisonsquare</img>
         <desc>Location of a military ditch dug by British forces in 1779</desc>
-		
+		<longDesc>
+		    In 2008, archaeologists discovered a military ditch dug by British forces in 1779. Angling northwest-
+southeast, this ditch was identified as the West-Central redoubt, which was the location of Allies’ feint
+before real attack at Spring Hill.
+
+After the British left Savannah in the summer of 1782, the Americans filled in the ditches, burying
+many artifacts as well. Brick from the barracks located just north was found in the ditch. Many of these
+artifacts tell us about the lives of the soldiers.
+		</longDesc>
         <evImg>maddison_ev1</evImg>
         <evDesc>Archaeologists excavating in Madison Square.</evDesc>
         
@@ -33,7 +57,20 @@
         <lon>-81.091912</lon>
 		<img>lafayettesquare</img>
 		<desc>Historical maps suggest this is the location of the East-Central redoubt</desc>
-		
+		<longDesc>
+		    Historic map analysis suggested that the East-Central redoubt was located in Lafayette Square, so
+archaeologists conducted a ground penetrating radar survey and dug several test pits (holes) in the
+northwest quadrant of the square. Archaeologists found many artifacts from the 1730s to 1770s
+
+including a .28 caliber lead ball, some gunflint fragments, and ceramics. This area was outside of the
+town during the Revolutionary War, so it is likely these artifacts were used by the soldiers or workers
+building the fortifications. Another possibility is that citizens were camped here to avoid the Allies’
+bombing.
+
+Later trash deposits were found above the 1700s material and were likely left behind during the
+completion of War of 1812 defenses and later construction of houses as the town encroached in the
+1840s and 1850s. Several Catholic religious medals were lost over the years as well.
+		</longDesc>
 		<evImg>lafayette_ev1</evImg>
 		<evDesc>Archaeologists digging, mapping, screening for artifacts, and talking to students from St. Vincent’s Academy in Lafayette Square.</evDesc>
     </site>
@@ -43,7 +80,23 @@
         <lon>-81.085002</lon>
        	<img>emmetpark</img>
         <desc>The site of many forts due to strategic position over the Savannah River</desc>
-        
+        <longDesc>
+            A series of forts sat on the high bluff overlooking the Savannah River at the northeastern corner of town,
+because it was an excellent strategic location. As early as 1734, a 12 gun battery and two block houses
+with four guns each was built. The fortification was greatly expanded by the British in 1779-1782 and
+renamed Fort Prevost. After the American Revolution, the new United States resurrected the area as
+Fort Wayne.
+
+Archaeologists found a large, wooden-floored trench measuring 33 by 10 feet and artifacts such as a
+brass percussion cap, a brass shotgun shell casing, clay pipes, nails, and late-1700s era pottery. Only part
+of the trench was excavated, leaving some of this feature for future archaeologists. The feature might be
+gun emplacement or other military construction during the American Revolution, the War of 1812, and
+maybe even the Civil War. The trench was probably filled in when the city built Factors’ Walk (ca. 1854-
+1869).
+
+This area is also has a Native American site, represented by oyster shell and Deptford check stamped,
+cordmarked, and plain pottery.
+        </longDesc>
         <evImg>emmet_ev1</evImg>
         <evDesc>Small shovel test pits help us find archaeological sites.</evDesc>
     	
