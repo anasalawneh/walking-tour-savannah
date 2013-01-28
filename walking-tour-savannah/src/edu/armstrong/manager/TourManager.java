@@ -1,8 +1,7 @@
 package edu.armstrong.manager;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
-import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
 
 /**
@@ -15,7 +14,7 @@ import edu.armstrong.util.Tour;
  */
 public class TourManager {
 	public static TourManager tm;
-	private HashMap<String, Tour> mapOfTours = new HashMap<String, Tour>();
+	private LinkedHashMap<String, Tour> mapOfTours = new LinkedHashMap<String, Tour>();
 
 	/**
 	 * Constructor: default
@@ -29,7 +28,7 @@ public class TourManager {
 	 * 
 	 * @param listOfSites - all the dig sites put into a hashmap
 	 */
-	public TourManager(HashMap<String, Tour> mapOfSites){
+	public TourManager(LinkedHashMap<String, Tour> mapOfSites){
 		tm = this;
 		tm.setMapOfTours(mapOfSites);
 	}
@@ -42,11 +41,11 @@ public class TourManager {
 		return tm;
 	}
 
-	public HashMap<String, Tour> getMapOfTours() {
+	public LinkedHashMap<String, Tour> getMapOfTours() {
 		return tm.mapOfTours;
 	}
 
-	public void setMapOfTours(HashMap<String, Tour> mapOfTours) {
+	public void setMapOfTours(LinkedHashMap<String, Tour> mapOfTours) {
 		tm.mapOfTours = mapOfTours;
 	}
 }

@@ -3,6 +3,7 @@ package edu.armstrong.walking_tour_savannah;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,14 +11,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.maps.GeoPoint;
-
-import edu.armstrong.manager.HistoricSiteManager;
-import edu.armstrong.manager.TourManager;
-import edu.armstrong.util.HistoricSite;
-import edu.armstrong.util.Tour;
-import edu.armstrong.util.XMLParser;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -32,6 +25,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.manager.TourManager;
+import edu.armstrong.util.HistoricSite;
+import edu.armstrong.util.Tour;
+import edu.armstrong.util.XMLParser;
 
 /**
  * 
@@ -59,10 +60,10 @@ public class TitleScreenActivity extends Activity {
 		btnSitesList = (Button) findViewById(R.id.buttonSites);
 		btnMap = (Button) findViewById(R.id.buttonMap);
 
-		btnToursList.getBackground().setColorFilter(Color.parseColor("#d76969"),
-				PorterDuff.Mode.MULTIPLY);
-		btnSitesList.getBackground().setColorFilter(Color.parseColor("#4ea956"),
-				PorterDuff.Mode.MULTIPLY);
+		btnToursList.getBackground().setColorFilter(
+				Color.parseColor("#d76969"), PorterDuff.Mode.MULTIPLY);
+		btnSitesList.getBackground().setColorFilter(
+				Color.parseColor("#4ea956"), PorterDuff.Mode.MULTIPLY);
 		btnMap.getBackground().setColorFilter(Color.parseColor("#4887ab"),
 				PorterDuff.Mode.MULTIPLY);
 
@@ -114,7 +115,7 @@ public class TitleScreenActivity extends Activity {
 	 * Parses .xml file containing dig sites and adds them to a hash map
 	 */
 	private void populateSites() {
-		HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
+		LinkedHashMap<String, HistoricSite> listOfSites = new LinkedHashMap<String, HistoricSite>();
 
 		// reads the .xml file into a string
 		XMLParser parser = new XMLParser();
@@ -130,118 +131,126 @@ public class TitleScreenActivity extends Activity {
 		// looping through all sites
 		for (int i = 0; i < nl.getLength(); i++) {
 			Element e = (Element) nl.item(i);
-			
+
 			Resources res = getResources();
 			int resID;
 
-			
 			// children tag values
 			String name = parser.getValue(e, "name");
 			double lat = Double.parseDouble(parser.getValue(e, "lat"));
 			double lon = Double.parseDouble(parser.getValue(e, "lon"));
-			
+
 			String mainImgName = parser.getValue(e, "img");
-		    resID = res.getIdentifier(mainImgName, "drawable", getPackageName());
+			resID = res
+					.getIdentifier(mainImgName, "drawable", getPackageName());
 			Drawable mainImg = res.getDrawable(resID);
-			
+
 			String desc = parser.getValue(e, "desc");
 			String longDesc = parser.getValue(e, "longDesc");
-			
-			//evidence images
+
+			// evidence images
 			NodeList ei = e.getElementsByTagName("evImg");
 			List<Drawable> evImgs = new ArrayList<Drawable>();
-			for(int j = 0; j < ei.getLength(); j++){
+			for (int j = 0; j < ei.getLength(); j++) {
 				String imgName = parser.getElementValue(ei.item(j));
-				resID = res.getIdentifier(imgName, "drawable", getPackageName());
-				Drawable drawable = new BitmapDrawable(getResources(), decodeBitmapFromResource(res, resID, 200, 200));
+				resID = res
+						.getIdentifier(imgName, "drawable", getPackageName());
+				Drawable drawable = new BitmapDrawable(getResources(),
+						decodeBitmapFromResource(res, resID, 200, 200));
 				evImgs.add(drawable);
 			}
-			
-			//evidence descriptions
+
+			// evidence descriptions
 			NodeList ed = e.getElementsByTagName("evDesc");
 			List<String> evDesc = new ArrayList<String>();
-			for(int j = 0; j < ed.getLength(); j++){
+			for (int j = 0; j < ed.getLength(); j++) {
 				String d = parser.getElementValue(ed.item(j));
 				evDesc.add(d);
 			}
-			
+
 			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon), mainImg, desc, longDesc, evImgs, evDesc));
+			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon),
+					mainImg, desc, longDesc, evImgs, evDesc));
 		}
 
 		// populate for use throughout the app
 		new HistoricSiteManager(listOfSites);
 	}
-	
-	private void populateTours(){
+
+	private void populateTours() {
 		// reads the .xml file into a string
-				HashMap<String, HistoricSite> mapOfSites = HistoricSiteManager.getInstanceOf().getMapOfSites();
-				HashMap<String, Tour> mapOfTours = new HashMap<String, Tour>();
-				
-				XMLParser parser = new XMLParser();
-				InputStream is = this.getResources().openRawResource(R.raw.tours);
-				String xml = parser.getXmlFromFile(is); // getting XML
+		LinkedHashMap<String, HistoricSite> mapOfSites = HistoricSiteManager
+				.getInstanceOf().getMapOfSites();
+		LinkedHashMap<String, Tour> mapOfTours = new LinkedHashMap<String, Tour>();
 
-				// sets xml up to be read by tags
-				Document doc = parser.getDomElement(xml); // getting DOM element
+		XMLParser parser = new XMLParser();
+		InputStream is = this.getResources().openRawResource(R.raw.tours);
+		String xml = parser.getXmlFromFile(is); // getting XML
 
-				// get all tags named "site"
-				NodeList nl = doc.getElementsByTagName("tour");
+		// sets xml up to be read by tags
+		Document doc = parser.getDomElement(xml); // getting DOM element
 
-				// looping through all sites
-				for (int i = 0; i < nl.getLength(); i++) {
-					Element e = (Element) nl.item(i);
-					
-					String tourName = parser.getValue(e, "name");
-					String tourDesc = parser.getValue(e, "desc");
-					NodeList sites = e.getElementsByTagName("site");
-					LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
-					for(int j = 0; j < sites.getLength(); j++){
-						tourRoute.push(mapOfSites.get(sites.item(j)));
-					}
-					
-					mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute));
-					
-				}
-				
-				new TourManager(mapOfTours);
+		// get all tags named "site"
+		NodeList nl = doc.getElementsByTagName("tour");
+
+		// looping through all sites
+		for (int i = 0; i < nl.getLength(); i++) {
+			Element e = (Element) nl.item(i);
+
+			String tourName = parser.getValue(e, "name");
+			String tourDesc = parser.getValue(e, "desc");
+			NodeList sites = e.getElementsByTagName("site");
+			LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
+			for (int j = 0; j < sites.getLength(); j++) {
+				tourRoute.push(mapOfSites.get(sites.item(j)));
+			}
+
+			mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute));
+
+		}
+
+		new TourManager(mapOfTours);
 	}
-	
+
 	public static Bitmap decodeBitmapFromResource(Resources res, int resId,
-	        int reqWidth, int reqHeight) {
+			int reqWidth, int reqHeight) {
 
-	    // First decode with inJustDecodeBounds=true to check dimensions
-	    final BitmapFactory.Options options = new BitmapFactory.Options();
-	    options.inJustDecodeBounds = true;
-	    BitmapFactory.decodeResource(res, resId, options);
+		// First decode with inJustDecodeBounds=true to check dimensions
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(res, resId, options);
 
-	    // Calculate inSampleSize
-	    options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
 
-	    // Decode bitmap with inSampleSize set
-	    options.inJustDecodeBounds = false;
-	    return BitmapFactory.decodeResource(res, resId, options);
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(res, resId, options);
 	}
-	
-	public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-    // Raw height and width of image
-    final int height = options.outHeight;
-    final int width = options.outWidth;
-    int inSampleSize = 1;
 
-    if (height > reqHeight || width > reqWidth) {
+	public static int calculateInSampleSize(BitmapFactory.Options options,
+			int reqWidth, int reqHeight) {
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
 
-        // Calculate ratios of height and width to requested height and width
-        final int heightRatio = Math.round((float) height / (float) reqHeight);
-        final int widthRatio = Math.round((float) width / (float) reqWidth);
+		if (height > reqHeight || width > reqWidth) {
 
-        // Choose the smallest ratio as inSampleSize value, this will guarantee
-        // a final image with both dimensions larger than or equal to the
-        // requested height and width.
-        inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-    }
+			// Calculate ratios of height and width to requested height and
+			// width
+			final int heightRatio = Math.round((float) height
+					/ (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
 
-    return inSampleSize;
-}
+			// Choose the smallest ratio as inSampleSize value, this will
+			// guarantee
+			// a final image with both dimensions larger than or equal to the
+			// requested height and width.
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+
+		return inSampleSize;
+	}
 }
