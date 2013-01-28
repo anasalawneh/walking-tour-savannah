@@ -29,7 +29,7 @@ public class SiteListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_site_list);
 
-		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayout1);
+		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayoutSitList);
 		
 		/**
 		 * this adds the tablerows to the tablelayout dynamically, depending on
@@ -44,8 +44,8 @@ public class SiteListActivity extends Activity {
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
 
-			TextView tvName = ((TextView) siteListItem.findViewById(R.id.textViewSiteName));
-			TextView tvDesc = ((TextView) siteListItem.findViewById(R.id.textViewSiteDesc));
+			TextView tvName = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowName));
+			TextView tvDesc = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowDesc));
 
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the
@@ -61,7 +61,7 @@ public class SiteListActivity extends Activity {
 			
 			Drawable drawable = hs.getImg();
 			ImageView ivSite = (ImageView) siteListItem
-					.findViewById(R.id.imageViewSiteListImg);
+					.findViewById(R.id.imageViewSiteTableRowImg);
 			ivSite.setImageDrawable(drawable);
 
 			/**

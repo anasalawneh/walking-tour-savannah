@@ -42,7 +42,7 @@ public class TourManager {
 		return tm;
 	}
 
-	public HashMap<String, Tour> getListOfSites() {
+	public HashMap<String, Tour> getMapOfTours() {
 		return tm.mapOfTours;
 	}
 
