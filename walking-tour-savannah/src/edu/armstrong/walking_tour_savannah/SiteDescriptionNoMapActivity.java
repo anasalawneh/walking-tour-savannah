@@ -51,24 +51,13 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String siteName = getIntent().getStringExtra("site");
-		hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
+		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
 		populateLists();
 		
 		setTitle("" + siteName);
 		setContentView(R.layout.activity_site_description_no_map);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
-		/*mapButton.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent mapActivityIntent = new Intent(SiteDescriptionActivity.this,
-						MapOfHistoricPointsActivity.class);
-				startActivity(mapActivityIntent);
-				
-			}	
-		});
-		*/
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));

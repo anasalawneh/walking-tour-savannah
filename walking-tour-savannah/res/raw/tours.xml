@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tours>
+    <tour>
+        <name>Basic Tour</name>
+        <desc>Some tour sites--cool beans</desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
+</tours>

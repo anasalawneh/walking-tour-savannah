@@ -48,6 +48,11 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 		// Requires API 11- NEED TO DECIDE!!!
 		setUpMapIfNeeded();
 		
+		String goTo = getIntent().getStringExtra("siteName");
+		if(goTo != null){
+			Marker m = markerMap.get(goTo);
+			m.showInfoWindow();
+		}
 		
 
 	}
@@ -71,7 +76,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 
 				HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
 				listOfSites = HistoricSiteManager.getInstanceOf()
-						.getListOfSites();
+						.getMapOfSites();
 
 				for (HistoricSite hs : listOfSites.values()) {
 					Marker m = 
@@ -107,7 +112,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					public View getInfoContents(Marker marker) {
 						String title = marker.getTitle();
 						HistoricSite hs = HistoricSiteManager.getInstanceOf()
-								.getListOfSites().get(title);
+								.getMapOfSites().get(title);
 						
 						Drawable drawable = hs.getImg();
 						

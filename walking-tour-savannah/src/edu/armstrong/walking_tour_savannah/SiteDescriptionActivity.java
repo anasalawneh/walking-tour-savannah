@@ -52,7 +52,7 @@ public class SiteDescriptionActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String siteName = getIntent().getStringExtra("site");
-		hs = HistoricSiteManager.getInstanceOf().getListOfSites().get(siteName);
+		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
 		populateLists();
 		
 		setTitle("" + siteName);
@@ -60,17 +60,17 @@ public class SiteDescriptionActivity extends Activity implements
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
 		mapButton = (Button) findViewById(R.id.mapButton);
-		/*mapButton.setOnClickListener(new View.OnClickListener(){
+		mapButton.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent mapActivityIntent = new Intent(SiteDescriptionActivity.this,
 						MapOfHistoricPointsActivity.class);
 				startActivity(mapActivityIntent);
-				
+				mapActivityIntent.putExtra("siteName", hs.getName());
 			}	
 		});
-		*/
+	
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));

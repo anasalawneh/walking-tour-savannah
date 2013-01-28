@@ -14,7 +14,7 @@ import edu.armstrong.util.HistoricSite;
  */
 public class HistoricSiteManager {
 	public static HistoricSiteManager hsm;
-	private HashMap<String, HistoricSite> listOfSites = new HashMap<String, HistoricSite>();
+	private HashMap<String, HistoricSite> mapOfSites = new HashMap<String, HistoricSite>();
 
 	/**
 	 * Constructor: default
@@ -41,11 +41,11 @@ public class HistoricSiteManager {
 		return hsm;
 	}
 
-	public HashMap<String, HistoricSite> getListOfSites() {
-		return hsm.listOfSites;
+	public HashMap<String, HistoricSite> getMapOfSites() {
+		return hsm.mapOfSites;
 	}
 
 	public void setListOfSites(HashMap<String, HistoricSite> listOfSites) {
-		hsm.listOfSites = listOfSites;
+		hsm.mapOfSites = listOfSites;
 	}
 }
