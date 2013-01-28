@@ -76,11 +76,11 @@ public class ToursListActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
-//					Intent toursActivityIntent = new Intent(
-//							ToursListActivity.this,
-//							SiteDescriptionActivity.class);
-//					toursActivityIntent.putExtra("site", tour.getTourName());
-//					startActivity(toursActivityIntent);
+					// Intent toursActivityIntent = new Intent(
+					// ToursListActivity.this,
+					// SiteDescriptionActivity.class);
+					// toursActivityIntent.putExtra("site", tour.getTourName());
+					// startActivity(toursActivityIntent);
 				}
 			});
 

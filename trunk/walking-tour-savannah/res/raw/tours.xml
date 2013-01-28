@@ -8,4 +8,22 @@
         <site>Layfayette Square</site>
         <site>Emmet Park</site>
     </tour>
+    
+    <tour>
+        <name>Basic Tour2</name>
+        <desc>Some tour sites--cool beans</desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
+    
+    <tour>
+        <name>Basic Tour3</name>
+        <desc>Some tour sites--cool beans</desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
 </tours>

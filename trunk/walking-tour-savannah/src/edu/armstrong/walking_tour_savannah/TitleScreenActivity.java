@@ -52,6 +52,7 @@ public class TitleScreenActivity extends Activity {
 		setContentView(R.layout.activity_title_screen);
 
 		populateSites();
+		populateTours();
 
 		// Button definitions
 		btnToursList = (Button) findViewById(R.id.buttonTours);
