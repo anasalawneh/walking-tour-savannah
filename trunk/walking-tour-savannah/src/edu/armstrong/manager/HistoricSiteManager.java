@@ -1,6 +1,7 @@
 package edu.armstrong.manager;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 import edu.armstrong.util.HistoricSite;
 
@@ -14,7 +15,7 @@ import edu.armstrong.util.HistoricSite;
  */
 public class HistoricSiteManager {
 	public static HistoricSiteManager hsm;
-	private HashMap<String, HistoricSite> mapOfSites = new HashMap<String, HistoricSite>();
+	private LinkedHashMap<String, HistoricSite> mapOfSites = new LinkedHashMap<String, HistoricSite>();
 
 	/**
 	 * Constructor: default
@@ -28,7 +29,7 @@ public class HistoricSiteManager {
 	 * 
 	 * @param listOfSites - all the dig sites put into a hashmap
 	 */
-	public HistoricSiteManager(HashMap<String, HistoricSite> listOfSites){
+	public HistoricSiteManager(LinkedHashMap<String, HistoricSite> listOfSites){
 		hsm = this;
 		hsm.setListOfSites(listOfSites);
 	}
@@ -41,11 +42,11 @@ public class HistoricSiteManager {
 		return hsm;
 	}
 
-	public HashMap<String, HistoricSite> getMapOfSites() {
+	public LinkedHashMap<String, HistoricSite> getMapOfSites() {
 		return hsm.mapOfSites;
 	}
 
-	public void setListOfSites(HashMap<String, HistoricSite> listOfSites) {
+	public void setListOfSites(LinkedHashMap<String, HistoricSite> listOfSites) {
 		hsm.mapOfSites = listOfSites;
 	}
 }
