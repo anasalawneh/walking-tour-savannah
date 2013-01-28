@@ -36,7 +36,7 @@ public class SiteListActivity extends Activity {
 		 * the list of sites.
 		 */
 		for (final HistoricSite hs : HistoricSiteManager.getInstanceOf()
-				.getListOfSites().values()) {
+				.getMapOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.site_table_row, null);

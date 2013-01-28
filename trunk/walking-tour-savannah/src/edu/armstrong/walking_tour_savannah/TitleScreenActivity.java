@@ -3,6 +3,7 @@ package edu.armstrong.walking_tour_savannah;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.w3c.dom.Document;
@@ -13,7 +14,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.maps.GeoPoint;
 
 import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
+import edu.armstrong.util.Tour;
 import edu.armstrong.util.XMLParser;
 import android.app.Activity;
 import android.content.Intent;
@@ -167,6 +170,40 @@ public class TitleScreenActivity extends Activity {
 
 		// populate for use throughout the app
 		new HistoricSiteManager(listOfSites);
+	}
+	
+	private void populateTours(){
+		// reads the .xml file into a string
+				HashMap<String, HistoricSite> mapOfSites = HistoricSiteManager.getInstanceOf().getMapOfSites();
+				HashMap<String, Tour> mapOfTours = new HashMap<String, Tour>();
+				
+				XMLParser parser = new XMLParser();
+				InputStream is = this.getResources().openRawResource(R.raw.tours);
+				String xml = parser.getXmlFromFile(is); // getting XML
+
+				// sets xml up to be read by tags
+				Document doc = parser.getDomElement(xml); // getting DOM element
+
+				// get all tags named "site"
+				NodeList nl = doc.getElementsByTagName("tour");
+
+				// looping through all sites
+				for (int i = 0; i < nl.getLength(); i++) {
+					Element e = (Element) nl.item(i);
+					
+					String tourName = parser.getValue(e, "name");
+					String tourDesc = parser.getValue(e, "desc");
+					NodeList sites = e.getElementsByTagName("site");
+					LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
+					for(int j = 0; j < sites.getLength(); j++){
+						tourRoute.push(mapOfSites.get(sites.item(j)));
+					}
+					
+					mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute));
+					
+				}
+				
+				new TourManager(mapOfTours);
 	}
 	
 	public static Bitmap decodeBitmapFromResource(Resources res, int resId,
