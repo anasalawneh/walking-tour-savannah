@@ -66,8 +66,8 @@ public class SiteDescriptionActivity extends Activity implements
 				// TODO Auto-generated method stub
 				Intent mapActivityIntent = new Intent(SiteDescriptionActivity.this,
 						MapOfHistoricPointsActivity.class);
-				startActivity(mapActivityIntent);
 				mapActivityIntent.putExtra("siteName", hs.getName());
+				startActivity(mapActivityIntent);
 			}	
 		});
 	

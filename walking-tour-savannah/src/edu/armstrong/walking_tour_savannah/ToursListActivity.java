@@ -34,7 +34,7 @@ public class ToursListActivity extends Activity {
 		 * the list of sites.
 		 */
 
-		for (final Tour tour : TourManager.getInstanceOf().getMapOfTours()
+		for (Tour tour : TourManager.getInstanceOf().getMapOfTours()
 				.values()) {
 
 			TableRow tourListItem = (TableRow) getLayoutInflater().inflate(

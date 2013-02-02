@@ -11,9 +11,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.internal.r;
 import com.google.android.gms.maps.GoogleMap;
@@ -53,9 +55,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 			Marker m = markerMap.get(goTo);
 			m.showInfoWindow();
 		}
-		
-
-	}
+		}
 
 	@Override
 	protected boolean isRouteDisplayed() {
