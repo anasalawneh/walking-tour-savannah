@@ -18,10 +18,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.internal.r;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.maps.MapActivity;
@@ -38,6 +41,8 @@ import edu.armstrong.util.HistoricSite;
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapOfHistoricPointsActivity extends MapActivity {
+	
+	private double minLat, minLon, maxLat, maxLon;
 
 	GoogleMap map;
 	HashMap<String, Marker> markerMap = new HashMap<String,Marker>();
@@ -54,8 +59,12 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 		if(goTo != null){
 			Marker m = markerMap.get(goTo);
 			m.showInfoWindow();
+			map.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
+		}else{
+			LatLng c = new LatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
+			map.animateCamera(CameraUpdateFactory.newLatLng(c));
 		}
-		}
+	}
 
 	@Override
 	protected boolean isRouteDisplayed() {
@@ -78,12 +87,35 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 				listOfSites = HistoricSiteManager.getInstanceOf()
 						.getMapOfSites();
 
+				boolean initial = true;
 				for (HistoricSite hs : listOfSites.values()) {
 					Marker m = 
 					map.addMarker(new MarkerOptions()
 					.position(hs.getLl())
 					.title(hs.getName()));
 					markerMap.put(m.getTitle(), m);
+					
+					if(initial){
+						initial = false;
+						minLat = m.getPosition().latitude;
+						maxLat = m.getPosition().latitude;
+						minLon = m.getPosition().longitude;
+						maxLon = m.getPosition().longitude;
+						//calculate the max and min boundaries
+					}else{
+						if(minLat > m.getPosition().latitude){
+							minLat = m.getPosition().latitude;
+						}
+						if(maxLat < m.getPosition().latitude){
+							maxLat = m.getPosition().latitude;
+						}
+						if(minLon > m.getPosition().longitude){
+							minLon = m.getPosition().longitude;
+						}
+						if(maxLon < m.getPosition().longitude){
+							maxLon = m.getPosition().longitude;
+						}
+					}
 				}
 
 				map.setOnInfoWindowClickListener(new OnInfoWindowClickListener(){
