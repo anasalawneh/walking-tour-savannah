@@ -143,7 +143,8 @@ public class TitleScreenActivity extends Activity {
 			String mainImgName = parser.getValue(e, "img");
 			resID = res
 					.getIdentifier(mainImgName, "drawable", getPackageName());
-			Drawable mainImg = res.getDrawable(resID);
+			Drawable mainImg = new BitmapDrawable(getResources(),
+					decodeBitmapFromResource(res, resID, 200, 200));
 
 			String desc = parser.getValue(e, "desc");
 			String longDesc = parser.getValue(e, "longDesc");

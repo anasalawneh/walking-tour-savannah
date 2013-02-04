@@ -1,7 +1,13 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,6 +16,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.manager.TourManager;
+import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
 
 /**
@@ -22,6 +29,7 @@ import edu.armstrong.util.Tour;
 public class ToursListActivity extends Activity {
 
 	TableLayout tableLayoutTourList;
+	LinkedHashMap<String, Tour> tours = TourManager.getInstanceOf().getMapOfTours();	
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,8 +42,7 @@ public class ToursListActivity extends Activity {
 		 * the list of sites.
 		 */
 
-		for (Tour tour : TourManager.getInstanceOf().getMapOfTours()
-				.values()) {
+		for (final Tour tour : tours.values()) {
 
 			TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.tour_table_row, null);
@@ -70,14 +77,20 @@ public class ToursListActivity extends Activity {
 			 * set the onclick listener to take us to the tour activity.
 			 */
 			tourListItem.setOnClickListener(new View.OnClickListener() {
-
+				
 				@Override
 				public void onClick(View v) {
-					// Intent toursActivityIntent = new Intent(
-					// ToursListActivity.this,
-					// SiteDescriptionActivity.class);
-					// toursActivityIntent.putExtra("site", tour.getTourName());
-					// startActivity(toursActivityIntent);
+					 LinkedList<HistoricSite> route = tour.getTourRoute();
+					 final Intent intent = new Intent(Intent.ACTION_VIEW,
+					  /** Using the web based turn by turn directions url. */
+						       Uri.parse(
+						                "http://maps.google.com/maps?" +
+						                "saddr="+route.peek().getLl().latitude+"," +route.peek().getLl().longitude+
+						                "&daddr="+route.peekLast().getLl().latitude+"," +route.peekLast().getLl().longitude));
+					 intent.setClassName(
+			                 "com.google.android.apps.maps",
+			                 "com.google.android.maps.MapsActivity");	       
+					 startActivity(intent);
 				}
 			});
 
