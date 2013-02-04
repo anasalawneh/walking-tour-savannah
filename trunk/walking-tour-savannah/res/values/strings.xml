@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">walking-tour-savannah</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Dig Savannah</string>
     <string name="menu_settings">Settings</string>
     <string name="Tours">Tours</string>
-    <string name="title_activity_tours_list">ToursListActivity</string>
+    <string name="title_activity_tours_list">List of Tours</string>
     <string name="title_activity_map">Dig Sites</string>
     <string name="Sites">Sites</string>
     <string name="Map">Map</string>
-    <string name="title_activity_testtt">TestttActivity</string>
-    <string name="title_activity_image_switcher_test">ImageSwitcherTest</string>
     <string name="noEvidence">No evidence</string>
     <string name="title_activity_image_switcher">ImageSwitcher</string>
     <string name="dig_sav_title_desc">Dig Savannah</string>
-    <string name="title_activity_site_image_switcher">SiteImageSwitcher</string>
     <string name="title_activity_site_description">SiteDescriptionActivity</string>
     <string name="more_info">More Info</string>
 
