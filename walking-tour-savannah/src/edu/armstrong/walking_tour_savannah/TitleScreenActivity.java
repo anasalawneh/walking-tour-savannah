@@ -203,13 +203,11 @@ public class TitleScreenActivity extends Activity {
 			NodeList sites = e.getElementsByTagName("site");
 			LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
 			for (int j = 0; j < sites.getLength(); j++) {
-				tourRoute.push(mapOfSites.get(sites.item(j)));
+				if(sites.item(j) != null)
+					tourRoute.push(mapOfSites.get(parser.getElementValue(sites.item(j))));
 			}
-
 			mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute));
-
 		}
-
 		new TourManager(mapOfTours);
 	}
 

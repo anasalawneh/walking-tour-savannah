@@ -1,20 +1,16 @@
 package edu.armstrong.walking_tour_savannah;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
