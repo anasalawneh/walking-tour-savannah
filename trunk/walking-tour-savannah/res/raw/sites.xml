@@ -1,32 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sites>
+    <!-- #1 -->
     <site>
         <name>Battlefield Park</name>
-        <lat>32.074696</lat>
-        <lon>-81.09729</lon>
+        <lat>32.075611</lat>
+        <lon>-81.099523</lon>
         <img>battlefieldpark</img>
         <desc>The site of the bloodiest battle of the American Revolution</desc>
         <longDesc>
-	Battlefield Park is the site of the bloodiest battle of the American Revolution. You are standing where
-the Colonial and French Allies attacked the Spring Hill Redoubt on October 9, 1779. Fourteen redoubts,
-or small forts, connected by an abatis wall surrounded British-held Savannah during the American
-Revolution. The Allied casualties numbered approximately 800, while the British only 50. The Allies
-retreated in chaos, losing the battle but eventually winning the war.
+Time period: American Revolution
 
-	Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about ¾ its original size.
-A few hundred feet down Louisville Road, a memorial marks the remains of the original Spring Hill
-Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques around
-the park that give a detailed history of the battle and a column of stones commemorating the Allies’
-casualties.
+Type of site: Military
 
-	After the Revolutionary War, houses and small business sprung up including a distillery and meat-
+History: 
+	
+	Battlefield Park is the site of the bloodiest battle of the American Revolution. You are standing
+where the Colonial and French Allies attacked the Spring Hill Redoubt on October 9, 1779. Fourteen
+redoubts, or small forts, connected by an abatis wall surrounded British-held Savannah during the
+American Revolution. The Allied casualties numbered approximately 800, while the British only 50. The
+Allies retreated in chaos, losing the battle but eventually winning the war.
+
+After the Revolutionary War, houses and small business sprung up including a distillery and meat-
 packing industries. In the 1830s, the area changed drastically again with the founding of the Central of
 Georgia Railroad.
+
+Archaeology: 
+
+	Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about ¾ its
+original size. A few hundred feet down Louisville Road, a memorial marks the remains of the original
+Spring Hill Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques
+around the park that give a detailed history of the battle and a column of stones commemorating the
+Allies’ casualties.
 		</longDesc>
         
         <!-- Image followed by description -->
         <evImg>battlefield_ev1</evImg>
         <evDesc>Brass barrel band from a Charleville pistol</evDesc>
+    </site>
+    <!--  #2 -->
+    <site>
+        <name>Central of Georgia Railroad</name>
+        <lat>32.075666</lat>
+        <lon>-81.09913</lon>
+        <img>centralrailroad</img>
+        <desc>The Central Railroad and Banking Company was founded in 1836 by William Washington Gordon. The Savannah History Museum is original Passenger Depot</desc>
+    	<longDesc>
+Time period: 1830s-1960s
+
+Type of site: Industrial
+
+History: 
+
+	The Central Railroad and Banking Company was founded in 1836 by William Washington Gordon
+(grandfather of Juliette Gordon Low, founder of the Girl Scouts). Central of Georgia Railway Savannah
+Shops and Terminal Facilities, as this area came to be known, is a National Historic Landmark. The brick
+building north of Battlefield Park is the original Passenger Depot and now houses a Visitor’s Center and
+the Savannah History Museum.
+
+Archaeology: 
+
+	The repair shops are partially restored and feature working steam and diesel engines.
+Many small archaeological projects have exposed older versions of the railroad over the year. For
+example, archaeologists have found the footprint of the first, smaller roundhouse where the rolling
+stock (correct name for a train car) was parked when undergoing minor repairs. The current roundhouse
+is the building closest to Battlefield Park.
+
+	The first transfer table, a mechanism for transporting rolling stock to the correct stall in the Carpentry
+Shop and Paint Shop, was also discovered archaeologically. Part of this transfer table is preserved
+outside of the Savannah Children’s Museum, which will be housed in the old Paint Shop.
+
+Note: Today the repair shops are the Georgia State Railroad Museum run by Coastal Heritage Society
+and do require an entry fee.
+    	</longDesc>
+    	<evImg>central_ev1</evImg>
+    	<evDesc>The remains of the original Central of Georgia Railway transfer table (facing west). The Carpentry Shop is to the left outside of the frame.</evDesc>
+    	<evImg>central_ev2</evImg>
+    	<evDesc>The remains of the original Central of Georgia Railway transfer table (facing east).</evDesc>
+    </site>
+    <!-- #3 -->
+    <site>
+        <name>Railroad Ward</name>
+        <lat>32.075193</lat>
+        <lon>-81.100342</lon>
+        <img>railroadward</img>
+        <desc>The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.</desc>
+		<longDesc>
+Time period: 1830s-present
+
+Type of site: Domestic
+
+History: 
+
+	Savannah is a carefully designed city, divided up into wards. Each ward consists of a central
+square surrounded by 4 tythings (or 40 town lots) and four Trust Lots for the public good, which often
+held public buildings. The earliest white, male settlers received a town lot (60x90 ft), a farm south of
+town (44 acres) and a garden lot west of town (5 acres).
+
+	The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From
+the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central
+of Georgia and their families.
+
+Archaeology: 
+
+	Prior to the construction to the Marriott Hotel, archaeologists were able to excavate part
+of the hotel’s footprint. Many of the residents left behind items from their everyday lives such as toys,
+plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their dinners.
+		</longDesc>
+		<evImg>railward_ev1</evImg>
+		<evDesc>Brick-lined privy excavated at the Railroad Ward</evDesc>
+		<evImg>railward_ev2</evImg>
+		<evDesc>Bone, teeth, and oyster shell found at the site tell us what the residents were eating. Look for the butchery cut marks.</evDesc>
+		<evImg>railward_ev3</evImg>
+		<evDesc>Plate and bowl fragments found on the site.</evDesc>
+		<evImg>railward_ev4</evImg>
+		<evDesc>Personal items recovered include a heating comb for straightening hair, a partial buckle, straight pin, and hook from a hook-and-eye clothing closure.</evDesc>
+		<evImg>railward_ev5</evImg>
+		<evDesc>Many children’s toys were found on site. Clockwise from top left: marble, plate and cup from a doll-size tea set, child-size knife and spoon, and a porcelain doll foot.</evDesc>
     </site>
     <site>
         <name>Madison Square</name>
