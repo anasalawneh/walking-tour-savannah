@@ -56,13 +56,14 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 		setUpMapIfNeeded();
 		
 		String goTo = getIntent().getStringExtra("siteName");
+		//if the parent is SiteDescription, then center on that site
 		if(goTo != null){
 			Marker m = markerMap.get(goTo);
 			m.showInfoWindow();
 			map.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
+		//else, center the map
 		}else{
-			LatLng c = new LatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
-			map.animateCamera(CameraUpdateFactory.newLatLng(c));
+			map.animateCamera(CameraUpdateFactory.newLatLng(getCenter()));
 		}
 	}
 
@@ -70,6 +71,10 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 	protected boolean isRouteDisplayed() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public LatLng getCenter(){
+		return new LatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
 	}
 
 	private void setUpMapIfNeeded() {
@@ -95,6 +100,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					.title(hs.getName()));
 					markerMap.put(m.getTitle(), m);
 					
+					//for the first point, initialize
 					if(initial){
 						initial = false;
 						minLat = m.getPosition().latitude;
@@ -102,6 +108,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						minLon = m.getPosition().longitude;
 						maxLon = m.getPosition().longitude;
 						//calculate the max and min boundaries
+					//calculate the min and max lon and lats
 					}else{
 						if(minLat > m.getPosition().latitude){
 							minLat = m.getPosition().latitude;
