@@ -184,14 +184,16 @@ public class TitleScreenActivity extends Activity {
 				.getInstanceOf().getMapOfSites();
 		LinkedHashMap<String, Tour> mapOfTours = new LinkedHashMap<String, Tour>();
 
+		Resources res = this.getResources();
+
 		XMLParser parser = new XMLParser();
-		InputStream is = this.getResources().openRawResource(R.raw.tours);
+		InputStream is = res.openRawResource(R.raw.tours);
 		String xml = parser.getXmlFromFile(is); // getting XML
 
 		// sets xml up to be read by tags
 		Document doc = parser.getDomElement(xml); // getting DOM element
 
-		// get all tags named "site"
+		// get all tags named "tour"
 		NodeList nl = doc.getElementsByTagName("tour");
 
 		// looping through all sites
@@ -200,13 +202,20 @@ public class TitleScreenActivity extends Activity {
 
 			String tourName = parser.getValue(e, "name");
 			String tourDesc = parser.getValue(e, "desc");
+			String tourImg = parser.getValue(e, "img");
+			int resID = res
+					.getIdentifier(tourImg, "drawable", getPackageName());
+			Drawable drawable = new BitmapDrawable(getResources(),
+					decodeBitmapFromResource(res, resID, 200, 200));
+
 			NodeList sites = e.getElementsByTagName("site");
 			LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
 			for (int j = 0; j < sites.getLength(); j++) {
-				if(sites.item(j) != null)
-					tourRoute.push(mapOfSites.get(parser.getElementValue(sites.item(j))));
+				if (sites.item(j) != null)
+					tourRoute.push(mapOfSites.get(parser.getElementValue(sites
+							.item(j))));
 			}
-			mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute));
+			mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, drawable));
 		}
 		new TourManager(mapOfTours);
 	}

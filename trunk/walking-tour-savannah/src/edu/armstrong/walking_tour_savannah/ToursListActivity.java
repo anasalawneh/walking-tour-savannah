@@ -5,9 +5,11 @@ import java.util.LinkedList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -45,7 +47,7 @@ public class ToursListActivity extends Activity {
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
-
+			
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourName));
 			TextView tvDesc = ((TextView) tourListItem
@@ -63,11 +65,10 @@ public class ToursListActivity extends Activity {
 			 * site
 			 */
 
-//			Drawable drawable = HistoricSiteManager.getInstanceOf()
-//					.getMapOfSites().get(tour.getTourName()).getImg();
-//			ImageView ivTour = (ImageView) tourListItem
-//					.findViewById(R.id.imageViewTourListImg1);
-//			ivTour.setImageDrawable(drawable);
+			Drawable drawable = tour.getImg();
+			ImageView ivTour = (ImageView) tourListItem
+					.findViewById(R.id.imageViewTourListImg1);
+			ivTour.setImageDrawable(drawable);
 
 			/**
 			 * set the onclick listener to take us to the tour activity.

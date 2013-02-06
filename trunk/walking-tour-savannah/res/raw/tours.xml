@@ -2,6 +2,7 @@
 <tours>
     <tour>
         <name>Basic Tour</name>
+        <img>placeholder</img>
         <desc>Some tour sites--cool beans</desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
@@ -11,6 +12,7 @@
     
     <tour>
         <name>Basic Tour2</name>
+		<img>placeholder</img>
         <desc>Some tour sites--cool beans</desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
@@ -20,6 +22,7 @@
     
     <tour>
         <name>Basic Tour3</name>
+        <img>placeholder</img>
         <desc>Some tour sites--cool beans</desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
