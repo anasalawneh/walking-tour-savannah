@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableRowSiteList1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutSiteTableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/black_white_gradient"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp" >
+
+                <LinearLayout
+                    android:id="@+id/LinearLayoutSiteTableRow11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFFFF"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:weightSum="1" >
+
+                    <RelativeLayout
+                        android:id="@+id/RelativeLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7" >
+
+                        <ImageView
+                            android:id="@+id/imageViewSiteTableRowImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_weight=".3"
+                            android:background="#FFFFFFFF" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".3" >
+
+                        <TextView
+                            android:id="@+id/textViewSiteTableRowName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="#FFFFFFFF"
+                            android:gravity="center_horizontal"
+                            android:text="BADDD"
+                            android:textColor="@android:color/black"
+                            android:textColorHint="@android:color/black"
+                            android:textColorLink="@android:color/black"
+                            android:textSize="22sp"
+                            android:typeface="serif" />
+
+                        <TextView
+                            android:id="@+id/textViewSiteTableRowDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textViewSiteTableRowName"
+                            android:layout_centerHorizontal="true"
+                            android:gravity="center_horizontal"
+                            android:paddingLeft="10dp"
+                            android:text="You shouldn&apos;t be seeing this"
+                            android:textColor="@android:color/black"
+                            android:textColorLink="@android:color/black"
+                            android:textSize="16sp"
+                            android:typeface="serif" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageViewSiteTableRowShadow1"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@drawable/black_white_gradient" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</TableRow>

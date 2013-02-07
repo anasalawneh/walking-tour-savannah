@@ -2,7 +2,6 @@ package edu.armstrong.walking_tour_savannah;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;

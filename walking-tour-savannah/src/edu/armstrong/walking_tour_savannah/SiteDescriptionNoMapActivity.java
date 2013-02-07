@@ -5,17 +5,14 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +25,8 @@ import edu.armstrong.util.HistoricSite;
  * switcher at the top and a description of the site at the bottom. These will
  * be created dynamically as each one is selected by the user to view. (from the
  * SiteListActivity).
+ * 
+ * contentview is activity_site_description_no_map
  * 
  * @author Sean Clapp, Dakota Brown
  * 

@@ -18,6 +18,11 @@ import edu.armstrong.util.HistoricSite;
  * the site highlighted. (Or another activity with more info about the site,
  * whichever works better for the app)
  * 
+ * contentview: activity_site_list
+ * uses -
+ * TableLayout: TableLayoutSiteList
+ * TableRows: 
+ * 
  * @author Sean Clapp, Dakota Brown 
  * 
  */
@@ -31,7 +36,7 @@ public class SiteListActivity extends Activity {
 		setContentView(R.layout.activity_site_list);
 
 		
-		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayoutSitList);
+		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayoutSiteList);
 		hsmgr = HistoricSiteManager.getInstanceOf();
 		
 		/**
@@ -41,7 +46,7 @@ public class SiteListActivity extends Activity {
 		for (final HistoricSite hs : hsmgr.getMapOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
-					R.layout.site_table_row, null);
+					R.layout.table_row_site, null);
 			siteListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));

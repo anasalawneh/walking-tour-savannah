@@ -19,7 +19,12 @@ import edu.armstrong.util.Tour;
 
 /**
  * This activity will hold the list of avilable tours, when a tour is clicked,
- * the activity TourActivity will launch and show the sites on the route
+ * the activity TourActivity will launch and show the sites on the route.
+ * 
+ * contentView: activity_tours_list
+ * uses -
+ * TableLayout: TableLayoutTourList
+ * TableRow: table_row_tour
  * 
  * @author Sean Clapp, Dakota Brown
  * 
@@ -44,7 +49,7 @@ public class ToursListActivity extends Activity {
 		for (final Tour tour : tours.values()) {
 
 			TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
-					R.layout.tour_table_row, null);
+					R.layout.table_row_tour, null);
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
@@ -75,20 +80,24 @@ public class ToursListActivity extends Activity {
 			 * set the onclick listener to take us to the tour activity.
 			 */
 			tourListItem.setOnClickListener(new View.OnClickListener() {
-
 				@Override
 				public void onClick(View v) {
-					LinkedList<HistoricSite> route = tour.getTourRoute();
-					final Intent intent = new Intent(Intent.ACTION_VIEW,
-					/** Using the web based turn by turn directions url. */
-					Uri.parse("http://maps.google.com/maps?" + "saddr="
-							+ route.peek().getLl().latitude + ","
-							+ route.peek().getLl().longitude + "&daddr="
-							+ route.peekLast().getLl().latitude + ","
-							+ route.peekLast().getLl().longitude));
-					intent.setClassName("com.google.android.apps.maps",
-							"com.google.android.maps.MapsActivity");
-					startActivity(intent);
+//					LinkedList<HistoricSite> route = tour.getTourRoute();
+//					final Intent intent = new Intent(Intent.ACTION_VIEW,
+//					/** Using the web based turn by turn directions url. */
+//					Uri.parse("http://maps.google.com/maps?" + "saddr="
+//							+ route.peek().getLl().latitude + ","
+//							+ route.peek().getLl().longitude + "&daddr="
+//							+ route.peekLast().getLl().latitude + ","
+//							+ route.peekLast().getLl().longitude));
+//					intent.setClassName("com.google.android.apps.maps",
+//							"com.google.android.maps.MapsActivity");
+//					startActivity(intent);
+					
+					Intent toursActivityIntent = new Intent(
+							ToursListActivity.this, TourActivity.class);
+					toursActivityIntent.putExtra("tour", tour.getTourName());
+					startActivity(toursActivityIntent);
 				}
 			});
 

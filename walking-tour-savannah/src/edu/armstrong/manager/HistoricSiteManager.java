@@ -1,6 +1,5 @@
 package edu.armstrong.manager;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 import edu.armstrong.util.HistoricSite;
