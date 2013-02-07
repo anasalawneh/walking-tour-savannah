@@ -28,6 +28,8 @@ import edu.armstrong.util.HistoricSite;
  * be created dynamically as each one is selected by the user to view. (from the
  * SiteListActivity).
  * 
+ * contentview: activity_site_desription
+ * 
  * @author Sean Clapp, Dakota Brown
  * 
  */
@@ -143,7 +145,6 @@ public class SiteDescriptionActivity extends Activity implements
 		myImageIds = new ArrayList<Drawable>();
 		myImageIds.add(hs.getImg());
 		myImageIds.addAll(hs.getEvImgs());
-
 		mDescs = new ArrayList<String>();
 		mDescs.add(hs.getLongDesc());
 		mDescs.addAll(hs.getEvDesc());

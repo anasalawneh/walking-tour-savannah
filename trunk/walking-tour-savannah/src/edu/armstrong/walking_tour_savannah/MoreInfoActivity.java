@@ -1,7 +1,7 @@
 package edu.armstrong.walking_tour_savannah;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class MoreInfoActivity extends Activity {
