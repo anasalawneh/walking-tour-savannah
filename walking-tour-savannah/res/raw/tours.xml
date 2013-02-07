@@ -3,7 +3,9 @@
     <tour>
         <name>Basic Tour</name>
         <img>placeholder</img>
-        <desc>Some tour sites--cool beans</desc>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
         <site>Layfayette Square</site>
@@ -13,7 +15,9 @@
     <tour>
         <name>Basic Tour2</name>
 		<img>placeholder</img>
-        <desc>Some tour sites--cool beans</desc>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
         <site>Layfayette Square</site>
@@ -23,7 +27,45 @@
     <tour>
         <name>Basic Tour3</name>
         <img>placeholder</img>
-        <desc>Some tour sites--cool beans</desc>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
+    
+    <tour>
+        <name>Basic Tour4</name>
+        <img>placeholder</img>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
+    
+    <tour>
+        <name>Basic Tour5</name>
+        <img>placeholder</img>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
+        <site>Battlefield Park</site>
+        <site>Maddison Square</site>
+        <site>Layfayette Square</site>
+        <site>Emmet Park</site>
+    </tour>
+    
+    <tour>
+        <name>Basic Tour6</name>
+        <img>placeholder</img>
+        <desc>Some tour sites--cool beans
+            Tour Time: 1-2 Hours
+            </desc>
         <site>Battlefield Park</site>
         <site>Maddison Square</site>
         <site>Layfayette Square</site>

@@ -13,5 +13,8 @@
     <string name="dig_sav_title_desc">Dig Savannah</string>
     <string name="title_activity_site_description">SiteDescriptionActivity</string>
     <string name="more_info">More Info</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_tour">TourActivity</string>
+    <string name="title_activity_more_info">MoreInfoActivity</string>
 
 </resources>

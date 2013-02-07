@@ -18,23 +18,24 @@ import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
 
 /**
- * This activity will hold the list of avilable tours, when a tour is clicked, a
- * tourmap activity will launch and show the route.
+ * This activity will hold the list of avilable tours, when a tour is clicked,
+ * the activity TourActivity will launch and show the sites on the route
  * 
- * @author Sean
+ * @author Sean Clapp, Dakota Brown
  * 
  */
 public class ToursListActivity extends Activity {
 
 	TableLayout tableLayoutTourList;
-	LinkedHashMap<String, Tour> tours = TourManager.getInstanceOf().getMapOfTours();	
+	LinkedHashMap<String, Tour> tours;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tours_list);
 
 		tableLayoutTourList = (TableLayout) findViewById(R.id.TableLayoutTourList);
-
+		tours = TourManager.getInstanceOf().getMapOfTours();
+		
 		/**
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
@@ -47,7 +48,7 @@ public class ToursListActivity extends Activity {
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
-			
+
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourName));
 			TextView tvDesc = ((TextView) tourListItem
@@ -74,20 +75,20 @@ public class ToursListActivity extends Activity {
 			 * set the onclick listener to take us to the tour activity.
 			 */
 			tourListItem.setOnClickListener(new View.OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
-					 LinkedList<HistoricSite> route = tour.getTourRoute();
-					 final Intent intent = new Intent(Intent.ACTION_VIEW,
-					  /** Using the web based turn by turn directions url. */
-						       Uri.parse(
-						                "http://maps.google.com/maps?" +
-						                "saddr="+route.peek().getLl().latitude+"," +route.peek().getLl().longitude+
-						                "&daddr="+route.peekLast().getLl().latitude+"," +route.peekLast().getLl().longitude));
-					 intent.setClassName(
-			                 "com.google.android.apps.maps",
-			                 "com.google.android.maps.MapsActivity");	       
-					 startActivity(intent);
+					LinkedList<HistoricSite> route = tour.getTourRoute();
+					final Intent intent = new Intent(Intent.ACTION_VIEW,
+					/** Using the web based turn by turn directions url. */
+					Uri.parse("http://maps.google.com/maps?" + "saddr="
+							+ route.peek().getLl().latitude + ","
+							+ route.peek().getLl().longitude + "&daddr="
+							+ route.peekLast().getLl().latitude + ","
+							+ route.peekLast().getLl().longitude));
+					intent.setClassName("com.google.android.apps.maps",
+							"com.google.android.maps.MapsActivity");
+					startActivity(intent);
 				}
 			});
 
