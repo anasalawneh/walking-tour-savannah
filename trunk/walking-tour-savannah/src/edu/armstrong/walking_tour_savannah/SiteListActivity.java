@@ -24,19 +24,21 @@ import edu.armstrong.util.HistoricSite;
 public class SiteListActivity extends Activity {
 
 	TableLayout tableLayoutSiteList;
+	HistoricSiteManager hsmgr;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_site_list);
 
+		
 		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayoutSitList);
+		hsmgr = HistoricSiteManager.getInstanceOf();
 		
 		/**
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
 		 */
-		for (final HistoricSite hs : HistoricSiteManager.getInstanceOf()
-				.getMapOfSites().values()) {
+		for (final HistoricSite hs : hsmgr.getMapOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.site_table_row, null);

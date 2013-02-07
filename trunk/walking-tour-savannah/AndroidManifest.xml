@@ -54,7 +54,6 @@
         <activity
             android:name="edu.armstrong.walking_tour_savannah.MapOfHistoricPointsActivity"
             android:label="@string/title_activity_map" >
-            
         </activity>
 
         <meta-data
@@ -69,9 +68,17 @@
             android:name="edu.armstrong.walking_tour_savannah.SiteDescriptionActivity"
             android:label="@string/title_activity_site_description" >
         </activity>
-         <activity
+        <activity
             android:name="edu.armstrong.walking_tour_savannah.SiteDescriptionNoMapActivity"
             android:label="@string/title_activity_site_description" >
+        </activity>
+        <activity
+            android:name="edu.armstrong.walking_tour_savannah.TourActivity"
+            android:label="@string/title_activity_tour" >
+        </activity>
+        <activity
+            android:name="edu.armstrong.walking_tour_savannah.MoreInfoActivity"
+            android:label="@string/title_activity_more_info" >
         </activity>
     </application>
 
