@@ -7,36 +7,17 @@
         <lon>-81.099523</lon>
         <img>battlefieldpark</img>
         <desc>The site of the bloodiest battle of the American Revolution.</desc>
-        <longDesc>
-Time period: American Revolution
-
-Type of site: Military
-
-History: 
-	
-	Battlefield Park is the site of the bloodiest battle of the American Revolution. You are standing
-where the Colonial and French Allies attacked the Spring Hill Redoubt on October 9, 1779. Fourteen
-redoubts, or small forts, connected by an abatis wall surrounded British-held Savannah during the
-American Revolution. The Allied casualties numbered approximately 800, while the British only 50. The
-Allies retreated in chaos, losing the battle but eventually winning the war.
-
-After the Revolutionary War, houses and small business sprung up including a distillery and meat-
-packing industries. In the 1830s, the area changed drastically again with the founding of the Central of
-Georgia Railroad.
-
-Archaeology: 
-
-	Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about ¾ its
-original size. A few hundred feet down Louisville Road, a memorial marks the remains of the original
-Spring Hill Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques
-around the park that give a detailed history of the battle and a column of stones commemorating the
-Allies’ casualties.
-		</longDesc>
-        
+        <longDesc>Time period: American Revolution\n\nType of site: Military\n\nHistory:\n\n\tBattlefield Park is the site of the bloodiest battle of the American Revolution. You are standing where the Colonial and French Allies attacked the Spring Hill Redoubt on October 9, 1779. Fourteen redoubts, or small forts, connected by an abatis wall surrounded British-held Savannah during the American Revolution. The Allied casualties numbered approximately 800, while the British only 50. The Allies retreated in chaos, losing the battle but eventually winning the war. After the Revolutionary War, houses and small business sprung up including a distillery and meat-packing industries. In the 1830s, the area changed drastically again with the founding of the Central of Georgia Railroad.\n\nArchaeology:\n\n\tAlong Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about 3/4ths its original size. A few hundred feet down Louisville Road, a memorial marks the remains of the original Spring Hill Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques around the park that give a detailed history of the battle and a column of stones commemorating the Allies’ casualties.\n</longDesc>
         <!-- Image followed by description -->
         <evImg>battlefield_ev1</evImg>
         <evDesc>Brass barrel band from a Charleville pistol.</evDesc>
-    </site>
+        <evImg>battlefield_ev2</evImg>
+        <evDesc>The reconstructed Spring Hill Redoubt at the top of Battlefield Park.</evDesc>
+        <evImg>battlefield_ev3</evImg>
+        <evDesc>Horizontal stones mark the outline of the original Spring Hill Redoubt. The redoubt extended into the current location of Louisville Road (in background).</evDesc>
+        <evImg>battlefield_ev4</evImg>
+        <evDesc>A column of 800 stones memorialize the casualties of the 1779 Battle of Savannah.</evDesc>
+ 	</site>
     <!--  #2 -->
     <site>
         <name>Central of Georgia Railroad</name>
@@ -44,38 +25,15 @@ Allies’ casualties.
         <lon>-81.09913</lon>
         <img>centralrailroad</img>
         <desc>The Central Railroad and Banking Company was founded in 1836 by William Washington Gordon. The Savannah History Museum is original Passenger Depot.</desc>
-    	<longDesc>
-Time period: 1830s-1960s
-
-Type of site: Industrial
-
-History: 
-
-	The Central Railroad and Banking Company was founded in 1836 by William Washington Gordon
-(grandfather of Juliette Gordon Low, founder of the Girl Scouts). Central of Georgia Railway Savannah
-Shops and Terminal Facilities, as this area came to be known, is a National Historic Landmark. The brick
-building north of Battlefield Park is the original Passenger Depot and now houses a Visitor’s Center and
-the Savannah History Museum.
-
-Archaeology: 
-
-	The repair shops are partially restored and feature working steam and diesel engines.
-Many small archaeological projects have exposed older versions of the railroad over the year. For
-example, archaeologists have found the footprint of the first, smaller roundhouse where the rolling
-stock (correct name for a train car) was parked when undergoing minor repairs. The current roundhouse
-is the building closest to Battlefield Park.
-
-	The first transfer table, a mechanism for transporting rolling stock to the correct stall in the Carpentry
-Shop and Paint Shop, was also discovered archaeologically. Part of this transfer table is preserved
-outside of the Savannah Children’s Museum, which will be housed in the old Paint Shop.
-
-Note: Today the repair shops are the Georgia State Railroad Museum run by Coastal Heritage Society
-and do require an entry fee.
-    	</longDesc>
+    	<longDesc>Time period: 1830s-1960s\n\nType of site: Industrial\n\nHistory:\n\n\tThe Central Railroad and Banking Company was founded in 1836 by William Washington Gordon (grandfather of Juliette Gordon Low, founder of the Girl Scouts). Central of Georgia Railway Savannah Shops and Terminal Facilities, as this area came to be known, is a National Historic Landmark. The brick building north of Battlefield Park is the original Passenger Depot and now houses a Visitor’s Center and the Savannah History Museum.\n\nArchaeology:\n\n\tThe repair shops are partially restored and feature working steam and diesel engines. Many small archaeological projects have exposed older versions of the railroad over the year. For example, archaeologists have found the footprint of the first, smaller roundhouse where the rolling stock (correct name for a train car) was parked when undergoing minor repairs. The current roundhouse is the building closest to Battlefield Park.\n\n\tThe first transfer table, a mechanism for transporting rolling stock to the correct stall in the Carpentry Shop and Paint Shop, was also discovered archaeologically. Part of this transfer table is preserved outside of the Savannah Children’s Museum, which will be housed in the old Paint Shop.\n\nNote: Today the repair shops are the Georgia State Railroad Museum run by Coastal Heritage Society and do require an entry fee.\n</longDesc>
     	<evImg>central_ev1</evImg>
     	<evDesc>The remains of the original Central of Georgia Railway transfer table (facing west). The Carpentry Shop is to the left outside of the frame.</evDesc>
     	<evImg>central_ev2</evImg>
     	<evDesc>The remains of the original Central of Georgia Railway transfer table (facing east).</evDesc>
+    	<evImg>central_ev3</evImg>
+    	<evDesc>The Passenger Depot for the Central of Georgia Railroad seen from the Louisville Road side. The two-story portion held offices, while trains pulled into the back of the building (foreground).</evDesc>
+    	<evImg>central_ev4</evImg>
+    	<evDesc>The roundhouse had many bays for quick repairs to rolling stock (train cars). The smokestack from the Blacksmith’s Shop can be seen in the background.</evDesc>
     </site>
     <!-- #3 -->
     <site>
@@ -84,28 +42,7 @@ and do require an entry fee.
         <lon>-81.100342</lon>
         <img>railroadward</img>
         <desc>The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.</desc>
-		<longDesc>
-Time period: 1830s-present
-
-Type of site: Domestic
-
-History: 
-
-	Savannah is a carefully designed city, divided up into wards. Each ward consists of a central
-square surrounded by 4 tythings (or 40 town lots) and four Trust Lots for the public good, which often
-held public buildings. The earliest white, male settlers received a town lot (60x90 ft), a farm south of
-town (44 acres) and a garden lot west of town (5 acres).
-
-	The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From
-the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central
-of Georgia and their families.
-
-Archaeology: 
-
-	Prior to the construction to the Marriott Hotel, archaeologists were able to excavate part
-of the hotel’s footprint. Many of the residents left behind items from their everyday lives such as toys,
-plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their dinners.
-		</longDesc>
+		<longDesc>Time period: 1830s-present\n\nType of site: Domestic\n\nHistory: \n\n\tSavannah is a carefully designed city, divided up into wards. Each ward consists of a central square surrounded by 4 tythings (or 40 town lots) and four Trust Lots for the public good, which often held public buildings. The earliest white, male settlers received a town lot (60x90 ft), a farm south of town (44 acres) and a garden lot west of town (5 acres).\n\n\tThe Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.\n\nArchaeology:\n\n\tPrior to the construction to the Marriott Hotel, archaeologists were able to excavate part of the hotel’s footprint. Many of the residents left behind items from their everyday lives such as toys, plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their dinners. The current Marriott Hotel “cottages” are made to resemble the original Railroad Ward houses.\n</longDesc>
 		<evImg>railward_ev1</evImg>
 		<evDesc>Brick-lined privy excavated at the Railroad Ward</evDesc>
 		<evImg>railward_ev2</evImg>
@@ -122,34 +59,12 @@ plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their di
         <name>Marriott Hotel and Liberty Street Parking Garage</name>
         <lat>32.074573</lat>
         <lon>-81.093437</lon>
-        <img>placeholder</img>
+        <img>marriottlib</img>
         <desc>Temporary Text</desc>
-        <longDesc>
-Time period: late 1700s- 1800s
-
-Type of site: Domestic
-
-History: 
-
-	Most archaeological sites in the United States do not have any legal protection. However, for
-projects conducted on federal land or projects using federal permits or funding, the National Historic
-Preservation Act of 1966 (NHPA) requires an archaeological survey to be conducted. If important
-archaeological sites are found, they are either preserved or (more likely) excavated to recover the data
-contained in the site. The NHPA covers very few of the development projects in the United States.
-
-Archaeology: 
-
-	At the southeast corner of Martin Luther King Jr. Blvd and Liberty Street, two projects
-were conducted under the NHPA. A small brick cellar dating to the earliest decades of the 19 th century
-was identified prior to the construction of the Marriott hotel.
-
-	A late-18th and 19th century site was found before the Liberty Street Parking Garage was built. This site
-was designated 9Ch696. The 9 is for Georgia, Ch for Chatham County, and it is the 696 archaeological
-site recorded in Chatham County. The 19th century features and building ruins were considered eligible
-for the National Register of Historic Places, which was created by the NHPA of 1966.
-        </longDesc>
-
-    </site>
+        <longDesc>Time period: late 1700s- 1800s\n\nType of site: Domestic\n\nHistory:\n\n\tMost archaeological sites in the United States do not have any legal protection. However, for projects conducted on federal land or projects using federal permits or funding, the National Historic Preservation Act of 1966 (NHPA) requires an archaeological survey to be conducted. If important archaeological sites are found, they are either preserved or (more likely) excavated to recover the data contained in the site. The NHPA covers very few of the development projects in the United States.\n\nArchaeology:\n\n\tAt the southeast corner of Martin Luther King Jr. Blvd and Liberty Street, two projects were conducted under the NHPA. A small brick cellar dating to the earliest decades of the 19 th century was identified prior to the construction of the Marriott hotel.\n\n\tA late-18th and 19th century site was found before the Liberty Street Parking Garage was built. This site was designated 9Ch696. The 9 is for Georgia, Ch for Chatham County, and it is the 696 archaeological site recorded in Chatham County. The 19th century features and building ruins were considered eligible for the National Register of Historic Places, which was created by the NHPA of 1966.\n</longDesc>
+		<evImg>marriottlib_ev1</evImg>
+		<evDesc>The Liberty Street Parking Garage is next to the Marriott on Liberty Street. Enormous buildings like hotels and parking garages require massive earth moving during construction, which destroys archaeology sites.</evDesc>
+	</site>
     <!-- #5 -->
     <site>
         <name>Madison Square</name>
@@ -157,36 +72,17 @@ for the National Register of Historic Places, which was created by the NHPA of 1
         <lon>-81.093877</lon>
         <img>madisonsquare</img>
         <desc>Location of a military ditch dug by British forces in 1779 identified as the West-Central redoubt.</desc>
-		<longDesc>
-Time period: American Revolution
-
-Type of site: Military
-
-History: 
-
-	Bull Street is one of the first streets in Savannah, bisecting the city north/south. During the
-American Revolution, this area was the location of two Central Redoubts (small forts) and just inside the
-fortification was a brick barracks. Shortly before the 1779 battle, the barracks were torn down and the
-bricks were used to reinforce the fortifications.
-
-Archaeology: 
-
-	In 2008, archaeologists discovered a military ditch dug by British forces in 1779. Angling
-northwest-southeast, this ditch was identified as part of the West-Central redoubt, which was the
-location of Allies’ feint before real attack at Spring Hill at dawn October 9, 1779.
-
-	After the British left Savannah in the summer of 1782, the Americans filled in the ditches, burying many
-artifacts as well. Brick from the barracks was also found in the ditch. Many of these artifacts tell us about
-the lives of the soldiers, including how they spent their free time.
-		</longDesc>
+		<longDesc>Time period: American Revolution\n\nType of site: Military\n\nHistory:\n\n\tBull Street is one of the first streets in Savannah, bisecting the city north/south. During the American Revolution, this area was the location of two Central Redoubts (small forts) and just inside the fortification was a brick barracks. Shortly before the 1779 battle, the barracks were torn down and the bricks were used to reinforce the fortifications. Sgt. William Jasper’s monument stands in the middle of Madison Square. Sgt. Jasper is pictured just after he climbed the Spring Hill Redoubt and planted the 2nd South Carolina Regiment company’s flag. Notice he is grasping his side. He died that day from his wounds.\n\nArchaeology:\n\n\tIn 2008, archaeologists discovered a military ditch dug by British forces in 1779. Angling northwest-southeast, this ditch was identified as part of the West-Central redoubt, which was the location of Allies’ feint before real attack at Spring Hill at dawn October 9, 1779.\n\n\tAfter the British left Savannah in the summer of 1782, the Americans filled in the ditches, burying many artifacts as well. Brick from the barracks was also found in the ditch. Many of these artifacts tell us about the lives of the soldiers, including how they spent their free time.\n</longDesc>
         <evImg>maddison_ev1</evImg>
         <evDesc>Archaeologists excavating in Madison Square.</evDesc>
-        
         <evImg>maddison_ev2</evImg>
         <evDesc>Military button found in Madison Square excavation, note the faint “V”.</evDesc>
-    
-    	<evImg>maddison_ev3</evImg>
+       	<evImg>maddison_ev3</evImg>
     	<evDesc>Guncock from a British Brown Bess musket recovered from the Madison Square excavation.</evDesc>    	    
+    	<evImg>maddison_ev4</evImg>
+    	<evDesc>Looking south into Madison Square from Bull Street. The excavation was in the northeast corner of the square, left side of this picture.</evDesc>
+    	<evImg>maddison_ev5</evImg>
+    	<evDesc>Some of the artifacts found in Madison Square: Lead shot, lead sprue (scraps), and a gaming die (one from a pair of dice) handmade from a musket lead ball. The lead die is shown from two different sides.</evDesc>
     </site>
     <!-- #6 -->
     <site>
@@ -195,61 +91,25 @@ the lives of the soldiers, including how they spent their free time.
         <lon>-81.091912</lon>
 		<img>lafayettesquare</img>
 		<desc>Historical maps suggest this is the location of the East-Central redoubt</desc>
-		<longDesc>
-Time period: American Revolution
-
-Type of site: Military
-
-History: 
-	During the American Revolution, this area was outside of the city. Lafayette Square and the
-surrounding ward were not developed until the 1840s and 1850s.
-
-Archaeology: 
-	Historic map analysis suggested that the East-Central Redoubt was located in Lafayette
-Square, so archaeologists conducted a ground penetrating radar survey and dug several test pits (holes)
-in the northwest quadrant of the square. Archaeologists found many artifacts from the 1730s to 1770s
-including a .28 caliber lead ball, some gunflint fragments, and ceramics. Since this area was outside of
-the town during the Revolutionary War, it is likely these artifacts were used by the soldiers or workers
-(likely slaves) building the fortifications. Another possibility is that citizens were camped here to avoid
-the Allies’ bombing.
-
-	Later trash deposits were found above the 1700s material and were likely left behind during the
-completion of War of 1812 defenses and later construction of houses as the town encroached in the
-1840s and 1850s. Several Catholic religious medals were lost over the years as well.
-		</longDesc>
+		<longDesc>Time period: American Revolution\n\nType of site: Military\n\nHistory:\n\n\tDuring the American Revolution, this area was outside of the city. Lafayette Square and the surrounding ward were not developed until the 1840s and 1850s.\n\nArchaeology:\n\n\tHistoric map analysis suggested that the East-Central Redoubt was located in Lafayette Square, so archaeologists conducted a ground penetrating radar survey and dug several test pits (holes) in the northwest quadrant of the square. Archaeologists found many artifacts from the 1730s to 1770s including a .28 caliber lead ball, some gunflint fragments, and ceramics. Since this area was outside of the town during the Revolutionary War, it is likely these artifacts were used by the soldiers or workers(likely slaves) building the fortifications. Another possibility is that citizens were camped here to avoid the Allies’ bombing.\n\n\tLater trash deposits were found above the 1700s material and were likely left behind during the completion of War of 1812 defenses and later construction of houses as the town encroached in the 1840s and 1850s. Several Catholic religious medals were lost over the years as well.\n</longDesc>
 		<evImg>lafayette_ev1</evImg>
 		<evDesc>Archaeologists digging, mapping, screening for artifacts, and talking to students from St. Vincent’s Academy in Lafayette Square.</evDesc>
-    </site>
+		<evImg>lafayette_ev2</evImg>
+		<evDesc>The northwest corner of Lafayette Square, looking towards the west.</evDesc>
+	</site>
     <!-- #7 -->
     <site>
         <name>Andrew Low House</name>
         <lat>32.073027</lat>
         <lon>-81.092484</lon>
         <img>lowhouse</img>
-        <desc></desc>
-        <longDesc>
-Time period: 1840s to present
-
-Type of site: Domestic
-
-History: 
-
-	John Norris designed Andrew Low’s house in 1848. Andrew Low was an extremely wealthy
-cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house
-upon her husband’s death in 1905. After Mrs. Low’s 1927 death, The National Society of The Colonial
-Dames of America bought the home from the Gordon family and opened the house as a museum in
-1950. Note: The Andrew Low House is a museum open to the public. Fees apply for entry and tours.
-
-Archaeology: 
-
-	2001 when Environmental Services, Inc. (ESI) investigated an area of the southwestern
-downspout in the dry “moat” that surrounds the Andrew Low house. The excavation was located in the
-south portion of the moat and uncovered a brick floor approximately one meter below the moat surface
-(Kratzer 2001). Archeologists also uncovered a portion of a brick arch.In 2005 Brockington and Associates conducted a ground penetrating radar (GPR) survey at the Andrew
-Low House in an effort to locate archeological features and identify existing drainage patterns (Weaver
-2005).
-        </longDesc>
-    </site>
+        <desc>Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905.</desc>
+        <longDesc>Time period: 1840s to present\n\nType of site: Domestic\n\nHistory:\n\n\tJohn Norris designed Andrew Low’s house in 1848. Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905. After Mrs. Low’s 1927 death, The National Society of The Colonial Dames of America bought the home from the Gordon family and opened the house as a museum in 1950. Note: The Andrew Low House is a museum open to the public. Fees apply for entry and tours.\n\nArchaeology:\n\n\t2001 when Environmental Services, Inc. (ESI) investigated an area of the southwestern downspout in the dry “moat” that surrounds the Andrew Low house. The excavation was located in the south portion of the moat and uncovered a brick floor approximately one meter below the moat surface (Kratzer 2001). Archeologists also uncovered a portion of a brick arch.In 2005 Brockington and Associates conducted a ground penetrating radar (GPR) survey at the Andrew Low House in an effort to locate archeological features and identify existing drainage patterns (Weaver 2005).\n</longDesc>
+ 		<evImg>lowhouse_ev1</evImg>
+ 		<evDesc>The dry "moat" surrounding the sides of the Andrew Low House</evDesc>
+ 		<evImg>lowhouse_ev2</evImg>
+ 		<evDesc>detailed ironwork on the windows at the Andrew Low House</evDesc>
+ 	</site>
     <!-- #8 -->
     <site>
         <name>Owens Thomas House</name>
@@ -257,40 +117,11 @@ Low House in an effort to locate archeological features and identify existing dr
         <lon>-81.089668</lon>
         <img>thomashouse</img>
         <desc>A lot with rich history and many archaeological digs that is currently a part of the Telfair Academy</desc>
-        <longDesc>
-Time period: 1700s to present
-
-Type of site: Domestic
-
-History: 
-
-	Royal surveyor William DeBraham built his 1760 house on the lot currently occupied by the
-Owens-Thomas House. In 1816, Richard Richardson bought the lot and hired architect William Jay
-build the existing house, carriage house, and slave quarters. Richardson sold the house in 1822, and
-Mary Maxwell operated a boarding house for several years, entertaining guests such as the Marquis de
-Lafayette during his 1825 American tour. George Welschman Owens bought the property in 1830, and it
-remained with his heirs until 1951, when the family donated it to the Telfair Academy.
-
-Archaeology: 
-
-	Many archaeological digs have taken place at the Owens-Thomas House. Starting in
-1965, J. Everette Fauber dug in the southwest basement rooms. Staff were told Boy Scouts dug on the
-property at one time, but, if so, there is no documentation and no artifacts were saved. The Coastal
-Georgia Archaeological Society dug approximately 300 square feet, finding artifacts from the 1700s
-DeBraham occupation.
-
-	The Chicora Foundation’s 1993 excavation was focused on the architecture of the carriage house and
-slave quarters and the nature of urban slave life. The archaeologists found surprisingly many clothing
-and personal items, showing that slaves had access to more material goods and suggesting urban slaves
-had more control over their lives than rural slaves. Archaeologists also found many plates, rather than
-bowls. Bowls are often found on slaves sites because slaves usually made slow-cooking soups and stews
-that can be started in the morning and simmered all day, breaking down poor, tough cuts of meat. The
-presence of more plates may suggest a diet of less soups and more “meat-and sides”. Archaeologists
-could not determine if the plates were purchased by the slaves or were hand-me-downs from the main
-house.
-
-Note: The Owens-Thomas House is a museum open to the public. Fees apply for entry and tours.            
-        </longDesc>
+        <longDesc>Time period: 1700s to present\n\nType of site: Domestic\n\nHistory:\n\n\tRoyal surveyor William DeBraham built his 1760 house on the lot currently occupied by the Owens-Thomas House. In 1816, Richard Richardson bought the lot and hired architect William Jay build the existing house, carriage house, and slave quarters. Richardson sold the house in 1822, and Mary Maxwell operated a boarding house for several years, entertaining guests such as the Marquis de Lafayette during his 1825 American tour. George Welschman Owens bought the property in 1830, and it remained with his heirs until 1951, when the family donated it to the Telfair Academy.\n\nArchaeology:\n\n\tMany archaeological digs have taken place at the Owens-Thomas House. Starting in 1965, J. Everette Fauber dug in the southwest basement rooms. Staff were told Boy Scouts dug on the property at one time, but, if so, there is no documentation and no artifacts were saved. The Coastal Georgia Archaeological Society dug approximately 300 square feet, finding artifacts from the 1700s DeBraham occupation.\n\n\tThe Chicora Foundation’s 1993 excavation was focused on the architecture of the carriage house and slave quarters and the nature of urban slave life. The archaeologists found surprisingly many clothing and personal items, showing that slaves had access to more material goods and suggesting urban slaves had more control over their lives than rural slaves. Archaeologists also found many plates, rather than bowls. Bowls are often found on slaves sites because slaves usually made slow-cooking soups and stews that can be started in the morning and simmered all day, breaking down poor, tough cuts of meat. The presence of more plates may suggest a diet of less soups and more "meat-and sides". Archaeologists could not determine if the plates were purchased by the slaves or were hand-me-downs from the main house.\n\nNote: The Owens-Thomas House is a museum open to the public. Fees apply for entry and tours.\n</longDesc>
+    	<evImg>thomashouse_ev1</evImg>
+    	<evDesc>The carriage house and slave quarters for the Owens-Thomas House.</evDesc>
+    	<evImg>thomashouse_ev2</evImg>
+    	<evDesc>The southern side of the Owens-Thomas House. The white, cast-iron balcony is where the Marquis de Lafayette gave a speech during his tour of America in 1825. The Marquis de Lafayette was a general and important French ally during in the American Revolution.</evDesc>
     </site>
     <!-- #9 -->
     <site>
@@ -299,54 +130,21 @@ Note: The Owens-Thomas House is a museum open to the public. Fees apply for entr
         <lon>-81.090474</lon>
         <img>colcemetery</img>
         <desc>The second major public cemetery of Savannah established in 1750</desc>
-        <longDesc>
-Time period: mid-1700s to present
-
-Type of site: Cemetery
-
-History: 
-
-	Savannah’s first public burying ground was located northwest of Colonial Park Cemetery.
-When town expansion and population growth dictated, the second major public cemetery in Savannah,
-Colonial Park Cemetery, was established in 1750. The cemetery was enlarged several times and closed in
-1853. Laurel Grove Cemetery was opened to replace the old Colonial Cemetery.
-
-	The greenspace directly south of Colonial Park cemetery houses, stables, outhouses, and storage
-buildings in the 1800s. It was designated as “city lot” and “City pound” on historic maps. In 1896 it was
-officially added to Colonial Park and named Davant Park.
-
-Archaeology: 
-
-	In 1999, Chicora Foundation archaeologists mapped the cemetery- both existing tombs
-and gravestones as well as unmarked graves. Unmarked graves were located with a penetrometer
-survey (a penetrometer measures soil compaction). The survey confirmed historical accounts that the
-cemetery was filled to overflowing. Archaeologists found an astonishing 8,678 unmarked graves in
-addition to the 560 marked graves. Nearly every grave was disturbed in some way as fresh graves were
-partially dug into previous ones. Contrary to other reports, no mass grave was found.
-
-	Also contrary to local legend, no evidence was found that Civil War soldiers had ever camped or stabled
-horses in Colonial Cemetery. Archaeologists did find many late-1800s artifacts from citizens enjoying the
-park including lamp parts, soda and alcohol glass bottles, toys, pipes, and shell casings and bullets. Coins
-and beads suggest the possibility of voodoo practices in the park. Few clothing artifacts or elaborate
-coffin hardware was found, so the burials were probably simple. People were likely buried in shrouds
-and simple wood coffins.
-
-	In 2008, Coastal Heritage Society archaeologists conducted a ground penetrating radar survey of the
-southeastern portion of the cemetery and part of Davant Park. They found a large linear anomaly
-running northeast/southwest, that seemed to coincide with Revolutionary War fortification ditches seen
-on historic maps. GPR also showed that there were no graves in Davant Park, allowing for excavation.
-A small excavation revealed two lead balls (bullets of the 1700s) early in the excavation, raising hopes.
-Unfortunately, they did not find a Revolutionary War trench, however, they did find evidence of a privy
-dating roughly to 1790s-1870s. The excavation unit was only a small test, and the soil layers suggest
-that the battlefield landscape is approximately 63-102 cm below the present ground surface. Future
-archaeologists will probably have more success in this area.
-        </longDesc>
+        <longDesc>Time period: mid-1700s to present\n\nType of site: Cemetery\n\nHistory:\n\n\tSavannah’s first public burying ground was located northwest of Colonial Park Cemetery. When town expansion and population growth dictated, the second major public cemetery in Savannah, Colonial Park Cemetery, was established in 1750. The cemetery was enlarged several times and closed in 1853. Laurel Grove Cemetery was opened to replace the old Colonial Cemetery.\n\n\tThe greenspace directly south of Colonial Park cemetery houses, stables, outhouses, and storage buildings in the 1800s. It was designated as “city lot” and “City pound” on historic maps. In 1896 it was officially added to Colonial Park and named Davant Park.\n\nArchaeology:\n\n\tIn 1999, Chicora Foundation archaeologists mapped the cemetery- both existing tombs and gravestones as well as unmarked graves. Unmarked graves were located with a penetrometer survey (a penetrometer measures soil compaction). The survey confirmed historical accounts that the cemetery was filled to overflowing. Archaeologists found an astonishing 8,678 unmarked graves in addition to the 560 marked graves. Nearly every grave was disturbed in some way as fresh graves were partially dug into previous ones. Contrary to other reports, no mass grave was found.\n\n\tAlso contrary to local legend, no evidence was found that Civil War soldiers had ever camped or stabled horses in Colonial Cemetery. Archaeologists did find many late-1800s artifacts from citizens enjoying the park including lamp parts, soda and alcohol glass bottles, toys, pipes, and shell casings and bullets. Coins and beads suggest the possibility of voodoo practices in the park. Few clothing artifacts or elaborate coffin hardware was found, so the burials were probably simple. People were likely buried in shrouds and simple wood coffins.\n\n\tIn 2008, Coastal Heritage Society archaeologists conducted a ground penetrating radar survey of the southeastern portion of the cemetery and part of Davant Park. They found a large linear anomaly running northeast/southwest, that seemed to coincide with Revolutionary War fortification ditches seen on historic maps. GPR also showed that there were no graves in Davant Park, allowing for excavation. A small excavation revealed two lead balls (bullets of the 1700s) early in the excavation, raising hopes. Unfortunately, they did not find a Revolutionary War trench, however, they did find evidence of a privy dating roughly to 1790s-1870s. The excavation unit was only a small test, and the soil layers suggest that the battlefield landscape is approximately 63-102 cm below the present ground surface. Future archaeologists will probably have more success in this area.\n</longDesc>
     	<evImg>colcemetery_ev1</evImg>
     	<evDesc>Archaeologist Dan Elliott (in the blue shirt) conducts a ground penetrating radar survey in Colonial Park Cemetery.</evDesc>
     	<evImg>colcemetery_ev2</evImg>
     	<evDesc>Mapping, taking notes, and photographing the site is the most important part of fieldwork.</evDesc>
     	<evImg>colcemetery_ev3</evImg>
     	<evDesc>All excavated soil is screened through wire mesh (left) to recover as may artifacts as possible.</evDesc>   
+    	<evImg>colcemetery_ev4</evImg>
+    	<evDesc>The southeastern portion of Colonial Park Cemetery.</evDesc>   
+    	<evImg>colcemetery_ev5</evImg>
+    	<evDesc>Broken or fallen tombstones line the east wall of the cemetery. When the tombstones were found out of place they were moved to this wall.</evDesc>   
+    	<evImg>colcemetery_ev6</evImg>
+    	<evDesc>Mausoleum in Colonial Park Cemetery.</evDesc>   
+    	<evImg>colcemetery_ev7</evImg>
+    	<evDesc>The southeastern portion of Colonial Park Cemetery.</evDesc>   
     </site>
     <!-- #10 -->
     <site>
@@ -355,43 +153,9 @@ archaeologists will probably have more success in this area.
         <lon>-81.085002</lon>
        	<img>emmetpark</img>
         <desc>The site of Fort Prevost and Fort Wayne due to strategic position over the Savannah River</desc>
-        <longDesc>
-Site: Fort Prevost, Fort Wayne, and Trustee’s Garden
-
-Time period: 1100 BC to 500 AD, 1733 to late 1800s
-
-Type of site: Military, Native American
-
-History: 
-
-	A series of forts sat on the high bluff overlooking the Savannah River at the northeastern corner
-of town, which was an excellent strategic location. As early as 1734, a 12 gun battery and two block
-houses each with four guns were built. The fortification was greatly expanded by the British from 1779
-to 1782 and renamed Fort Prevost, after the British General Augustine Prevost. After the American
-Revolution, the new United States resurrected the area as Fort Wayne.
-
-	Immediately south of the fortifications was the Trustee’s Garden. This was an experimental garden area
-dating the colony’s earliest days. Mulberry trees for silk worms were grown. Other crops include rice,
-olives, peaches, grapes, cotton, indigo, flax (for linen), and hemp. The gardens were closed in 1748 when
-the silk crop was deemed unsuccessful.
-
-Archaeology: 
-
-	At the eastern end of Emmet Park, Coastal Heritage Society archaeologists found a large,
-wooden-floored trench through ground-penetrating radar and excavation. The trench measured 33
-by 10 feet and contained artifacts such as a brass percussion cap, a brass shotgun shell casing, clay
-pipes, nails, and late-1700s era pottery. Only part of the trench was excavated, leaving most of this
-feature preserved for future archaeologists. The feature might be gun emplacement or other military
-construction created during the American Revolution, the War of 1812, and maybe even the Civil War.
-More excavation might be able to better date the trench, which was probably filled in when the city
-built Factors’ Walk (ca. 1854-1869).
-
-	The park also has a Native American site, represented by oyster shell and Deptford check stamped,
-cordmarked, and plain pottery.
-        </longDesc>
+        <longDesc>Site: Fort Prevost, Fort Wayne, and Trustee’s Garden\n\nTime period: 1100 BC to 500 AD, 1733 to late 1800s\n\nType of site: Military, Native American\n\nHistory:\n\n\tA series of forts sat on the high bluff overlooking the Savannah River at the northeastern corner of town, which was an excellent strategic location. As early as 1734, a 12 gun battery and two block houses each with four guns were built. The fortification was greatly expanded by the British from 1779 to 1782 and renamed Fort Prevost, after the British General Augustine Prevost. After the American Revolution, the new United States resurrected the area as Fort Wayne.\n\n\tImmediately south of the fortifications was the Trustee’s Garden. This was an experimental garden area dating the colony’s earliest days. Mulberry trees for silk worms were grown. Other crops include rice, olives, peaches, grapes, cotton, indigo, flax (for linen), and hemp. The gardens were closed in 1748 when the silk crop was deemed unsuccessful.\n\nArchaeology:\n\n\tAt the eastern end of Emmet Park, Coastal Heritage Society archaeologists found a large, wooden-floored trench through ground-penetrating radar and excavation. The trench measured 33 by 10 feet and contained artifacts such as a brass percussion cap, a brass shotgun shell casing, clay pipes, nails, and late-1700s era pottery. Only part of the trench was excavated, leaving most of this feature preserved for future archaeologists. The feature might be gun emplacement or other military construction created during the American Revolution, the War of 1812, and maybe even the Civil War. More excavation might be able to better date the trench, which was probably filled in when the city built Factors’ Walk (ca. 1854-1869).\n\n\tThe park also has a Native American site, represented by oyster shell and Deptford check stamped, cordmarked, and plain pottery.\n</longDesc>
         <evImg>emmet_ev1</evImg>
         <evDesc>Small shovel test pits help us find archaeological sites.</evDesc>
-    	
     	<evImg>emmet_ev2</evImg>
     	<evDesc>Close-up of artifacts in the screen from digging a shovel test pit. The oyster shell was left by Native Americans living here. </evDesc>
     </site>
@@ -402,25 +166,16 @@ cordmarked, and plain pottery.
         <lon>-81.089981</lon>
         <img>ces</img>
         <desc>named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage. A detailed history of the embankments stores is available <a href="http://www.savannahga.gov/index.aspx?NID=1097">here</a>.</desc>
-        <longDesc>
-Time period: 1840 to present
-
-Type of site: Industrial
-
-History: 
-
-	The Cluskey Embankment Stores are named after architect Charles B. Cluskey, who designed
-a retaining wall four brick arched vaults for storage. A detailed history of the embankments stores is
-available <a href="http://www.savannahga.gov/index.aspx?NID=1097">here</a>.
-
-Archaeology: 
-
-	Researchers do not know how the embankments stores were used, so Georgia Southern
-University archaeologists are currently excavating (Fall 2013).
-		</longDesc>
+        <longDesc>Time period: 1840 to present\n\nType of site: Industrial\n\nHistory:\n\n\tThe Cluskey Embankment Stores are named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage. The four open Cluskey Embankment Stores were used for parking until historical interest was sparked. A detailed history of the embankments stores is available at http://www.savannahga.gov/index.aspx?NID=1097.\n\nArchaeology:\n\n\tResearchers do not know how the embankments stores were used, so Georgia Southern University archaeologists are currently excavating (Fall 2013).</longDesc>
 		<evImg>ces_ev1</evImg>
 		<evDesc>Visitors try their hand at screening for artifacts at a Public Day.</evDesc>
 		<evImg>ces_ev2</evImg>
 		<evDesc>A Georgia Southern University archaeologist digs a unit at the entrance to the embankment stores while visitors watch.</evDesc>
+    	<evImg>ces_ev3</evImg>
+    	<evDesc>The interior of a vault.</evDesc>
+    	<evImg>ces_ev4</evImg>
+    	<evDesc>One of the vaults were sealed.</evDesc>
+    	<evImg>ces_ev5</evImg>
+    	<evDesc>The Cluskey Embankment Stores sit directly east of City Hall.</evDesc>
     </site>
 </sites>

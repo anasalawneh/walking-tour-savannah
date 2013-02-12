@@ -50,6 +50,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String siteName = getIntent().getStringExtra("site");
+		
 		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
 		populateLists();
 		

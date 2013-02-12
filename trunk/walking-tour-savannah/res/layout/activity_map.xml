@@ -8,6 +8,6 @@
   map:cameraBearing="0"
   map:cameraTargetLat="32.077629"
   map:cameraTargetLng="-81.091375"
-  map:cameraTilt="0"
+  map:cameraTilt="30"
   map:cameraZoom="16"
   />
