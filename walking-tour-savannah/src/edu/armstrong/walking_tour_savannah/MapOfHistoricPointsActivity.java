@@ -56,6 +56,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 			Marker m = markerMap.get(goTo);
 			m.showInfoWindow();
 			map.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
+
 		//else, center the map
 		}else{
 			map.animateCamera(CameraUpdateFactory.newLatLng(getCenter()));
