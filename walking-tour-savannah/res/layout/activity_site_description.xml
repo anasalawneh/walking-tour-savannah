@@ -60,13 +60,13 @@
             android:text="Map" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/directionsButton"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="|||" />
+            android:text="Directions" />
 
     </RelativeLayout>
 
