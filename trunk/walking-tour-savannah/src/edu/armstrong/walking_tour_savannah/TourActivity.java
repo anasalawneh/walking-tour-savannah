@@ -24,9 +24,7 @@ import edu.armstrong.util.HistoricSite;
  * 
  * contentView: activity_tour
  * 
- * Uses - 
- * TableLayout: TableLayoutTourSites
- * TableRow: table_row_tour_site
+ * Uses - TableLayout: TableLayoutTourSites TableRow: table_row_tour_site
  * 
  * @since 02/06/2013
  * @author Sean Clapp, Dakota Brown
@@ -66,30 +64,31 @@ public class TourActivity extends Activity {
 			ImageView ivSite = (ImageView) tourListItem
 					.findViewById(R.id.imageViewTourSite);
 			ivSite.setImageDrawable(drawable);
-			
-			//set onclick listener for directions here
-			
+
+			// set onclick listener for directions here
 			tourListItem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					//LinkedList<HistoricSite> route = tour.getTourRoute();
 					
-					final Intent intent = new Intent(Intent.ACTION_VIEW,
-					/** Using the web based turn by turn directions url. */
-					Uri.parse("http://maps.google.com/maps?" + "saddr="
-							+ "&daddr="
-							+ hs.getLl().latitude + ","
-							+ hs.getLl().longitude));
-					intent.setClassName("com.google.android.apps.maps",
-							"com.google.android.maps.MapsActivity");
-					startActivity(intent);
+					Intent toursActivityIntent = new Intent(
+							TourActivity.this, SiteDescriptionActivity.class);
+					toursActivityIntent.putExtra("site", hs.getName());
+					startActivity(toursActivityIntent);
+//					// LinkedList<HistoricSite> route = tour.getTourRoute();
+//
+//					final Intent intent = new Intent(Intent.ACTION_VIEW,
+//					/** Using the web based turn by turn directions url. */
+//					Uri.parse("http://maps.google.com/maps?" + "saddr="
+//							+ "&daddr=" + hs.getLl().latitude + ","
+//							+ hs.getLl().longitude));
+//					intent.setClassName("com.google.android.apps.maps",
+//							"com.google.android.maps.MapsActivity");
+//					startActivity(intent);
 				}
 			});
-			
-			tableLayoutTourSiteList.addView(tourListItem);
 
+			tableLayoutTourSiteList.addView(tourListItem);
 		}
-		
 	}
 
 	@Override

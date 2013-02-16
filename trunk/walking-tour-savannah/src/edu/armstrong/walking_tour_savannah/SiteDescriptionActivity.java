@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -45,6 +46,7 @@ public class SiteDescriptionActivity extends Activity implements
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
 	private Button mapButton = null;
+	private Button dirButton = null;
 	Gallery g = null;
 
 	private Context mContext;
@@ -62,6 +64,7 @@ public class SiteDescriptionActivity extends Activity implements
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
 		mapButton = (Button) findViewById(R.id.mapButton);
+		dirButton = (Button) findViewById(R.id.directionsButton);
 		mapButton.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -73,6 +76,20 @@ public class SiteDescriptionActivity extends Activity implements
 			}	
 		});
 	
+		dirButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				final Intent intent = new Intent(Intent.ACTION_VIEW,
+						/** Using the web based turn by turn directions url. */
+						Uri.parse("http://maps.google.com/maps?" + "saddr="
+								+ "&daddr=" + hs.getLl().latitude + ","
+								+ hs.getLl().longitude));
+						intent.setClassName("com.google.android.apps.maps",
+								"com.google.android.maps.MapsActivity");
+						startActivity(intent);
+			}
+		});
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
