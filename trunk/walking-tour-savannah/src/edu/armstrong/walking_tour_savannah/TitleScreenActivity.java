@@ -11,6 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -19,7 +20,9 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -45,15 +48,22 @@ import edu.armstrong.util.XMLParser;
 public class TitleScreenActivity extends Activity {
 
 	Button btnToursList, btnSitesList, btnMap;
+	private Dialog mSplashDialog;
+	boolean showSplash = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+
+		if(HistoricSiteManager.getInstanceOf() == null){
+			showSplash = true;
+			showSplashScreen();
+			new PopulateSites().execute();
+		}
+
+		
 		setContentView(R.layout.activity_title_screen);
-
-		populateSites();
-		populateTours();
-
 		// Button definitions
 		btnToursList = (Button) findViewById(R.id.buttonTours);
 		btnSitesList = (Button) findViewById(R.id.buttonSites);
@@ -260,4 +270,44 @@ public class TitleScreenActivity extends Activity {
 
 		return inSampleSize;
 	}
+	
+	protected void showSplashScreen() {
+	    mSplashDialog = new Dialog(this, R.style.SplashScreen);
+	    mSplashDialog.setContentView(R.layout.splash);
+	    mSplashDialog.setCancelable(false);
+	    mSplashDialog.show();
+	     
+	    // Set Runnable to remove splash screen just in case
+	    final Handler handler = new Handler();
+	   
+	    handler.postDelayed(new Runnable() {
+	      @Override
+	      public void run() {
+	    	if(showSplash){
+	    		handler.postDelayed(this, 1000);
+	    	}else{
+	    		removeSplashScreen();
+	    	}
+	      }
+	    }, 1000);
+	}
+	
+	protected void removeSplashScreen() {
+	    if (mSplashDialog != null) {
+	        mSplashDialog.dismiss();
+	        mSplashDialog = null;
+	    }
+	}
+	
+    private class PopulateSites extends AsyncTask<Void, Void, Void> {
+		@Override
+		protected Void doInBackground(Void... arg0) {
+			populateSites();
+			populateTours();
+			
+			TitleScreenActivity.this.showSplash = false;
+			return null;
+		}
+  }  
+	 
 }
