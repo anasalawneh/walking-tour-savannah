@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -38,7 +39,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	/**
 	 * Lists to hold the images and descriptions
 	 */
-	private List<Drawable> myImageIds = null;
+	private List<Bitmap> myImageIds = null;
 	private List<String> mDescs = null;
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
@@ -112,7 +113,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		 */
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ImageView i = new ImageView(mContext);
-			i.setImageDrawable(myImageIds.get(position));
+			i.setImageBitmap(myImageIds.get(position));
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -127,7 +128,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	 * poopulate the lists with info from the historic site manager
 	 */
 	private void populateLists() {
-		myImageIds = new ArrayList<Drawable>();
+		myImageIds = new ArrayList<Bitmap>();
 		myImageIds.add(hs.getImg());
 		myImageIds.addAll(hs.getEvImgs());
 

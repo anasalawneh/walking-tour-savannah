@@ -2,6 +2,7 @@ package edu.armstrong.util;
 
 import java.util.LinkedList;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
 /**
@@ -14,10 +15,10 @@ public class Tour {
 	private LinkedList<HistoricSite> tourRoute;
 	private String tourName;
 	private String tourDesc;
-	private Drawable img;
+	private Bitmap img;
 
 	public Tour(String tourName, String tourDesc,
-			LinkedList<HistoricSite> tourRoute, Drawable img) {
+			LinkedList<HistoricSite> tourRoute, Bitmap img) {
 		this.tourName = tourName;
 		this.tourDesc = tourDesc;
 		this.tourRoute = tourRoute;
@@ -48,11 +49,11 @@ public class Tour {
 		this.tourDesc = tourDesc;
 	}
 
-	public Drawable getImg() {
+	public Bitmap getImg() {
 		return img;
 	}
 
-	public void setImg(Drawable img) {
+	public void setImg(Bitmap img) {
 		this.img = img;
 	}
 

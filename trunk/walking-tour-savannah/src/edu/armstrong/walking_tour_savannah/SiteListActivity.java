@@ -2,6 +2,7 @@ package edu.armstrong.walking_tour_savannah;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -66,10 +67,10 @@ public class SiteListActivity extends Activity {
 			 * site
 			 */
 			
-			Drawable drawable = hs.getImg();
+			Bitmap img = hs.getImg();
 			ImageView ivSite = (ImageView) siteListItem
 					.findViewById(R.id.imageViewSiteTableRowImg);
-			ivSite.setImageDrawable(drawable);
+			ivSite.setImageBitmap(img);
 
 			/**
 			 * set the onclick listener to take us to the map position of the

@@ -120,156 +120,6 @@ public class TitleScreenActivity extends Activity {
 		return true;
 	}
 
-	/**
-	 * Parses .xml file containing dig sites and adds them to a hash map
-	 */
-	private void populateSites() {
-		LinkedHashMap<String, HistoricSite> listOfSites = new LinkedHashMap<String, HistoricSite>();
-
-		// reads the .xml file into a string
-		XMLParser parser = new XMLParser();
-		InputStream is = this.getResources().openRawResource(R.raw.sites);
-		String xml = parser.getXmlFromFile(is); // getting XML
-
-		// sets xml up to be read by tags
-		Document doc = parser.getDomElement(xml); // getting DOM element
-
-		// get all tags named "site"
-		NodeList nl = doc.getElementsByTagName("site");
-
-		// looping through all sites
-		for (int i = 0; i < nl.getLength(); i++) {
-			Element e = (Element) nl.item(i);
-
-			Resources res = getResources();
-			int resID;
-
-			// children tag values
-			String name = parser.getValue(e, "name");
-			double lat = Double.parseDouble(parser.getValue(e, "lat"));
-			double lon = Double.parseDouble(parser.getValue(e, "lon"));
-
-			String mainImgName = parser.getValue(e, "img");
-			resID = res
-					.getIdentifier(mainImgName, "drawable", getPackageName());
-			Drawable mainImg = new BitmapDrawable(getResources(),
-					decodeBitmapFromResource(res, resID, 200, 200));
-
-			String desc = parser.getValue(e, "desc");
-			String longDesc = parser.getValue(e, "longDesc");
-
-			// evidence images
-			NodeList ei = e.getElementsByTagName("evImg");
-			List<Drawable> evImgs = new ArrayList<Drawable>();
-			for (int j = 0; j < ei.getLength(); j++) {
-				String imgName = parser.getElementValue(ei.item(j));
-				resID = res
-						.getIdentifier(imgName, "drawable", getPackageName());
-				Drawable drawable = new BitmapDrawable(getResources(),
-						decodeBitmapFromResource(res, resID, 200, 200));
-				evImgs.add(drawable);
-			}
-
-			// evidence descriptions
-			NodeList ed = e.getElementsByTagName("evDesc");
-			List<String> evDesc = new ArrayList<String>();
-			for (int j = 0; j < ed.getLength(); j++) {
-				String d = parser.getElementValue(ed.item(j));
-				evDesc.add(d);
-			}
-
-			Log.d("Added site", name);
-			listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon),
-					mainImg, desc, longDesc, evImgs, evDesc));
-		}
-
-		// populate for use throughout the app
-		new HistoricSiteManager(listOfSites);
-	}
-
-	private void populateTours() {
-		// reads the .xml file into a string
-		LinkedHashMap<String, HistoricSite> mapOfSites = HistoricSiteManager
-				.getInstanceOf().getMapOfSites();
-		LinkedHashMap<String, Tour> mapOfTours = new LinkedHashMap<String, Tour>();
-
-		Resources res = this.getResources();
-
-		XMLParser parser = new XMLParser();
-		InputStream is = res.openRawResource(R.raw.tours);
-		String xml = parser.getXmlFromFile(is); // getting XML
-
-		// sets xml up to be read by tags
-		Document doc = parser.getDomElement(xml); // getting DOM element
-
-		// get all tags named "tour"
-		NodeList nl = doc.getElementsByTagName("tour");
-
-		// looping through all sites
-		for (int i = 0; i < nl.getLength(); i++) {
-			Element e = (Element) nl.item(i);
-
-			String tourName = parser.getValue(e, "name");
-			String tourDesc = parser.getValue(e, "desc");
-			String tourImg = parser.getValue(e, "img");
-			int resID = res
-					.getIdentifier(tourImg, "drawable", getPackageName());
-			Drawable drawable = new BitmapDrawable(getResources(),
-					decodeBitmapFromResource(res, resID, 200, 200));
-
-			NodeList sites = e.getElementsByTagName("site");
-			LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
-			for (int j = 0; j < sites.getLength(); j++) {
-				if (sites.item(j) != null)
-					tourRoute.push(mapOfSites.get(parser.getElementValue(sites
-							.item(j))));
-			}
-			mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, drawable));
-		}
-		new TourManager(mapOfTours);
-	}
-
-	public static Bitmap decodeBitmapFromResource(Resources res, int resId,
-			int reqWidth, int reqHeight) {
-
-		// First decode with inJustDecodeBounds=true to check dimensions
-		final BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		BitmapFactory.decodeResource(res, resId, options);
-
-		// Calculate inSampleSize
-		options.inSampleSize = calculateInSampleSize(options, reqWidth,
-				reqHeight);
-
-		// Decode bitmap with inSampleSize set
-		options.inJustDecodeBounds = false;
-		return BitmapFactory.decodeResource(res, resId, options);
-	}
-
-	public static int calculateInSampleSize(BitmapFactory.Options options,
-			int reqWidth, int reqHeight) {
-		// Raw height and width of image
-		final int height = options.outHeight;
-		final int width = options.outWidth;
-		int inSampleSize = 1;
-
-		if (height > reqHeight || width > reqWidth) {
-
-			// Calculate ratios of height and width to requested height and
-			// width
-			final int heightRatio = Math.round((float) height
-					/ (float) reqHeight);
-			final int widthRatio = Math.round((float) width / (float) reqWidth);
-
-			// Choose the smallest ratio as inSampleSize value, this will
-			// guarantee
-			// a final image with both dimensions larger than or equal to the
-			// requested height and width.
-			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-		}
-
-		return inSampleSize;
-	}
 	
 	protected void showSplashScreen() {
 	    mSplashDialog = new Dialog(this, R.style.SplashScreen);
@@ -307,6 +157,156 @@ public class TitleScreenActivity extends Activity {
 			
 			TitleScreenActivity.this.showSplash = false;
 			return null;
+		}
+		
+
+		/**
+		 * Parses .xml file containing dig sites and adds them to a hash map
+		 */
+		private void populateSites() {
+			LinkedHashMap<String, HistoricSite> listOfSites = new LinkedHashMap<String, HistoricSite>();
+
+			// reads the .xml file into a string
+			XMLParser parser = new XMLParser();
+			InputStream is = TitleScreenActivity.this.getResources().openRawResource(R.raw.sites);
+			String xml = parser.getXmlFromFile(is); // getting XML
+
+			// sets xml up to be read by tags
+			Document doc = parser.getDomElement(xml); // getting DOM element
+
+			// get all tags named "site"
+			NodeList nl = doc.getElementsByTagName("site");
+
+			// looping through all sites
+			for (int i = 0; i < nl.getLength(); i++) {
+				Element e = (Element) nl.item(i);
+
+				Resources res = getResources();
+				int resID;
+
+				// children tag values
+				String name = parser.getValue(e, "name");
+				double lat = Double.parseDouble(parser.getValue(e, "lat"));
+				double lon = Double.parseDouble(parser.getValue(e, "lon"));
+
+				String mainImgName = parser.getValue(e, "img");
+				resID = res
+						.getIdentifier(mainImgName, "drawable", getPackageName());
+				Bitmap mainImg = decodeBitmapFromResource(res, resID, 200, 200);
+
+				String desc = parser.getValue(e, "desc");
+				String longDesc = parser.getValue(e, "longDesc");
+
+				// evidence images
+				NodeList ei = e.getElementsByTagName("evImg");
+				List<Bitmap> evImgs = new ArrayList<Bitmap>();
+				for (int j = 0; j < ei.getLength(); j++) {
+					String imgName = parser.getElementValue(ei.item(j));
+					resID = res.getIdentifier(imgName, "drawable", getPackageName());
+					Bitmap b  = decodeBitmapFromResource(res, resID, 200, 200);
+					evImgs.add(b);
+					b.recycle();
+					b=null;
+				}
+
+				// evidence descriptions
+				NodeList ed = e.getElementsByTagName("evDesc");
+				List<String> evDesc = new ArrayList<String>();
+				for (int j = 0; j < ed.getLength(); j++) {
+					String d = parser.getElementValue(ed.item(j));
+					evDesc.add(d);
+				}
+
+				Log.d("Added site", name);
+				listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon),
+						mainImg, desc, longDesc, evImgs, evDesc));
+			}
+
+			// populate for use throughout the app
+			new HistoricSiteManager(listOfSites);
+		}
+
+		private void populateTours() {
+			// reads the .xml file into a string
+			LinkedHashMap<String, HistoricSite> mapOfSites = HistoricSiteManager
+					.getInstanceOf().getMapOfSites();
+			LinkedHashMap<String, Tour> mapOfTours = new LinkedHashMap<String, Tour>();
+
+			Resources res = getResources();
+
+			XMLParser parser = new XMLParser();
+			InputStream is = res.openRawResource(R.raw.tours);
+			String xml = parser.getXmlFromFile(is); // getting XML
+
+			// sets xml up to be read by tags
+			Document doc = parser.getDomElement(xml); // getting DOM element
+
+			// get all tags named "tour"
+			NodeList nl = doc.getElementsByTagName("tour");
+
+			// looping through all sites
+			for (int i = 0; i < nl.getLength(); i++) {
+				Element e = (Element) nl.item(i);
+
+				String tourName = parser.getValue(e, "name");
+				String tourDesc = parser.getValue(e, "desc");
+				String tourImg = parser.getValue(e, "img");
+				int resID = res
+						.getIdentifier(tourImg, "drawable", getPackageName());
+				Bitmap b = decodeBitmapFromResource(res, resID, 200, 200);
+
+				NodeList sites = e.getElementsByTagName("site");
+				LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
+				for (int j = 0; j < sites.getLength(); j++) {
+					if (sites.item(j) != null)
+						tourRoute.push(mapOfSites.get(parser.getElementValue(sites
+								.item(j))));
+				}
+				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
+			}
+			new TourManager(mapOfTours);
+		}
+
+		public Bitmap decodeBitmapFromResource(Resources res, int resId,
+				int reqWidth, int reqHeight) {
+
+			// First decode with inJustDecodeBounds=true to check dimensions
+			final BitmapFactory.Options options = new BitmapFactory.Options();
+			options.inJustDecodeBounds = true;
+			BitmapFactory.decodeResource(res, resId, options);
+
+			// Calculate inSampleSize
+			options.inSampleSize = calculateInSampleSize(options, reqWidth,
+					reqHeight);
+
+			// Decode bitmap with inSampleSize set
+			options.inJustDecodeBounds = false;
+			return BitmapFactory.decodeResource(res, resId, options);
+		}
+
+		public int calculateInSampleSize(BitmapFactory.Options options,
+				int reqWidth, int reqHeight) {
+			// Raw height and width of image
+			final int height = options.outHeight;
+			final int width = options.outWidth;
+			int inSampleSize = 1;
+
+			if (height > reqHeight || width > reqWidth) {
+
+				// Calculate ratios of height and width to requested height and
+				// width
+				final int heightRatio = Math.round((float) height
+						/ (float) reqHeight);
+				final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+				// Choose the smallest ratio as inSampleSize value, this will
+				// guarantee
+				// a final image with both dimensions larger than or equal to the
+				// requested height and width.
+				inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+			}
+
+			return inSampleSize;
 		}
   }  
 	 
