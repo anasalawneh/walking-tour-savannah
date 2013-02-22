@@ -205,8 +205,6 @@ public class TitleScreenActivity extends Activity {
 					resID = res.getIdentifier(imgName, "drawable", getPackageName());
 					Bitmap b  = decodeBitmapFromResource(res, resID, 200, 200);
 					evImgs.add(b);
-					b.recycle();
-					b=null;
 				}
 
 				// evidence descriptions
@@ -262,8 +260,6 @@ public class TitleScreenActivity extends Activity {
 								.item(j))));
 				}
 				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
-				b.recycle();
-				b=null;
 			}
 			new TourManager(mapOfTours);
 		}
