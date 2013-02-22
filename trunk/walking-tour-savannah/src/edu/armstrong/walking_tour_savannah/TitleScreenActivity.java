@@ -251,8 +251,7 @@ public class TitleScreenActivity extends Activity {
 				String tourName = parser.getValue(e, "name");
 				String tourDesc = parser.getValue(e, "desc");
 				String tourImg = parser.getValue(e, "img");
-				int resID = res
-						.getIdentifier(tourImg, "drawable", getPackageName());
+				int resID = res.getIdentifier(tourImg, "drawable", getPackageName());
 				Bitmap b = decodeBitmapFromResource(res, resID, 200, 200);
 
 				NodeList sites = e.getElementsByTagName("site");
@@ -263,6 +262,8 @@ public class TitleScreenActivity extends Activity {
 								.item(j))));
 				}
 				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
+				b.recycle();
+				b=null;
 			}
 			new TourManager(mapOfTours);
 		}
