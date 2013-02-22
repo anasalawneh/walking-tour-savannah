@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -149,10 +150,10 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						HistoricSite hs = HistoricSiteManager.getInstanceOf()
 								.getMapOfSites().get(title);
 						
-						Drawable drawable = hs.getImg();
+						Bitmap img = hs.getImg();
 						
 						ImageView iv = ((ImageView) markerInfo.findViewById(R.id.ivInfoWindowMain));
-					    iv.setImageDrawable(drawable);
+					    iv.setImageBitmap(img);
 								
 						TextView txtTitle = ((TextView) markerInfo
 								.findViewById(R.id.txtInfoWindowTitle));

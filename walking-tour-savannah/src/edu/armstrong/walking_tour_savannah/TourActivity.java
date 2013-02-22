@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -60,10 +61,10 @@ public class TourActivity extends Activity {
 			tvName.setText(hs.getName());
 			tvDesc.setText(hs.getDesc());
 
-			Drawable drawable = hs.getImg();
+			Bitmap img = hs.getImg();
 			ImageView ivSite = (ImageView) tourListItem
 					.findViewById(R.id.imageViewTourSite);
-			ivSite.setImageDrawable(drawable);
+			ivSite.setImageBitmap(img);
 
 			// set onclick listener for directions here
 			tourListItem.setOnClickListener(new View.OnClickListener() {

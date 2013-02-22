@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -72,10 +73,10 @@ public class ToursListActivity extends Activity {
 			 * site
 			 */
 
-			Drawable drawable = tour.getImg();
+			Bitmap img = tour.getImg();
 			ImageView ivTour = (ImageView) tourListItem
 					.findViewById(R.id.imageViewTourListImg1);
-			ivTour.setImageDrawable(drawable);
+			ivTour.setImageBitmap(img);
 
 			/**
 			 * set the onclick listener to take us to the tour activity.

@@ -2,6 +2,7 @@ package edu.armstrong.util;
 
 import java.util.List;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -17,14 +18,14 @@ import com.google.android.gms.maps.model.LatLng;
 public class HistoricSite{
 	private String name;
 	private LatLng ll;
-	private Drawable img;
+	private Bitmap img;
 	private String desc;
 	private String longDesc;
-	private List<Drawable> evImgs;
+	private List<Bitmap> evImgs;
 	private List<String> evDesc;
 
-	public HistoricSite(String name, LatLng ll, Drawable mainImg,
-			String desc, String longDesc, List<Drawable> evImgs, List<String> evDesc) {
+	public HistoricSite(String name, LatLng ll, Bitmap mainImg,
+			String desc, String longDesc, List<Bitmap> evImgs, List<String> evDesc) {
 		this.name = name;
 		this.ll = ll;
 		this.img = mainImg;
@@ -58,11 +59,11 @@ public class HistoricSite{
 		this.ll = ll;
 	}
 
-	public Drawable getImg() {
+	public Bitmap getImg() {
 		return img;
 	}
 
-	public void setImg(Drawable img) {
+	public void setImg(Bitmap img) {
 		this.img = img;
 	}
 
@@ -74,11 +75,11 @@ public class HistoricSite{
 		this.desc = desc;
 	}
 
-	public List<Drawable> getEvImgs() {
+	public List<Bitmap> getEvImgs() {
 		return evImgs;
 	}
 
-	public void setEvImgs(List<Drawable> evImgs) {
+	public void setEvImgs(List<Bitmap> evImgs) {
 		this.evImgs = evImgs;
 	}
 
