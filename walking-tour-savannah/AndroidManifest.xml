@@ -61,10 +61,6 @@
             android:value="AIzaSyAf17wSbrMVyUBoYCnF_iTbKmki3_50ZPU" />
 
         <activity
-            android:name="edu.armstrong.walking_tour_savannah.ImageSwitcher"
-            android:label="@string/title_activity_image_switcher" >
-        </activity>
-        <activity
             android:name="edu.armstrong.walking_tour_savannah.SiteDescriptionActivity"
             android:label="@string/title_activity_site_description" >
         </activity>

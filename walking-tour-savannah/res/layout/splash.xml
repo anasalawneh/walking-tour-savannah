@@ -5,7 +5,7 @@
     android:background="#000000" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/seanTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView2"
@@ -16,7 +16,7 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/dakotaTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -28,22 +28,22 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/splashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Dig Savannah"
+        android:text="@string/dig_sav_title_desc"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFFFFF"
-        android:textSize="36sp" />
+        android:textSize="32sp" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView3"
+        android:layout_below="@id/splashTitle"
         android:background="#000000"
         android:src="@drawable/dig_sav_logo" />
 

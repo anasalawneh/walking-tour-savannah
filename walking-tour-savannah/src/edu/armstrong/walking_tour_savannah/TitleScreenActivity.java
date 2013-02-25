@@ -18,6 +18,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -27,6 +28,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -124,6 +126,9 @@ public class TitleScreenActivity extends Activity {
 	protected void showSplashScreen() {
 	    mSplashDialog = new Dialog(this, R.style.SplashScreen);
 	    mSplashDialog.setContentView(R.layout.splash);
+	    TextView splashTitle = (TextView) findViewById(R.id.splashTitle);
+	    Typeface type = Typeface.createFromAsset(getAssets(),"fonts/TRASHED.ttf"); 
+	    splashTitle.setTypeface(type);
 	    mSplashDialog.setCancelable(false);
 	    mSplashDialog.show();
 	     
@@ -302,7 +307,6 @@ public class TitleScreenActivity extends Activity {
 				// requested height and width.
 				inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
 			}
-
 			return inSampleSize;
 		}
   }  
