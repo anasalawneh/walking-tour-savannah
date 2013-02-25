@@ -95,6 +95,7 @@ public class SiteDescriptionActivity extends Activity implements
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
+		
 	}
 
 	@Override

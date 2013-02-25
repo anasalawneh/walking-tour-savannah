@@ -35,7 +35,6 @@ import edu.armstrong.util.HistoricSite;
  * @author Sean Clapp, Dakota Brown
  * 
  */
-@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MapOfHistoricPointsActivity extends MapActivity {
 	
 	private double minLat, minLon, maxLat, maxLon;
