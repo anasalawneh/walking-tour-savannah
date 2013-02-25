@@ -30,5 +30,15 @@
     <style name="textViewStyle">
     	<item name="android:gravity">center</item>    
     </style>
+   	
+    <color name="light_green">#A2D76F</color>
+    <color name="light_brown">#A5836C</color>
+    <color name="dark_green">#366E04</color>
+    <color name="dark_brown">#532202</color>
+    
+    <color name="armstrong_maroon">#8C0C04</color>
+    <color name="armstrong_rust_orange">#DE7907</color>
+    <color name="armstrong_teal_blue">#004F5A</color>
+    <color name="arstrong_dark_moss">#566F5D</color>
 
 </resources>

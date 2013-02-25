@@ -36,6 +36,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/ImageSwitcher02"
             android:text="@string/dig_sav_title_desc"
+            android:textColor="@color/dark_brown"
             android:textSize="32sp" />
 
     </RelativeLayout>

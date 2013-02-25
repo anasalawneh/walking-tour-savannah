@@ -32,6 +32,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
@@ -66,6 +67,10 @@ public class TitleScreenActivity extends Activity {
 
 		
 		setContentView(R.layout.activity_title_screen);
+		
+		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
+		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
+		
 		// Button definitions
 		btnToursList = (Button) findViewById(R.id.buttonTours);
 		btnSitesList = (Button) findViewById(R.id.buttonSites);
@@ -126,9 +131,11 @@ public class TitleScreenActivity extends Activity {
 	protected void showSplashScreen() {
 	    mSplashDialog = new Dialog(this, R.style.SplashScreen);
 	    mSplashDialog.setContentView(R.layout.splash);
-	    TextView splashTitle = (TextView) findViewById(R.id.splashTitle);
-	    Typeface type = Typeface.createFromAsset(getAssets(),"fonts/TRASHED.ttf"); 
-	    splashTitle.setTypeface(type);
+	    
+	    // changed font
+	    TextView splashTitle = (TextView)mSplashDialog.findViewById(R.id.splashTitle);
+	    splashTitle.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
+	    
 	    mSplashDialog.setCancelable(false);
 	    mSplashDialog.show();
 	     
