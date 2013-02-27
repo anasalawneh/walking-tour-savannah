@@ -8,4 +8,8 @@ public class FontManager{
 	public static Typeface Trashed(Context c){
 		return Typeface.createFromAsset(c.getAssets(),"fonts/TRASHED.ttf");
 	}
+	
+	public static Typeface DroidSans(Context c){
+		return Typeface.createFromAsset(c.getAssets(),"fonts/DroidSans.ttf");
+	}
 }

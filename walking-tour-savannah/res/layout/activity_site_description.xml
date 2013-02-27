@@ -23,21 +23,26 @@
         android:src="@drawable/black_white_gradient" />
 
       <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight=".6" >
+          android:id="@+id/scrollView1"
+          style="android:scrollViewStyle"
+          android:layout_width="match_parent"
+          android:layout_height="fill_parent"
+          android:layout_weight=".6"
+          android:fillViewport="true"
+          android:scrollbarAlwaysDrawVerticalTrack="true"
+          android:scrollbarStyle="insideOverlay"
+          android:scrollbars="vertical" >
 
        <TextView
-       	android:id="@+id/imageSwitcherTextView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:gravity="left"
-        android:text="@string/noEvidence"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+           android:id="@+id/imageSwitcherTextView"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_marginTop="10dp"
+           android:gravity="left"
+           android:text="@string/noEvidence"
+           android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </ScrollView>
 

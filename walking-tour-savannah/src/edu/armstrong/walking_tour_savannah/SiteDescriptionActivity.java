@@ -21,6 +21,7 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
 
@@ -64,6 +65,7 @@ public class SiteDescriptionActivity extends Activity implements
 		setContentView(R.layout.activity_site_description);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
+		tvSiteDesc.setTypeface(FontManager.DroidSans(SiteDescriptionActivity.this));
 		mapButton = (Button) findViewById(R.id.mapButton);
 		dirButton = (Button) findViewById(R.id.directionsButton);
 		mapButton.setOnClickListener(new View.OnClickListener(){
