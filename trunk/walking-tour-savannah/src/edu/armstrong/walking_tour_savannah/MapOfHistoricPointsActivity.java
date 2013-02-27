@@ -2,15 +2,10 @@ package edu.armstrong.walking_tour_savannah;
 
 import java.util.HashMap;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +20,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.maps.MapActivity;
 
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
 
@@ -154,15 +150,10 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						ImageView iv = ((ImageView) markerInfo.findViewById(R.id.ivInfoWindowMain));
 					    iv.setImageBitmap(img);
 								
-						TextView txtTitle = ((TextView) markerInfo
-								.findViewById(R.id.txtInfoWindowTitle));
-
+						TextView txtTitle = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowTitle));
+						txtTitle.setTypeface(FontManager.Trashed(MapOfHistoricPointsActivity.this));
 						if (title != null) {
 							SpannableString titleText = new SpannableString(title);
-							titleText.setSpan(
-									new ForegroundColorSpan(Color.RED), 0,
-									titleText.length(), 0);
-
 							txtTitle.setText(titleText);
 
 						} else {
@@ -170,6 +161,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 						}
 
 						TextView txtType = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowDesc));
+						txtType.setTypeface(FontManager.DroidSans(MapOfHistoricPointsActivity.this));
 						txtType.setText(hs.getDesc());
 
 						return markerInfo;

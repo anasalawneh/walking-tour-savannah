@@ -18,6 +18,7 @@ import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
 
@@ -59,6 +60,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		setContentView(R.layout.activity_site_description_no_map);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
+		tvSiteDesc.setTypeface(FontManager.DroidSans(SiteDescriptionNoMapActivity.this));
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));

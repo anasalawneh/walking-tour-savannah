@@ -21,7 +21,7 @@
             android:layout_gravity="center_horizontal"
             android:ellipsize="end"
             android:singleLine="true"
-            android:textColor="#ff000000"
+            android:textColor="@color/armstrong_rust_orange"
             android:textSize="14sp"
             android:textStyle="bold" />
 

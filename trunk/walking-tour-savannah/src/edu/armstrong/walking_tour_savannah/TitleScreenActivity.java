@@ -50,7 +50,7 @@ import edu.armstrong.util.XMLParser;
  */
 public class TitleScreenActivity extends Activity {
 
-	Button btnToursList, btnSitesList, btnMap;
+	Button btnToursList, btnSitesList, btnMap, btnMoreInfo;
 	private Dialog mSplashDialog;
 	boolean showSplash = true;
 
@@ -73,9 +73,14 @@ public class TitleScreenActivity extends Activity {
 		
 		// Button definitions
 		btnToursList = (Button) findViewById(R.id.buttonTours);
+		btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnSitesList = (Button) findViewById(R.id.buttonSites);
+		btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnMap = (Button) findViewById(R.id.buttonMap);
-
+		btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		btnMoreInfo = (Button) findViewById(R.id.buttonMoreInfo);
+		btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		
 		btnToursList.getBackground().setColorFilter(
 				Color.parseColor("#d76969"), PorterDuff.Mode.MULTIPLY);
 		btnSitesList.getBackground().setColorFilter(
