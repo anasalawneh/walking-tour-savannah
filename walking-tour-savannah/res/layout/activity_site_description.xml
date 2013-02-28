@@ -27,11 +27,13 @@
           style="android:scrollViewStyle"
           android:layout_width="match_parent"
           android:layout_height="fill_parent"
+          android:tileMode="repeat"
           android:layout_weight=".6"
+          android:background="@drawable/paper_bg"
+          android:fadeScrollbars="false"
           android:fillViewport="true"
           android:scrollbarAlwaysDrawVerticalTrack="true"
-          android:scrollbars="vertical" 
-          android:fadeScrollbars="false">
+          android:scrollbars="vertical" >
 
        <TextView
            android:id="@+id/imageSwitcherTextView"
