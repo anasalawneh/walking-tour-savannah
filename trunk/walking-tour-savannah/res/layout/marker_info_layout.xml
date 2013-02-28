@@ -22,7 +22,7 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:textColor="@color/armstrong_rust_orange"
-            android:textSize="14sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
 <ScrollView

@@ -152,7 +152,7 @@ public class SiteDescriptionActivity extends Activity implements
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-			i.setBackgroundColor(0xFF000000);
+			i.setBackgroundColor(0xFF8C0C04);
 			
 			return i;
 		}
