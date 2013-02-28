@@ -209,7 +209,7 @@ public class TitleScreenActivity extends Activity {
 				String mainImgName = parser.getValue(e, "img");
 				resID = res
 						.getIdentifier(mainImgName, "drawable", getPackageName());
-				Bitmap mainImg = decodeBitmapFromResource(res, resID, 200, 200);
+				Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
 
 				String desc = parser.getValue(e, "desc");
 				String longDesc = parser.getValue(e, "longDesc");
@@ -220,7 +220,7 @@ public class TitleScreenActivity extends Activity {
 				for (int j = 0; j < ei.getLength(); j++) {
 					String imgName = parser.getElementValue(ei.item(j));
 					resID = res.getIdentifier(imgName, "drawable", getPackageName());
-					Bitmap b  = decodeBitmapFromResource(res, resID, 200, 200);
+					Bitmap b  = decodeBitmapFromResource(res, resID, 300, 300);
 					evImgs.add(b);
 				}
 
@@ -267,7 +267,7 @@ public class TitleScreenActivity extends Activity {
 				String tourDesc = parser.getValue(e, "desc");
 				String tourImg = parser.getValue(e, "img");
 				int resID = res.getIdentifier(tourImg, "drawable", getPackageName());
-				Bitmap b = decodeBitmapFromResource(res, resID, 200, 200);
+				Bitmap b = decodeBitmapFromResource(res, resID, 300, 300);
 
 				NodeList sites = e.getElementsByTagName("site");
 				LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
