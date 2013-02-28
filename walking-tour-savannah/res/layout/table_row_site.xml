@@ -43,7 +43,7 @@
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:layout_weight=".3"
-                            android:background="#000000" />
+                            android:background="@color/arstrong_dark_moss" />
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -60,7 +60,7 @@
                             android:background="#FFFFFFFF"
                             android:gravity="center_horizontal"
                             android:text="BADDD"
-                            android:textColor="@android:color/black"
+                            android:textColor="@color/dark_brown"
                             android:textColorHint="@android:color/black"
                             android:textColorLink="@android:color/black"
                             android:textSize="22sp"

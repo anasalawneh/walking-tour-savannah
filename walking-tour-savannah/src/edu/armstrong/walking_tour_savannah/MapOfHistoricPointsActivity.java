@@ -151,7 +151,7 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					    iv.setImageBitmap(img);
 								
 						TextView txtTitle = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowTitle));
-						txtTitle.setTypeface(FontManager.Trashed(MapOfHistoricPointsActivity.this));
+						txtTitle.setTypeface(FontManager.DroidSans(MapOfHistoricPointsActivity.this));
 						if (title != null) {
 							SpannableString titleText = new SpannableString(title);
 							txtTitle.setText(titleText);

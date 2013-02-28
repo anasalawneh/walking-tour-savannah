@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
 
@@ -53,8 +54,12 @@ public class SiteListActivity extends Activity {
 					TableRow.LayoutParams.WRAP_CONTENT));
 
 			TextView tvName = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowName));
+			tvName.setTypeface(FontManager.Trashed(SiteListActivity.this));
+			
 			TextView tvDesc = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowDesc));
+			tvDesc.setTypeface(FontManager.DroidSans(SiteListActivity.this));
 
+		
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the
 			 * info
