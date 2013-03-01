@@ -122,7 +122,7 @@ public class TitleScreenActivity extends Activity {
 					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
 					startActivity(mapActivityIntent);
 				}else{
-					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivityOlder.class);
+					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
 					startActivity(mapActivityIntent);
 				}
 			}

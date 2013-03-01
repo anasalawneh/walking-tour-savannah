@@ -5,6 +5,7 @@ import java.util.HashMap;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,11 +15,10 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.maps.MapActivity;
 
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
@@ -31,7 +31,7 @@ import edu.armstrong.util.HistoricSite;
  * @author Sean Clapp, Dakota Brown
  * 
  */
-public class MapOfHistoricPointsActivity extends MapActivity {
+public class MapOfHistoricPointsActivity extends FragmentActivity {
 	
 	private double minLat, minLon, maxLat, maxLon;
 
@@ -43,7 +43,6 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 
-		// Requires API 11- NEED TO DECIDE!!!
 		setUpMapIfNeeded();
 		
 		String goTo = getIntent().getStringExtra("siteName");
@@ -58,12 +57,6 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 			map.animateCamera(CameraUpdateFactory.newLatLng(getCenter()));
 		}
 	}
-
-	@Override
-	protected boolean isRouteDisplayed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	public LatLng getCenter(){
 		return new LatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
@@ -73,8 +66,8 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 		// Do a null check to confirm that we have not already instantiated the
 		// map.
 		if (map == null) {
-			map = ((MapFragment) getFragmentManager()
-					.findFragmentById(R.id.map)).getMap();
+			SupportMapFragment s = (SupportMapFragment) this.getSupportFragmentManager().findFragmentById(R.id.map);
+			map = s.getMap();
 			// Check if we were successful in obtaining the map.
 			if (map != null) {
 				// The Map is verified. It is now safe to manipulate the map.
@@ -95,25 +88,9 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					//for the first point, initialize
 					if(initial){
 						initial = false;
-						minLat = m.getPosition().latitude;
-						maxLat = m.getPosition().latitude;
-						minLon = m.getPosition().longitude;
-						maxLon = m.getPosition().longitude;
-						//calculate the max and min boundaries
-					//calculate the min and max lon and lats
+						initializeBoundaries(m);
 					}else{
-						if(minLat > m.getPosition().latitude){
-							minLat = m.getPosition().latitude;
-						}
-						if(maxLat < m.getPosition().latitude){
-							maxLat = m.getPosition().latitude;
-						}
-						if(minLon > m.getPosition().longitude){
-							minLon = m.getPosition().longitude;
-						}
-						if(maxLon < m.getPosition().longitude){
-							maxLon = m.getPosition().longitude;
-						}
+						updateBoundaries(m);
 					}
 				}
 
@@ -168,6 +145,28 @@ public class MapOfHistoricPointsActivity extends MapActivity {
 					}
 				});
 			}
+		}
+	}
+
+	private void initializeBoundaries(Marker m) {
+		minLat = m.getPosition().latitude;
+		maxLat = m.getPosition().latitude;
+		minLon = m.getPosition().longitude;
+		maxLon = m.getPosition().longitude;	
+	}
+
+	private void updateBoundaries(Marker m) {
+		if(minLat > m.getPosition().latitude){
+			minLat = m.getPosition().latitude;
+		}
+		if(maxLat < m.getPosition().latitude){
+			maxLat = m.getPosition().latitude;
+		}
+		if(minLon > m.getPosition().longitude){
+			minLon = m.getPosition().longitude;
+		}
+		if(maxLon < m.getPosition().longitude){
+			maxLon = m.getPosition().longitude;
 		}
 	}
 }
