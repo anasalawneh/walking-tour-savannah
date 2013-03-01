@@ -118,13 +118,8 @@ public class TitleScreenActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
-					startActivity(mapActivityIntent);
-				}else{
-					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
-					startActivity(mapActivityIntent);
-				}
+				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
+				startActivity(mapActivityIntent);
 			}
 		});
 	}
@@ -277,7 +272,7 @@ public class TitleScreenActivity extends Activity {
 				LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
 				for (int j = 0; j < sites.getLength(); j++) {
 					if (sites.item(j) != null)
-						tourRoute.push(mapOfSites.get(parser.getElementValue(sites
+						tourRoute.add(mapOfSites.get(parser.getElementValue(sites
 								.item(j))));
 				}
 				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
