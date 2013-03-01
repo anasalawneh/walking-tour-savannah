@@ -22,6 +22,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -117,10 +118,13 @@ public class TitleScreenActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,
-						MapOfHistoricPointsActivity.class);
-				startActivity(mapActivityIntent);
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
+					startActivity(mapActivityIntent);
+				}else{
+					Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivityOlder.class);
+					startActivity(mapActivityIntent);
+				}
 			}
 		});
 	}
