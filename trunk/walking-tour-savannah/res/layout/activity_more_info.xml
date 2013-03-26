@@ -4,4 +4,13 @@
     android:layout_height="match_parent"
     tools:context=".MoreInfoActivity" >
 
+    <TextView
+        android:id="@+id/moreInfoText"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
 </RelativeLayout>
