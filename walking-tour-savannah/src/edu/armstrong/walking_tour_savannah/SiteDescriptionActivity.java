@@ -10,6 +10,8 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +68,7 @@ public class SiteDescriptionActivity extends Activity implements
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
 		tvSiteDesc.setTypeface(FontManager.DroidSans(SiteDescriptionActivity.this));
+		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
 		mapButton = (Button) findViewById(R.id.mapButton);
 		dirButton = (Button) findViewById(R.id.directionsButton);
 		mapButton.setOnClickListener(new View.OnClickListener(){
@@ -110,7 +113,7 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
-		tvSiteDesc.setText(mDescs.get(position));
+		tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
 	}
 
 	@Override
