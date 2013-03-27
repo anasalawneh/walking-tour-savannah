@@ -112,7 +112,7 @@ public class TitleScreenActivity extends Activity {
 			}
 		});
 
-		// on click open the MapActivity, a map of savannah with points of
+		// on click open the MapActivity, a map of Savannah with points of
 		// interest.
 		btnMap.setOnClickListener(new View.OnClickListener() {
 
@@ -120,6 +120,15 @@ public class TitleScreenActivity extends Activity {
 			public void onClick(View v) {
 				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
 				startActivity(mapActivityIntent);
+			}
+		});
+		
+		btnMoreInfo.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent moreInfoActivityIntent = new Intent(
+						TitleScreenActivity.this, MoreInfoActivity.class);
+				startActivity(moreInfoActivityIntent);
 			}
 		});
 	}
