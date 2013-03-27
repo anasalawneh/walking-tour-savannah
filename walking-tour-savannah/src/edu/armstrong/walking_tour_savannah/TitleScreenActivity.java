@@ -275,6 +275,7 @@ public class TitleScreenActivity extends Activity {
 						tourRoute.add(mapOfSites.get(parser.getElementValue(sites
 								.item(j))));
 				}
+				
 				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
 			}
 			new TourManager(mapOfTours);
