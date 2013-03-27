@@ -23,6 +23,7 @@ public class HistoricSite{
 	private String longDesc;
 	private List<Bitmap> evImgs;
 	private List<String> evDesc;
+	private Boolean isVisited;
 
 	public HistoricSite(String name, LatLng ll, Bitmap mainImg,
 			String desc, String longDesc, List<Bitmap> evImgs, List<String> evDesc) {
@@ -33,6 +34,15 @@ public class HistoricSite{
 		this.longDesc = longDesc;
 		this.evImgs = evImgs;
 		this.evDesc = evDesc;
+		this.isVisited = false;
+	}
+
+	public Boolean getIsVisited() {
+		return isVisited;
+	}
+
+	public void setIsVisited(Boolean isVisited) {
+		this.isVisited = isVisited;
 	}
 
 	public String getLongDesc() {

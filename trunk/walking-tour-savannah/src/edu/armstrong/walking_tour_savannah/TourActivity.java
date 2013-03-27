@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -50,9 +50,26 @@ public class TourActivity extends Activity {
 		for (final HistoricSite hs : tourRoute) {
 			TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.table_row_tour_site, null);
+
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
+
+			CheckBox cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
+			
+			cb.setChecked(hs.getIsVisited());
+
+			cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView,
+						boolean isChecked) {
+					if (!hs.getIsVisited())
+						hs.setIsVisited(true);
+					else
+						hs.setIsVisited(false);
+				}
+			});
 
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourSiteName));
@@ -70,21 +87,11 @@ public class TourActivity extends Activity {
 			tourListItem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					
-					Intent toursActivityIntent = new Intent(
-							TourActivity.this, SiteDescriptionActivity.class);
+
+					Intent toursActivityIntent = new Intent(TourActivity.this,
+							SiteDescriptionActivity.class);
 					toursActivityIntent.putExtra("site", hs.getName());
 					startActivity(toursActivityIntent);
-//					// LinkedList<HistoricSite> route = tour.getTourRoute();
-//
-//					final Intent intent = new Intent(Intent.ACTION_VIEW,
-//					/** Using the web based turn by turn directions url. */
-//					Uri.parse("http://maps.google.com/maps?" + "saddr="
-//							+ "&daddr=" + hs.getLl().latitude + ","
-//							+ hs.getLl().longitude));
-//					intent.setClassName("com.google.android.apps.maps",
-//							"com.google.android.maps.MapsActivity");
-//					startActivity(intent);
 				}
 			});
 
