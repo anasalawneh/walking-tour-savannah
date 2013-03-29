@@ -121,11 +121,9 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 						String title = marker.getTitle();
 						HistoricSite hs = HistoricSiteManager.getInstanceOf()
 								.getMapOfSites().get(title);
-						
-						Bitmap img = hs.getImg();
-						
+												
 						ImageView iv = ((ImageView) markerInfo.findViewById(R.id.ivInfoWindowMain));
-					    iv.setImageBitmap(img);
+					    iv.setImageBitmap(hs.getImg());
 								
 						TextView txtTitle = ((TextView) markerInfo.findViewById(R.id.txtInfoWindowTitle));
 						txtTitle.setTypeface(FontManager.DroidSans(MapOfHistoricPointsActivity.this));

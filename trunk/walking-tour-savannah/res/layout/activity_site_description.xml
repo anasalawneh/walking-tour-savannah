@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
-        android:background="@color/armstrong_rust_orange"
+        android:background="@color/armstrong_maroon"
         android:gravity="center_vertical"
         android:spacing="16dp" />
 

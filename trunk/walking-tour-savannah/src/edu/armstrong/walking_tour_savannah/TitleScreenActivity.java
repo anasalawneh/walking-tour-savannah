@@ -68,6 +68,9 @@ public class TitleScreenActivity extends Activity {
 		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
 		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
 		
+	    TextView armstrongView = (TextView) findViewById(R.id.armstrongView);
+	    armstrongView.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		
 		// Button definitions
 		btnToursList = (Button) findViewById(R.id.buttonTours);
 		btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
