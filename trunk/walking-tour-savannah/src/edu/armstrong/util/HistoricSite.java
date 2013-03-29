@@ -1,5 +1,6 @@
 package edu.armstrong.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.graphics.Bitmap;
@@ -22,19 +23,33 @@ public class HistoricSite{
 	private String desc;
 	private String longDesc;
 	private List<Bitmap> evImgs;
+	private List<String> evImgsStr;
 	private List<String> evDesc;
 	private Boolean isVisited;
 
+//	public HistoricSite(String name, LatLng ll, Bitmap mainImg,
+//			String desc, String longDesc, List<Bitmap> evImgs, List<String> evDesc) {
+//		this.name = name;
+//		this.ll = ll;
+//		this.img = mainImg;
+//		this.desc = desc;
+//		this.longDesc = longDesc;
+//		this.evImgs = evImgs;
+//		this.evDesc = evDesc;
+//		this.isVisited = false;
+//	}
+	
 	public HistoricSite(String name, LatLng ll, Bitmap mainImg,
-			String desc, String longDesc, List<Bitmap> evImgs, List<String> evDesc) {
+			String desc, String longDesc, List<String> evImgsStr, List<String> evDesc) {
 		this.name = name;
 		this.ll = ll;
 		this.img = mainImg;
 		this.desc = desc;
 		this.longDesc = longDesc;
-		this.evImgs = evImgs;
+		this.evImgsStr = evImgsStr;
 		this.evDesc = evDesc;
 		this.isVisited = false;
+		this.evImgs = new ArrayList<Bitmap>();
 	}
 
 	public Boolean getIsVisited() {
@@ -95,6 +110,14 @@ public class HistoricSite{
 
 	public List<String> getEvDesc() {
 		return evDesc;
+	}
+
+	public List<String> getEvImgsStr() {
+		return evImgsStr;
+	}
+
+	public void setEvImgsStr(List<String> evImgsStr) {
+		this.evImgsStr = evImgsStr;
 	}
 
 	public void setEvDesc(List<String> evDesc) {

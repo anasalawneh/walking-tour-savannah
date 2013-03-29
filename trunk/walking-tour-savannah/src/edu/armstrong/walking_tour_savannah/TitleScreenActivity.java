@@ -18,11 +18,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -224,12 +220,12 @@ public class TitleScreenActivity extends Activity {
 
 				// evidence images
 				NodeList ei = e.getElementsByTagName("evImg");
-				List<Bitmap> evImgs = new ArrayList<Bitmap>();
-				for (int j = 0; j < ei.getLength(); j++) {
+				
+				//img string names
+				List<String> evImgStr = new ArrayList<String>();
+				for (int j = 0; j < ei.getLength(); j++){
 					String imgName = parser.getElementValue(ei.item(j));
-					resID = res.getIdentifier(imgName, "drawable", getPackageName());
-					Bitmap b  = decodeBitmapFromResource(res, resID, 300, 300);
-					evImgs.add(b);
+					evImgStr.add(imgName);
 				}
 
 				// evidence descriptions
@@ -241,8 +237,9 @@ public class TitleScreenActivity extends Activity {
 				}
 
 				Log.d("Added site", name);
+				
 				listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon),
-						mainImg, desc, longDesc, evImgs, evDesc));
+						mainImg, desc, longDesc, evImgStr, evDesc));
 			}
 
 			// populate for use throughout the app

@@ -1,11 +1,17 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
@@ -23,6 +29,7 @@ import android.widget.ViewSwitcher;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
+import edu.armstrong.util.XMLParser;
 
 /**
  * This will hold the information about each site. There will be an image
@@ -134,11 +141,82 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Bitmap>();
+		loadImgs();
 		myImageIds.add(hs.getImg());
 		myImageIds.addAll(hs.getEvImgs());
-
 		mDescs = new ArrayList<String>();
 		mDescs.add(hs.getLongDesc());
 		mDescs.addAll(hs.getEvDesc());
+	}
+	
+	private void loadImgs() {
+
+		
+		// reads the .xml file into a string
+		XMLParser parser = new XMLParser();
+		InputStream is = SiteDescriptionNoMapActivity.this.getResources()
+				.openRawResource(R.raw.sites);
+		String xml = parser.getXmlFromFile(is); // getting XML
+
+		// sets xml up to be read by tags
+		Document doc = parser.getDomElement(xml); // getting DOM element
+
+		// get all tags named "site"
+		NodeList nl = doc.getElementsByTagName("site");
+
+		for (int i = 0; i < hs.getEvImgsStr().size(); i++) {
+			
+			Resources res = getResources();
+			int resID;
+
+			resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable", getPackageName());
+			Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
+			
+			Bitmap b = decodeBitmapFromResource(this.getResources(), resID,
+					300, 300);
+			hs.getEvImgs().add(b);
+		}
+
+	}
+
+	public Bitmap decodeBitmapFromResource(Resources res, int resId,
+			int reqWidth, int reqHeight) {
+
+		// First decode with inJustDecodeBounds=true to check dimensions
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(res, resId, options);
+
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
+
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(res, resId, options);
+	}
+
+	public int calculateInSampleSize(BitmapFactory.Options options,
+			int reqWidth, int reqHeight) {
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+
+		if (height > reqHeight || width > reqWidth) {
+
+			// Calculate ratios of height and width to requested height and
+			// width
+			final int heightRatio = Math.round((float) height
+					/ (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+			// Choose the smallest ratio as inSampleSize value, this will
+			// guarantee
+			// a final image with both dimensions larger than or equal to the
+			// requested height and width.
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+		return inSampleSize;
 	}
 }

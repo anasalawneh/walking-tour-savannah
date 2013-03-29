@@ -1,12 +1,20 @@
 package edu.armstrong.walking_tour_savannah;
 
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,6 +34,7 @@ import android.widget.ViewSwitcher;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
+import edu.armstrong.util.XMLParser;
 
 /**
  * This will hold the information about each site. There will be an image
@@ -58,55 +67,57 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		String siteName = getIntent().getStringExtra("site");
 		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
+
 		populateLists();
-		
+
 		setTitle("" + siteName);
 		setContentView(R.layout.activity_site_description);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
-		tvSiteDesc.setTypeface(FontManager.DroidSans(SiteDescriptionActivity.this));
+		tvSiteDesc.setTypeface(FontManager
+				.DroidSans(SiteDescriptionActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
 		mapButton = (Button) findViewById(R.id.mapButton);
 		dirButton = (Button) findViewById(R.id.directionsButton);
-		mapButton.setOnClickListener(new View.OnClickListener(){
+		mapButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent mapActivityIntent = new Intent(SiteDescriptionActivity.this,
+				Intent mapActivityIntent = new Intent(
+						SiteDescriptionActivity.this,
 						MapOfHistoricPointsActivity.class);
 				mapActivityIntent.putExtra("siteName", hs.getName());
 				startActivity(mapActivityIntent);
-			}	
+			}
 		});
-	
+
 		dirButton.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				final Intent intent = new Intent(Intent.ACTION_VIEW,
-						/** Using the web based turn by turn directions url. */
-						Uri.parse("http://maps.google.com/maps?" + "saddr="
-								+ "&daddr=" + hs.getLl().latitude + ","
-								+ hs.getLl().longitude));
-						intent.setClassName("com.google.android.apps.maps",
-								"com.google.android.maps.MapsActivity");
-						startActivity(intent);
+				/** Using the web based turn by turn directions url. */
+				Uri.parse("http://maps.google.com/maps?" + "saddr=" + "&daddr="
+						+ hs.getLl().latitude + "," + hs.getLl().longitude));
+				intent.setClassName("com.google.android.apps.maps",
+						"com.google.android.maps.MapsActivity");
+				startActivity(intent);
 			}
 		});
 
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
-		
+
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.activity_site_description, menu);
+		// getMenuInflater().inflate(R.menu.activity_site_description, menu);
 		return true;
 	}
 
@@ -156,21 +167,93 @@ public class SiteDescriptionActivity extends Activity implements
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 			i.setBackgroundColor(0xFF8C0C04);
-			
+
 			return i;
 		}
 	}// ImageAdapter
 
-	
 	/**
 	 * poopulate the lists with info from the historic site manager
 	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Bitmap>();
+		loadImgs();
 		myImageIds.add(hs.getImg());
 		myImageIds.addAll(hs.getEvImgs());
 		mDescs = new ArrayList<String>();
 		mDescs.add(hs.getLongDesc());
 		mDescs.addAll(hs.getEvDesc());
 	}
+
+	private void loadImgs() {
+
+		
+		// reads the .xml file into a string
+		XMLParser parser = new XMLParser();
+		InputStream is = SiteDescriptionActivity.this.getResources()
+				.openRawResource(R.raw.sites);
+		String xml = parser.getXmlFromFile(is); // getting XML
+
+		// sets xml up to be read by tags
+		Document doc = parser.getDomElement(xml); // getting DOM element
+
+		// get all tags named "site"
+		NodeList nl = doc.getElementsByTagName("site");
+
+		for (int i = 0; i < hs.getEvImgsStr().size(); i++) {
+			
+			Resources res = getResources();
+			int resID;
+
+			resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable", getPackageName());
+			Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
+			
+			Bitmap b = decodeBitmapFromResource(this.getResources(), resID,
+					300, 300);
+			hs.getEvImgs().add(b);
+		}
+
+	}
+
+	public Bitmap decodeBitmapFromResource(Resources res, int resId,
+			int reqWidth, int reqHeight) {
+
+		// First decode with inJustDecodeBounds=true to check dimensions
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(res, resId, options);
+
+		// Calculate inSampleSize
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
+
+		// Decode bitmap with inSampleSize set
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(res, resId, options);
+	}
+
+	public int calculateInSampleSize(BitmapFactory.Options options,
+			int reqWidth, int reqHeight) {
+		// Raw height and width of image
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+
+		if (height > reqHeight || width > reqWidth) {
+
+			// Calculate ratios of height and width to requested height and
+			// width
+			final int heightRatio = Math.round((float) height
+					/ (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+			// Choose the smallest ratio as inSampleSize value, this will
+			// guarantee
+			// a final image with both dimensions larger than or equal to the
+			// requested height and width.
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+		return inSampleSize;
+	}
+
 }
