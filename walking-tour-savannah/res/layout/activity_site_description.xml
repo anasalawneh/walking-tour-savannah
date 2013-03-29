@@ -9,9 +9,9 @@
 
     <Gallery
         android:id="@+id/gallerySiteDesc"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight=".4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".5"
         android:background="@color/armstrong_rust_orange"
         android:gravity="center_vertical"
         android:spacing="16dp" />
@@ -26,19 +26,19 @@
           android:id="@+id/scrollView1"
           style="android:scrollViewStyle"
           android:layout_width="match_parent"
-          android:layout_height="fill_parent"
-          android:tileMode="repeat"
-          android:layout_weight=".6"
+          android:layout_height="0dp"
+          android:layout_weight=".425"
           android:background="@drawable/paper_bg"
           android:fadeScrollbars="false"
           android:fillViewport="true"
           android:scrollbarAlwaysDrawVerticalTrack="true"
-          android:scrollbars="vertical" >
+          android:scrollbars="vertical"
+          android:tileMode="repeat" >
 
        <TextView
            android:id="@+id/imageSwitcherTextView"
            android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="match_parent"
            android:layout_marginLeft="10dp"
            android:layout_marginRight="10dp"
            android:layout_marginTop="10dp"
@@ -52,8 +52,8 @@
     <RelativeLayout
         android:id="@+id/RelativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_weight=".2"
+        android:layout_height="0dp"
+        android:layout_weight=".075"
         android:alpha=".8"
         android:background="#FF000000"
         android:orientation="vertical" >
@@ -61,8 +61,8 @@
         <Button
             android:id="@+id/mapButton"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:text="Map" />
@@ -70,8 +70,8 @@
         <Button
             android:id="@+id/directionsButton"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="Directions" />
