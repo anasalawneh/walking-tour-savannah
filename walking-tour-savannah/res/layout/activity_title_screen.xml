@@ -44,14 +44,14 @@
     <RelativeLayout
         android:id="@+id/RelativeLayoutTitleScreenBottom"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/RelativeLayoutTitleScreenTop"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/buttonSites"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:alpha=".9"
             android:drawableLeft="@android:drawable/ic_menu_info_details"
             android:drawablePadding="-155sp"
@@ -61,7 +61,7 @@
         <Button
             android:id="@+id/buttonTours"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonSites"
             android:alpha=".9"
             android:drawableLeft="@android:drawable/ic_menu_compass"
@@ -72,7 +72,7 @@
         <Button
             android:id="@+id/buttonMap"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonTours"
             android:alpha=".9"
             android:drawableLeft="@android:drawable/ic_menu_mylocation"
@@ -83,7 +83,7 @@
         <Button
             android:id="@+id/buttonMoreInfo"
             android:layout_width="fill_parent"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/buttonMap"
             android:alpha=".9"
             android:drawableLeft="@android:drawable/ic_menu_more"
@@ -91,6 +91,21 @@
             android:text="@string/more_info"
             android:textSize="22sp" />
 
+        
+
     </RelativeLayout>
+
+<TextView
+    android:id="@+id/armstrongView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="20dp"
+    android:layout_marginRight="20dp"
+    android:text="@string/armstrong"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textColor="@color/armstrong_maroon"
+    android:textSize="48sp" />
 
 </RelativeLayout>

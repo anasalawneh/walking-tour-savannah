@@ -14,5 +14,6 @@
     <string name="more_info" translatable="false">More Info</string>
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="title_activity_tour" translatable="false">Tour Guide</string>
-    <string name="title_activity_more_info" translatable="false">MoreInfoActivity</string>
+    <string name="title_activity_more_info" translatable="false">More Info</string>
+    <string name="armstrong">Armstrong</string>
 </resources>

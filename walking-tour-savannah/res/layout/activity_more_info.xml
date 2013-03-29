@@ -2,15 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bricks31bw"
     tools:context=".MoreInfoActivity" >
 
-    <TextView
-        android:id="@+id/moreInfoText"
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/moreInfoText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="24sp" />
+
+    </ScrollView>
 
 </RelativeLayout>
