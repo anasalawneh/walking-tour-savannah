@@ -13,99 +13,116 @@
         android:background="@drawable/bricks31bw" >
     </ImageSwitcher>
 
-    <RelativeLayout
-        android:id="@+id/RelativeLayoutTitleScreenTop"
-        android:layout_width="fill_parent"
-        android:layout_height="160dp"
-        android:background="#55000000"
-        android:visibility="visible" >
-
-        <ImageSwitcher
-            android:id="@+id/ImageSwitcher02"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@drawable/dig_sav_logo" >
-
-        </ImageSwitcher>
-
-        <TextView
-            android:id="@+id/textViewDigSavTitleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/ImageSwitcher02"
-            android:text="@string/dig_sav_title_desc"
-            android:textColor="@color/dark_brown"
-            android:textSize="32sp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/RelativeLayoutTitleScreenBottom"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/RelativeLayoutTitleScreenTop"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/buttonSites"
+        <RelativeLayout
+            android:id="@+id/RelativeLayoutTitleScreenTop"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:alpha=".9"
-            android:drawableLeft="@android:drawable/ic_menu_info_details"
-            android:drawablePadding="-155sp"
-            android:text="@string/Sites"
-            android:textSize="22sp" />
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="#55000000"
+            android:visibility="visible" >
 
-        <Button
-            android:id="@+id/buttonTours"
+            <ImageSwitcher
+                android:id="@+id/ImageSwitcher02"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/dig_sav_logo" >
+            </ImageSwitcher>
+
+            <TextView
+                android:id="@+id/textViewDigSavTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ImageSwitcher02"
+                android:text="@string/dig_sav_title_desc"
+                android:textColor="@color/dark_brown"
+                android:textSize="32sp" />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/buttonSites"
-            android:alpha=".9"
-            android:drawableLeft="@android:drawable/ic_menu_compass"
-            android:drawablePadding="-155sp"
-            android:text="@string/Tours"
-            android:textSize="22sp" />
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/buttonMap"
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5" >
+
+                <Button
+                    android:id="@+id/buttonSites"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:alpha=".9"
+                    android:drawableLeft="@android:drawable/ic_menu_info_details"
+                    android:gravity="center"
+                    android:text="@string/Sites"
+                    android:textSize="40sp" />
+
+                <Button
+                    android:id="@+id/buttonTours"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:alpha=".9"
+                    android:drawableLeft="@android:drawable/ic_menu_compass"
+                    android:gravity="center"
+                    android:text="@string/Tours"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5" >
+
+                <Button
+                    android:id="@+id/buttonMap"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:alpha=".9"
+                    android:drawableLeft="@android:drawable/ic_menu_mylocation"
+                    android:gravity="center"
+                    android:text="@string/Map"
+                    android:textSize="40sp" />
+
+                <Button
+                    android:id="@+id/buttonMoreInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:alpha=".9"
+                    android:drawableLeft="@android:drawable/ic_menu_more"
+                    android:gravity="center"
+                    android:text="@string/more_info"
+                    android:textSize="40sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/armstrongView"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/buttonTours"
-            android:alpha=".9"
-            android:drawableLeft="@android:drawable/ic_menu_mylocation"
-            android:drawablePadding="-155sp"
-            android:text="@string/Map"
-            android:textSize="22sp" />
-        
-        <Button
-            android:id="@+id/buttonMoreInfo"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/buttonMap"
-            android:alpha=".9"
-            android:drawableLeft="@android:drawable/ic_menu_more"
-            android:drawablePadding="-155sp"
-            android:text="@string/more_info"
-            android:textSize="22sp" />
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/armstrong"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/armstrong_maroon"
+            android:textSize="48sp" />
 
-        
-
-    </RelativeLayout>
-
-<TextView
-    android:id="@+id/armstrongView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentRight="true"
-    android:layout_marginBottom="20dp"
-    android:layout_marginRight="20dp"
-    android:text="@string/armstrong"
-    android:textAppearance="?android:attr/textAppearanceLarge"
-    android:textColor="@color/armstrong_maroon"
-    android:textSize="48sp" />
+    </LinearLayout>
 
 </RelativeLayout>
