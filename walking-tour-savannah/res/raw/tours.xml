@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tours>
     <tour>
-        <name>A Three Hour Tour</name>
+        <name>"A Three Hour Tour"</name>
         <img>placeholder</img>
-        <desc></desc>
+        <desc>A wonderful walking tour around downtown savannah visiting the major archeological sites!</desc>
         <site>Battlefield Park</site>
         <site>Central of Georgia Railroad</site>
         <site>Railroad Ward</site>

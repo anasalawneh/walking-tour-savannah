@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:text="@string/dig_sav_title_desc"
+                android:text="@string/app_name_lower_d"
                 android:textColor="@color/dark_brown"
                 android:textSize="48sp" />
 
@@ -57,20 +57,23 @@
                     android:id="@+id/buttonSites"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="5"
-                    android:background="@color/light_brown"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/sites" />
+                    android:alpha=".6"
+                    android:background="@color/arstrong_dark_moss"
+                    android:scaleType="center"
+                    android:src="@drawable/device_access_storage" />
 
                 <ImageButton
                     android:id="@+id/buttonTours"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="5"
-                    android:alpha=".9"
-                    android:background="@color/light_brown"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/tours" />
+                    android:alpha=".6"
+                    android:background="@color/arstrong_dark_moss"
+                    android:scaleType="center"
+                    android:src="@drawable/location_directions" />
 
             </LinearLayout>
 
@@ -83,22 +86,24 @@
                     android:id="@+id/buttonMap"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="5"
-                    android:alpha=".9"
-                    android:background="@color/light_brown"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/maps" />
+                    android:alpha=".6"
+                    android:background="@color/arstrong_dark_moss"
+                    android:scaleType="center"
+                    android:src="@drawable/location_map" />
 
                 <ImageButton
                     android:id="@+id/buttonMoreInfo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:layout_weight="5"
-                    android:alpha=".9"
-                    android:background="@color/light_brown"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/moreinfo" />
+                    android:alpha=".6"
+                    android:background="@color/arstrong_dark_moss"
+                    android:scaleType="center"
+                    android:src="@drawable/action_about" />
 
             </LinearLayout>
         </LinearLayout>
@@ -107,13 +112,14 @@
             android:id="@+id/armstrongView"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_gravity="center"
             android:layout_weight="2"
-            android:gravity="center"
+            android:gravity="right|center_vertical"
+            android:paddingRight="20dp"
             android:text="@string/armstrong"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/armstrong_maroon"
             android:textSize="48sp" />
+
     </LinearLayout>
 
 </RelativeLayout>

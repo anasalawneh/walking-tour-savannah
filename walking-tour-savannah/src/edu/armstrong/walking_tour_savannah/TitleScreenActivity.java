@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -47,7 +48,7 @@ import edu.armstrong.util.XMLParser;
  */
 public class TitleScreenActivity extends Activity {
 
-	Button btnToursList, btnSitesList, btnMap, btnMoreInfo;
+	ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo;
 	private Dialog mSplashDialog;
 	boolean showSplash = true;
 
@@ -72,14 +73,14 @@ public class TitleScreenActivity extends Activity {
 	    armstrongView.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		
 		// Button definitions
-		btnToursList = (Button) findViewById(R.id.buttonTours);
-		btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
-		btnSitesList = (Button) findViewById(R.id.buttonSites);
-		btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
-		btnMap = (Button) findViewById(R.id.buttonMap);
-		btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
-		btnMoreInfo = (Button) findViewById(R.id.buttonMoreInfo);
-		btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		btnToursList = (ImageButton) findViewById(R.id.buttonTours);
+		//btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		btnSitesList = (ImageButton) findViewById(R.id.buttonSites);
+		//btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		btnMap = (ImageButton) findViewById(R.id.buttonMap);
+		//btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		btnMoreInfo = (ImageButton) findViewById(R.id.buttonMoreInfo);
+		//btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		
 		btnToursList.getBackground().setColorFilter(
 				Color.parseColor("#d76969"), PorterDuff.Mode.MULTIPLY);

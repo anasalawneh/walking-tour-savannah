@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.Tour;
 
@@ -53,8 +54,13 @@ public class ToursListActivity extends Activity {
 
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourName));
+
+			tvName.setTypeface(FontManager.Trashed(ToursListActivity.this));
+			
 			TextView tvDesc = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourDesc));
+			
+			tvDesc.setTypeface(FontManager.DroidSans(ToursListActivity.this));
 
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the
