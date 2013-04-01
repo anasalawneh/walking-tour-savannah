@@ -30,7 +30,7 @@
                             android:id="@+id/imageViewTourSite"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="#000000"
+                            android:background="@color/arstrong_dark_moss"
                             android:src="@drawable/background" />
 
                     </RelativeLayout>
@@ -38,7 +38,8 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight=".3" >
+                        android:layout_weight=".3"
+                        android:background="@drawable/paper_bg" >
 
                         <TextView
                             android:id="@+id/textViewTourSiteName"
@@ -46,13 +47,12 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
-                            android:background="#FFFFFFFF"
                             android:gravity="center_horizontal"
                             android:text="BADDD"
-                            android:textColor="@android:color/black"
+                            android:textColor="@color/dark_brown"
                             android:textColorHint="@android:color/black"
                             android:textColorLink="@android:color/black"
-                            android:textSize="22sp"
+                            android:textSize="32sp"
                             android:typeface="serif" />
 
                         <TextView
@@ -61,7 +61,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/textViewTourSiteName"
                             android:layout_centerHorizontal="true"
-                            android:gravity="center_horizontal"
+                            android:gravity="center"
                             android:paddingLeft="10dp"
                             android:text="You shouldn&apos;t be seeing this"
                             android:textColor="@android:color/black"
