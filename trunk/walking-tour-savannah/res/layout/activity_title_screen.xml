@@ -35,9 +35,10 @@
                 android:id="@+id/textViewDigSavTitleText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_vertical"
                 android:text="@string/dig_sav_title_desc"
                 android:textColor="@color/dark_brown"
-                android:textSize="32sp" />
+                android:textSize="48sp" />
 
         </LinearLayout>
 
@@ -52,27 +53,25 @@
                 android:layout_height="0dp"
                 android:layout_weight="5" >
 
-                <Button
+                <ImageButton
                     android:id="@+id/buttonSites"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="5"
-                    android:alpha=".9"
-                    android:drawableLeft="@android:drawable/ic_menu_info_details"
-                    android:gravity="center"
-                    android:text="@string/Sites"
-                    android:textSize="40sp" />
+                    android:background="@color/light_brown"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/sites" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/buttonTours"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:alpha=".9"
-                    android:drawableLeft="@android:drawable/ic_menu_compass"
-                    android:gravity="center"
-                    android:text="@string/Tours"
-                    android:textSize="40sp" />
+                    android:background="@color/light_brown"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tours" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -80,28 +79,27 @@
                 android:layout_height="0dp"
                 android:layout_weight="5" >
 
-                <Button
+                <ImageButton
                     android:id="@+id/buttonMap"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:alpha=".9"
-                    android:drawableLeft="@android:drawable/ic_menu_mylocation"
-                    android:gravity="center"
-                    android:text="@string/Map"
-                    android:textSize="40sp" />
+                    android:background="@color/light_brown"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/maps" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/buttonMoreInfo"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="5"
                     android:alpha=".9"
-                    android:drawableLeft="@android:drawable/ic_menu_more"
-                    android:gravity="center"
-                    android:text="@string/more_info"
-                    android:textSize="40sp" />
+                    android:background="@color/light_brown"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/moreinfo" />
+
             </LinearLayout>
         </LinearLayout>
 
