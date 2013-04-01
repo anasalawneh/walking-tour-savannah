@@ -1,74 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tours>
     <tour>
-        <name>Basic Tour</name>
+        <name>A Three Hour Tour</name>
         <img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
+        <desc></desc>
         <site>Battlefield Park</site>
+        <site>Central of Georgia Railroad</site>
+        <site>Railroad Ward</site>
+        <site>Marriott Hotel and Liberty Street Parking Garage</site>
         <site>Madison Square</site>
         <site>Lafayette Square</site>
+        <site>Andrew Low House</site>
+        <site>Owens Thomas House</site>
+        <site>Colonial Cemetery</site>
         <site>Emmet Park</site>
-    </tour>
-    
-    <tour>
-        <name>Basic Tour2</name>
-		<img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
-        <site>Battlefield Park</site>
-        <site>Madison Square</site>
-        <site>Lafayette Square</site>
-        <site>Emmet Park</site>
-    </tour>
-    
-    <tour>
-        <name>Basic Tour3</name>
-        <img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
-        <site>Battlefield Park</site>
-        <site>Madison Square</site>
-        <site>Lafayette Square</site>
-        <site>Emmet Park</site>
-    </tour>
-    
-    <tour>
-        <name>Basic Tour4</name>
-        <img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
-        <site>Battlefield Park</site>
-        <site>Madison Square</site>
-        <site>Lafayette Square</site>
-        <site>Emmet Park</site>
-    </tour>
-    
-    <tour>
-        <name>Basic Tour5</name>
-        <img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
-        <site>Battlefield Park</site>
-        <site>Madison Square</site>
-        <site>Lafayette Square</site>
-        <site>Emmet Park</site>
-    </tour>
-    
-    <tour>
-        <name>Basic Tour6</name>
-        <img>placeholder</img>
-        <desc>Some tour sites--cool beans
-            Tour Time: 1-2 Hours
-            </desc>
-        <site>Battlefield Park</site>
-        <site>Madison Square</site>
-        <site>Lafayette Square</site>
-        <site>Emmet Park</site>
+        <site>Clusky Embankment Stores</site>
     </tour>
 </tours>
