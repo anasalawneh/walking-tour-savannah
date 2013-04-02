@@ -50,7 +50,7 @@
                         android:layout_weight=".3"
                         android:background="@drawable/paper_bg" >
 
-                        <TextView
+                        <edu.armstrong.util.AutoFitTextView
                             android:id="@+id/textViewTourName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -70,6 +70,7 @@
                             android:layout_alignParentLeft="true"
                             android:layout_below="@+id/textViewTourName"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="5dp"
                             android:gravity="center_horizontal"
                             android:paddingLeft="10dp"
                             android:text="You shouldn&apos;t be seeing this"

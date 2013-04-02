@@ -14,7 +14,7 @@
         android:layout_width="400dp"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
-  	<TextView
+  	<edu.armstrong.util.AutoFitTextView
             android:id="@+id/txtInfoWindowTitle"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
 
-    <TextView
+    <edu.armstrong.util.AutoFitTextView
         android:id="@+id/txtInfoWindowDesc"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"      

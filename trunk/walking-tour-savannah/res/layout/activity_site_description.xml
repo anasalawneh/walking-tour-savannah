@@ -35,7 +35,7 @@
           android:scrollbars="vertical"
           android:tileMode="repeat" >
 
-       <TextView
+       <EditText
            android:id="@+id/imageSwitcherTextView"
            android:layout_width="fill_parent"
            android:layout_height="match_parent"
