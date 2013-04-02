@@ -30,7 +30,7 @@
                             android:id="@+id/imageViewTourSite"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/arstrong_dark_moss"
+                            android:background="@drawable/moss_gradiant1"
                             android:src="@drawable/background" />
 
                     </RelativeLayout>
