@@ -30,7 +30,7 @@
                 android:background="@drawable/dig_sav_logo" >
             </ImageSwitcher>
 
-            <TextView
+            <edu.armstrong.util.AutoFitTextView
                 android:id="@+id/textViewDigSavTitleText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:background="#55000000" >
 
-            <TextView
+            <edu.armstrong.util.AutoFitTextView
                 android:id="@+id/armstrongView"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

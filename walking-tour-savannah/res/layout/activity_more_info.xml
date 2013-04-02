@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
-        <TextView
+        <edu.armstrong.util.AutoFitTextView
             android:id="@+id/moreInfoText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

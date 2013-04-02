@@ -74,7 +74,7 @@ public class TourActivity extends Activity {
 			});
 
 			TextView tvName = ((TextView) tourListItem
-					.findViewById(R.id.textViewTourSiteName));
+					.findViewById(R.id.textViewSiteTableRowName));
 			TextView tvDesc = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourSiteDesc));
 			tvName.setText(hs.getName());

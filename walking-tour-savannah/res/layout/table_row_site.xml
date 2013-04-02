@@ -53,7 +53,7 @@
                         android:tileMode="repeat"
                         android:background="@drawable/paper_bg" >
 
-                        <TextView
+                        <edu.armstrong.util.AutoFitTextView
                             android:id="@+id/textViewSiteTableRowName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
