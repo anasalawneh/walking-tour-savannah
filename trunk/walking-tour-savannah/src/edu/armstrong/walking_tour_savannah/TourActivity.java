@@ -16,6 +16,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
+import edu.armstrong.walking_tour_savannah.R.color;
 
 /**
  * This activity will hold the routes for the tour. This list is different from
@@ -35,6 +36,7 @@ public class TourActivity extends Activity {
 
 	TableLayout tableLayoutTourSiteList;
 	private LinkedList<HistoricSite> tourRoute;
+	CheckBox cb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +50,14 @@ public class TourActivity extends Activity {
 		tourRoute = tmgr.getMapOfTours().get(tourName).getTourRoute();
 
 		for (final HistoricSite hs : tourRoute) {
-			TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
+			final TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.table_row_tour_site, null);
 
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
 
-			CheckBox cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
+			cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
 			
 			cb.setChecked(hs.getIsVisited());
 
@@ -87,7 +89,11 @@ public class TourActivity extends Activity {
 			tourListItem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-
+					
+					cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
+					hs.setIsVisited(true);
+					cb.setChecked(hs.getIsVisited());
+					
 					Intent toursActivityIntent = new Intent(TourActivity.this,
 							SiteDescriptionActivity.class);
 					toursActivityIntent.putExtra("site", hs.getName());
