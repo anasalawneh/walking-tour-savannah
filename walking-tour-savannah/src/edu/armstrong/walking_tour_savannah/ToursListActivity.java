@@ -91,9 +91,7 @@ public class ToursListActivity extends Activity {
 					startActivity(toursActivityIntent);
 				}
 			});
-
 			tableLayoutTourList.addView(tourListItem);
 		}
 	}
-
 }
