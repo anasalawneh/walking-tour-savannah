@@ -118,7 +118,8 @@
             android:text="@string/armstrong"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/armstrong_maroon"
-            android:textSize="48sp" />
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
