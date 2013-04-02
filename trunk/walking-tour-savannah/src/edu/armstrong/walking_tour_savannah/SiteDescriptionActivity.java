@@ -121,7 +121,13 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
+		try{
 		tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+		} catch (IndexOutOfBoundsException e) {
+			// this needs to be caught if the user swipes too fast... strange
+			// side effect of gallery.
+			tvSiteDesc.setText(Html.fromHtml(mDescs.get(mDescs.size()-1)));
+		}
 	}
 
 	@Override

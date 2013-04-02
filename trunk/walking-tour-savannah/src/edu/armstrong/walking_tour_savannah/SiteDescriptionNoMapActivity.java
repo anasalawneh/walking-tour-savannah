@@ -60,17 +60,18 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String siteName = getIntent().getStringExtra("site");
-		
+
 		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
 		populateLists();
-		
+
 		setTitle("" + siteName);
 		setContentView(R.layout.activity_site_description_no_map);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
-		tvSiteDesc.setTypeface(FontManager.DroidSans(SiteDescriptionNoMapActivity.this));
+		tvSiteDesc.setTypeface(FontManager
+				.DroidSans(SiteDescriptionNoMapActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
-		
+
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
@@ -79,14 +80,20 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.activity_site_description, menu);
+		// getMenuInflater().inflate(R.menu.activity_site_description, menu);
 		return true;
 	}
 
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
-		tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+		try {
+			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+		} catch (IndexOutOfBoundsException e) {
+			// this needs to be caught if the user swipes too fast... strange
+			// side effect of gallery.
+			tvSiteDesc.setText(Html.fromHtml(mDescs.get(mDescs.size()-1)));
+		}
 	}
 
 	@Override
@@ -128,13 +135,12 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-			//i.setBackgroundColor(0xFF8C0C04);
-			
+			// i.setBackgroundColor(0xFF8C0C04);
+
 			return i;
 		}
 	}// ImageAdapter
 
-	
 	/**
 	 * poopulate the lists with info from the historic site manager
 	 */
@@ -147,10 +153,9 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		mDescs.add(hs.getLongDesc());
 		mDescs.addAll(hs.getEvDesc());
 	}
-	
+
 	private void loadImgs() {
 
-		
 		// reads the .xml file into a string
 		XMLParser parser = new XMLParser();
 		InputStream is = SiteDescriptionNoMapActivity.this.getResources()
@@ -164,13 +169,14 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		NodeList nl = doc.getElementsByTagName("site");
 
 		for (int i = 0; i < hs.getEvImgsStr().size(); i++) {
-			
+
 			Resources res = getResources();
 			int resID;
 
-			resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable", getPackageName());
+			resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable",
+					getPackageName());
 			Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
-			
+
 			Bitmap b = decodeBitmapFromResource(this.getResources(), resID,
 					300, 300);
 			hs.getEvImgs().add(b);
