@@ -65,9 +65,9 @@ public class SiteDescriptionActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		myImageIds = new ArrayList<Bitmap>();
 		String siteName = getIntent().getStringExtra("site");
 		hs = HistoricSiteManager.getInstanceOf().getMapOfSites().get(siteName);
-
 		populateLists();
 
 		setTitle("" + siteName);
@@ -105,10 +105,10 @@ public class SiteDescriptionActivity extends Activity implements
 			}
 		});
 
+
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
-
 	}
 
 	@Override
@@ -121,12 +121,10 @@ public class SiteDescriptionActivity extends Activity implements
 	@Override
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
-		try{
-		tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+		try {
+			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
 		} catch (IndexOutOfBoundsException e) {
-			// this needs to be caught if the user swipes too fast... strange
-			// side effect of gallery.
-			tvSiteDesc.setText(Html.fromHtml(mDescs.get(mDescs.size()-1)));
+			tvSiteDesc.setText("WHOOPS!!!");
 		}
 	}
 
@@ -169,10 +167,9 @@ public class SiteDescriptionActivity extends Activity implements
 			i.setAdjustViewBounds(true);
 			i.setLayoutParams(new Gallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-			//i.setBackgroundColor(0xFF8C0C04);
-
 			return i;
 		}
+
 	}// ImageAdapter
 
 	/**
@@ -180,83 +177,19 @@ public class SiteDescriptionActivity extends Activity implements
 	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Bitmap>();
-		loadImgs();
-		myImageIds.add(hs.getImg());
-		myImageIds.addAll(hs.getEvImgs());
+		if (!myImageIds.contains(hs.getImg())) {
+			myImageIds.add(hs.getImg());
+		}
+		for (Bitmap b : hs.getEvImgs()) {
+			if (!myImageIds.contains(b))
+				myImageIds.add(b);
+		}
 		mDescs = new ArrayList<String>();
+		if (!mDescs.contains(hs.getLongDesc()))
 		mDescs.add(hs.getLongDesc());
-		mDescs.addAll(hs.getEvDesc());
-	}
-
-	private void loadImgs() {
-
-		
-		// reads the .xml file into a string
-		XMLParser parser = new XMLParser();
-		InputStream is = SiteDescriptionActivity.this.getResources()
-				.openRawResource(R.raw.sites);
-		String xml = parser.getXmlFromFile(is); // getting XML
-
-		// sets xml up to be read by tags
-		Document doc = parser.getDomElement(xml); // getting DOM element
-
-		// get all tags named "site"
-		NodeList nl = doc.getElementsByTagName("site");
-
-		for (int i = 0; i < hs.getEvImgsStr().size(); i++) {
-			
-			Resources res = getResources();
-			int resID;
-
-			resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable", getPackageName());
-			Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
-			
-			Bitmap b = decodeBitmapFromResource(this.getResources(), resID,
-					300, 300);
-			hs.getEvImgs().add(b);
+		for (String s : hs.getEvDesc()){
+			if(!mDescs.contains(s))
+				mDescs.add(s);
 		}
-
 	}
-
-	public Bitmap decodeBitmapFromResource(Resources res, int resId,
-			int reqWidth, int reqHeight) {
-
-		// First decode with inJustDecodeBounds=true to check dimensions
-		final BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		BitmapFactory.decodeResource(res, resId, options);
-
-		// Calculate inSampleSize
-		options.inSampleSize = calculateInSampleSize(options, reqWidth,
-				reqHeight);
-
-		// Decode bitmap with inSampleSize set
-		options.inJustDecodeBounds = false;
-		return BitmapFactory.decodeResource(res, resId, options);
-	}
-
-	public int calculateInSampleSize(BitmapFactory.Options options,
-			int reqWidth, int reqHeight) {
-		// Raw height and width of image
-		final int height = options.outHeight;
-		final int width = options.outWidth;
-		int inSampleSize = 1;
-
-		if (height > reqHeight || width > reqWidth) {
-
-			// Calculate ratios of height and width to requested height and
-			// width
-			final int heightRatio = Math.round((float) height
-					/ (float) reqHeight);
-			final int widthRatio = Math.round((float) width / (float) reqWidth);
-
-			// Choose the smallest ratio as inSampleSize value, this will
-			// guarantee
-			// a final image with both dimensions larger than or equal to the
-			// requested height and width.
-			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-		}
-		return inSampleSize;
-	}
-
 }
