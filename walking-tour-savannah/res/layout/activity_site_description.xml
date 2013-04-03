@@ -19,7 +19,7 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="10sp"
+        android:layout_height="12sp"
         android:src="@drawable/black_white_gradient" />
 
       <ScrollView
@@ -45,7 +45,11 @@
            android:gravity="left"
            android:linksClickable="true"
            android:text="@string/noEvidence"
-           android:textAppearance="?android:attr/textAppearanceMedium" />
+           android:textAppearance="?android:attr/textAppearanceMedium"
+           android:clickable="false" 
+           android:cursorVisible="false" 
+           android:focusable="false" 
+           android:focusableInTouchMode="false" />
 
     </ScrollView>
 
