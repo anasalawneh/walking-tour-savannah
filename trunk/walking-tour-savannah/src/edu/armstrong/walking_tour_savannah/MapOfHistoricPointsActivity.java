@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -57,7 +58,7 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 			// else, center the map
 		} else {
 			map.animateCamera(CameraUpdateFactory.newLatLngBounds(bc.build(),
-					50));
+					30));
 		}
 	}
 
@@ -113,7 +114,7 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 
 						ImageView iv = ((ImageView) markerInfo
 								.findViewById(R.id.ivInfoWindowMain));
-						iv.setImageBitmap(hs.getImg());
+						iv.setImageBitmap(hs.getImg(MapOfHistoricPointsActivity.this));
 
 						TextView txtTitle = ((TextView) markerInfo
 								.findViewById(R.id.txtInfoWindowTitle));

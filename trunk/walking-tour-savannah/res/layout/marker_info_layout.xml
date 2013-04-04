@@ -5,8 +5,10 @@
     android:paddingLeft="5dp" >
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:minHeight="150dp" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="150dp"
+        android:minWidth="300dp" >
 
         <ImageView
             android:id="@+id/ivInfoWindowMain"
@@ -22,7 +24,7 @@
 
             <edu.armstrong.util.AutoFitTextView
                 android:id="@+id/txtInfoWindowTitle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"

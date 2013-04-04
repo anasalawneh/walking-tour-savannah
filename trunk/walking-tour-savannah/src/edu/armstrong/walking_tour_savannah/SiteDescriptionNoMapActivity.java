@@ -147,10 +147,10 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Bitmap>();
-		if (!myImageIds.contains(hs.getImg())) {
-			myImageIds.add(hs.getImg());
+		if (!myImageIds.contains(hs.getImg(SiteDescriptionNoMapActivity.this))) {
+			myImageIds.add(hs.getImg(SiteDescriptionNoMapActivity.this));
 		}
-		for (Bitmap b : hs.getEvImgs()) {
+		for (Bitmap b : hs.getEvImgs(SiteDescriptionNoMapActivity.this)) {
 			if (!myImageIds.contains(b))
 				myImageIds.add(b);
 		}

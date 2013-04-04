@@ -214,10 +214,7 @@ public class TitleScreenActivity extends Activity {
 				double lat = Double.parseDouble(parser.getValue(e, "lat"));
 				double lon = Double.parseDouble(parser.getValue(e, "lon"));
 
-				String mainImgName = parser.getValue(e, "img");
-				resID = res
-						.getIdentifier(mainImgName, "drawable", getPackageName());
-				Bitmap mainImg = decodeBitmapFromResource(res, resID, 300, 300);
+				String mainImg = parser.getValue(e, "img");
 
 				String desc = parser.getValue(e, "desc");
 				String longDesc = parser.getValue(e, "longDesc");
@@ -275,8 +272,6 @@ public class TitleScreenActivity extends Activity {
 				String tourName = parser.getValue(e, "name");
 				String tourDesc = parser.getValue(e, "desc");
 				String tourImg = parser.getValue(e, "img");
-				int resID = res.getIdentifier(tourImg, "drawable", getPackageName());
-				Bitmap b = decodeBitmapFromResource(res, resID, 300, 300);
 
 				NodeList sites = e.getElementsByTagName("site");
 				LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
@@ -286,50 +281,9 @@ public class TitleScreenActivity extends Activity {
 								.item(j))));
 				}
 				
-				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, b));
+				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, tourImg));
 			}
 			new TourManager(mapOfTours);
-		}
-
-		public Bitmap decodeBitmapFromResource(Resources res, int resId,
-				int reqWidth, int reqHeight) {
-
-			// First decode with inJustDecodeBounds=true to check dimensions
-			final BitmapFactory.Options options = new BitmapFactory.Options();
-			options.inJustDecodeBounds = true;
-			BitmapFactory.decodeResource(res, resId, options);
-
-			// Calculate inSampleSize
-			options.inSampleSize = calculateInSampleSize(options, reqWidth,
-					reqHeight);
-
-			// Decode bitmap with inSampleSize set
-			options.inJustDecodeBounds = false;
-			return BitmapFactory.decodeResource(res, resId, options);
-		}
-
-		public int calculateInSampleSize(BitmapFactory.Options options,
-				int reqWidth, int reqHeight) {
-			// Raw height and width of image
-			final int height = options.outHeight;
-			final int width = options.outWidth;
-			int inSampleSize = 1;
-
-			if (height > reqHeight || width > reqWidth) {
-
-				// Calculate ratios of height and width to requested height and
-				// width
-				final int heightRatio = Math.round((float) height
-						/ (float) reqHeight);
-				final int widthRatio = Math.round((float) width / (float) reqWidth);
-
-				// Choose the smallest ratio as inSampleSize value, this will
-				// guarantee
-				// a final image with both dimensions larger than or equal to the
-				// requested height and width.
-				inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-			}
-			return inSampleSize;
 		}
   }  
 	 

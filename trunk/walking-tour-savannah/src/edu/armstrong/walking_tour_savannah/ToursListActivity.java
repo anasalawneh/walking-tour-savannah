@@ -77,7 +77,7 @@ public class ToursListActivity extends Activity {
 			 * site
 			 */
 
-			Bitmap img = tour.getImg();
+			Bitmap img = tour.getImg(ToursListActivity.this);
 			ImageView ivTour = (ImageView) tourListItem
 					.findViewById(R.id.imageViewTourListImg1);
 			ivTour.setImageBitmap(img);

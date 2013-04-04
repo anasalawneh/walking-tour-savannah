@@ -176,14 +176,14 @@ public class SiteDescriptionActivity extends Activity implements
 	}// ImageAdapter
 
 	/**
-	 * poopulate the lists with info from the historic site manager
+	 * populate the lists with info from the historic site manager
 	 */
 	private void populateLists() {
 		myImageIds = new ArrayList<Bitmap>();
-		if (!myImageIds.contains(hs.getImg())) {
-			myImageIds.add(hs.getImg());
+		if (!myImageIds.contains(hs.getImg(SiteDescriptionActivity.this))) {
+			myImageIds.add(hs.getImg(SiteDescriptionActivity.this));
 		}
-		for (Bitmap b : hs.getEvImgs()) {
+		for (Bitmap b : hs.getEvImgs(SiteDescriptionActivity.this)) {
 			if (!myImageIds.contains(b))
 				myImageIds.add(b);
 		}
