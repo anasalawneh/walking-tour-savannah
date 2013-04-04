@@ -36,12 +36,12 @@ public class TourActivity extends Activity {
 
 	TableLayout tableLayoutTourSiteList;
 	private LinkedList<HistoricSite> tourRoute;
-	CheckBox cb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tour);
+		
 
 		String tourName = getIntent().getStringExtra("tour");
 		tableLayoutTourSiteList = (TableLayout) findViewById(R.id.TableLayoutTourSites);
@@ -53,20 +53,20 @@ public class TourActivity extends Activity {
 			final TableRow tourListItem = (TableRow) getLayoutInflater().inflate(
 					R.layout.table_row_tour_site, null);
 
+			final CheckBox cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
+
 			tourListItem.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.MATCH_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
 
-			cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
-			
 			cb.setChecked(hs.getIsVisited());
-
+			
 			cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
 				@Override
 				public void onCheckedChanged(CompoundButton buttonView,
 						boolean isChecked) {
-					if (!hs.getIsVisited())
+					if (!isChecked)
 						hs.setIsVisited(true);
 					else
 						hs.setIsVisited(false);
@@ -90,7 +90,6 @@ public class TourActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					
-					cb = (CheckBox) tourListItem.findViewById(R.id.checkBox1);
 					hs.setIsVisited(true);
 					cb.setChecked(hs.getIsVisited());
 					

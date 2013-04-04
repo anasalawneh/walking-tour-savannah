@@ -16,6 +16,16 @@
         android:gravity="center_vertical"
         android:spacing="16dp" />
 
+    <TextView
+        android:id="@+id/textViewImageNumber"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#522320"
+        android:gravity="center"
+        android:text="Image 0 of 0"
+        android:textColor="@color/armstrong_rust_orange"
+        android:textSize="10sp" />
+
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
