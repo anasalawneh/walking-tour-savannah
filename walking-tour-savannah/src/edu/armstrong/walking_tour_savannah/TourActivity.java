@@ -85,7 +85,7 @@ public class TourActivity extends Activity {
 			tvName.setText(hs.getName());
 			tvDesc.setText(hs.getDesc());
 
-			Bitmap img = hs.getImg();
+			Bitmap img = hs.getImg(TourActivity.this);
 			ImageView ivSite = (ImageView) tourListItem
 					.findViewById(R.id.imageViewTourSite);
 			ivSite.setImageBitmap(img);
@@ -97,7 +97,6 @@ public class TourActivity extends Activity {
 					
 					hs.setIsVisited(true);
 					cb.setChecked(hs.getIsVisited());
-					loadImgs(hs);
 					Intent toursActivityIntent = new Intent(TourActivity.this,
 							SiteDescriptionActivity.class);
 					toursActivityIntent.putExtra("site", hs.getName());
@@ -109,61 +108,6 @@ public class TourActivity extends Activity {
 		}
 	}
 	
-	private void loadImgs(HistoricSite hs) {
-		//only load imgs if the hs images haven't been loaded already...
-		if (hs.getEvImgs().isEmpty()) {
-			for (int i = 0; i < hs.getEvImgsStr().size(); i++) {
-				Resources res = getResources();
-				int resID;
-				resID = res.getIdentifier(hs.getEvImgsStr().get(i), "drawable",
-						getPackageName());
-				Bitmap b = decodeBitmapFromResource(res, resID, 300, 300);
-				hs.getEvImgs().add(b);
-			}
-		}
-	}
-
-	public Bitmap decodeBitmapFromResource(Resources res, int resId,
-			int reqWidth, int reqHeight) {
-
-		// First decode with inJustDecodeBounds=true to check dimensions
-		final BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		BitmapFactory.decodeResource(res, resId, options);
-
-		// Calculate inSampleSize
-		options.inSampleSize = calculateInSampleSize(options, reqWidth,
-				reqHeight);
-
-		// Decode bitmap with inSampleSize set
-		options.inJustDecodeBounds = false;
-		return BitmapFactory.decodeResource(res, resId, options);
-	}
-
-	public int calculateInSampleSize(BitmapFactory.Options options,
-			int reqWidth, int reqHeight) {
-		// Raw height and width of image
-		final int height = options.outHeight;
-		final int width = options.outWidth;
-		int inSampleSize = 1;
-
-		if (height > reqHeight || width > reqWidth) {
-
-			// Calculate ratios of height and width to requested height and
-			// width
-			final int heightRatio = Math.round((float) height
-					/ (float) reqHeight);
-			final int widthRatio = Math.round((float) width / (float) reqWidth);
-
-			// Choose the smallest ratio as inSampleSize value, this will
-			// guarantee
-			// a final image with both dimensions larger than or equal to the
-			// requested height and width.
-			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
-		}
-		return inSampleSize;
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
