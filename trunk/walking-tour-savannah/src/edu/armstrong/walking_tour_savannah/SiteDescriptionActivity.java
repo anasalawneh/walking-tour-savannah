@@ -55,6 +55,7 @@ public class SiteDescriptionActivity extends Activity implements
 	private List<String> mDescs = null;
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
+	private TextView tvImageNumber = null;
 	private Button mapButton = null;
 	private Button dirButton = null;
 	Gallery g = null;
@@ -74,6 +75,7 @@ public class SiteDescriptionActivity extends Activity implements
 		setContentView(R.layout.activity_site_description);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
+		tvImageNumber = (TextView) findViewById(R.id.textViewImageNumber);
 		tvSiteDesc.setTypeface(FontManager
 				.DroidSans(SiteDescriptionActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
@@ -123,8 +125,9 @@ public class SiteDescriptionActivity extends Activity implements
 			long id) {
 		try {
 			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+			tvImageNumber.setText("Image " + (position + 1) + " of " + myImageIds.size() + " (Swipe for more!)");
 		} catch (IndexOutOfBoundsException e) {
-			tvSiteDesc.setText("WHOOPS!!!");
+
 		}
 	}
 
@@ -188,7 +191,6 @@ public class SiteDescriptionActivity extends Activity implements
 		if (!mDescs.contains(hs.getLongDesc()))
 		mDescs.add(hs.getLongDesc());
 		for (String s : hs.getEvDesc()){
-			if(!mDescs.contains(s))
 				mDescs.add(s);
 		}
 	}

@@ -52,6 +52,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	private List<String> mDescs = null;
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
+	private TextView tvImageNumber = null;
 	Gallery g = null;
 
 	private Context mContext;
@@ -68,6 +69,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		setContentView(R.layout.activity_site_description_no_map);
 
 		tvSiteDesc = (TextView) findViewById(R.id.imageSwitcherTextView);
+		tvImageNumber = (TextView) findViewById(R.id.textViewImageNumber);
 		tvSiteDesc.setTypeface(FontManager
 				.DroidSans(SiteDescriptionNoMapActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
@@ -89,10 +91,9 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 			long id) {
 		try {
 			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
+			tvImageNumber.setText("Image " + (position + 1) + " of " + myImageIds.size() + " (Swipe for more!)");
 		} catch (IndexOutOfBoundsException e) {
-			// this needs to be caught if the user swipes too fast... strange
-			// side effect of gallery.
-			tvSiteDesc.setText(Html.fromHtml(mDescs.get(mDescs.size()-1)));
+
 		}
 	}
 
@@ -157,7 +158,6 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 		if (!mDescs.contains(hs.getLongDesc()))
 		mDescs.add(hs.getLongDesc());
 		for (String s : hs.getEvDesc()){
-			if(!mDescs.contains(s))
 				mDescs.add(s);
 		}
 	}
