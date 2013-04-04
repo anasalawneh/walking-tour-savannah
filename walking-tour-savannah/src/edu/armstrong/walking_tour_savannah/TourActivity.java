@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
 import edu.armstrong.walking_tour_savannah.R.color;
@@ -77,8 +78,10 @@ public class TourActivity extends Activity {
 
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewSiteTableRowName));
+			tvName.setTypeface(FontManager.Trashed(TourActivity.this));
 			TextView tvDesc = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourSiteDesc));
+			tvDesc.setTypeface(FontManager.DroidSans(TourActivity.this));
 			tvName.setText(hs.getName());
 			tvDesc.setText(hs.getDesc());
 
