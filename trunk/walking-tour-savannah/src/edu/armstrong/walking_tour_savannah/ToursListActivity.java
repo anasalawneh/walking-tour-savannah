@@ -4,7 +4,9 @@ import java.util.LinkedHashMap;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,6 +15,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.TourManager;
+import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
 
 /**
