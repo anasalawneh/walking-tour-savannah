@@ -79,6 +79,7 @@ public class SiteDescriptionActivity extends Activity implements
 		tvSiteDesc.setTypeface(FontManager
 				.DroidSans(SiteDescriptionActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
+
 		mapButton = (Button) findViewById(R.id.mapButton);
 		dirButton = (Button) findViewById(R.id.directionsButton);
 		mapButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +108,6 @@ public class SiteDescriptionActivity extends Activity implements
 			}
 		});
 
-
 		g = (Gallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
@@ -125,7 +125,8 @@ public class SiteDescriptionActivity extends Activity implements
 			long id) {
 		try {
 			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position)));
-			tvImageNumber.setText("Image " + (position + 1) + " of " + myImageIds.size() + " (Swipe for more!)");
+			tvImageNumber.setText("Image " + (position + 1) + " of "
+					+ myImageIds.size() + " (Swipe for more!)");
 		} catch (IndexOutOfBoundsException e) {
 
 		}
@@ -188,10 +189,9 @@ public class SiteDescriptionActivity extends Activity implements
 				myImageIds.add(b);
 		}
 		mDescs = new ArrayList<String>();
-		if (!mDescs.contains(hs.getLongDesc()))
 		mDescs.add(hs.getLongDesc());
-		for (String s : hs.getEvDesc()){
-				mDescs.add(s);
+		for (String s : hs.getEvDesc()) {
+			mDescs.add(s);
 		}
 	}
 }
