@@ -21,6 +21,7 @@ import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -55,33 +56,32 @@ public class TitleScreenActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 
-		if(HistoricSiteManager.getInstanceOf() == null){
+		if (HistoricSiteManager.getInstanceOf() == null) {
 			showSplash = true;
 			showSplashScreen();
 			new PopulateSites().execute();
 		}
 
-		
 		setContentView(R.layout.activity_title_screen);
-		
+
 		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
 		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
-		
-	    TextView armstrongView = (TextView) findViewById(R.id.armstrongView);
-	    armstrongView.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
-		
+
+		TextView armstrongView = (TextView) findViewById(R.id.armstrongView);
+		armstrongView.setTypeface(FontManager
+				.DroidSans(TitleScreenActivity.this));
+
 		// Button definitions
 		btnToursList = (ImageButton) findViewById(R.id.buttonTours);
-		//btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		// btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnSitesList = (ImageButton) findViewById(R.id.buttonSites);
-		//btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		// btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnMap = (ImageButton) findViewById(R.id.buttonMap);
-		//btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+		// btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnMoreInfo = (ImageButton) findViewById(R.id.buttonMoreInfo);
-		//btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
-		
+		// btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
+
 		btnToursList.getBackground().setColorFilter(
 				Color.parseColor("#d76969"), PorterDuff.Mode.MULTIPLY);
 		btnSitesList.getBackground().setColorFilter(
@@ -118,11 +118,12 @@ public class TitleScreenActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,	MapOfHistoricPointsActivity.class);
+				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,
+						MapOfHistoricPointsActivity.class);
 				startActivity(mapActivityIntent);
 			}
 		});
-		
+
 		btnMoreInfo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -140,50 +141,49 @@ public class TitleScreenActivity extends Activity {
 		return true;
 	}
 
-	
 	protected void showSplashScreen() {
-	    mSplashDialog = new Dialog(this, R.style.SplashScreen);
-	    mSplashDialog.setContentView(R.layout.splash);
-	    
-	    // changed font
-	    TextView splashTitle = (TextView)mSplashDialog.findViewById(R.id.splashTitle);
-	    splashTitle.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
-	    
-	    mSplashDialog.setCancelable(false);
-	    mSplashDialog.show();
-	     
-	    // Set Runnable to remove splash screen just in case
-	    final Handler handler = new Handler();
-	   
-	    handler.postDelayed(new Runnable() {
-	      @Override
-	      public void run() {
-	    	if(showSplash){
-	    		handler.postDelayed(this, 1000);
-	    	}else{
-	    		removeSplashScreen();
-	    	}
-	      }
-	    }, 1000);
+		mSplashDialog = new Dialog(this, R.style.SplashScreen);
+		mSplashDialog.setContentView(R.layout.splash);
+
+		// changed font
+		TextView splashTitle = (TextView) mSplashDialog
+				.findViewById(R.id.splashTitle);
+		splashTitle.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
+
+		mSplashDialog.setCancelable(false);
+		mSplashDialog.show();
+
+		// Set Runnable to remove splash screen just in case
+		final Handler handler = new Handler();
+
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				if (showSplash) {
+					handler.postDelayed(this, 1000);
+				} else {
+					removeSplashScreen();
+				}
+			}
+		}, 1000);
 	}
-	
+
 	protected void removeSplashScreen() {
-	    if (mSplashDialog != null) {
-	        mSplashDialog.dismiss();
-	        mSplashDialog = null;
-	    }
+		if (mSplashDialog != null) {
+			mSplashDialog.dismiss();
+			mSplashDialog = null;
+		}
 	}
-	
-    private class PopulateSites extends AsyncTask<Void, Void, Void> {
+
+	private class PopulateSites extends AsyncTask<Void, Void, Void> {
 		@Override
 		protected Void doInBackground(Void... arg0) {
 			populateSites();
 			populateTours();
-			
+
 			TitleScreenActivity.this.showSplash = false;
 			return null;
 		}
-		
 
 		/**
 		 * Parses .xml file containing dig sites and adds them to a hash map
@@ -193,7 +193,8 @@ public class TitleScreenActivity extends Activity {
 
 			// reads the .xml file into a string
 			XMLParser parser = new XMLParser();
-			InputStream is = TitleScreenActivity.this.getResources().openRawResource(R.raw.sites);
+			InputStream is = TitleScreenActivity.this.getResources()
+					.openRawResource(R.raw.sites);
 			String xml = parser.getXmlFromFile(is); // getting XML
 
 			// sets xml up to be read by tags
@@ -217,14 +218,26 @@ public class TitleScreenActivity extends Activity {
 				String mainImg = parser.getValue(e, "img");
 
 				String desc = parser.getValue(e, "desc");
+
+				/**
+				 * This is where longDesc is being filld as empty in 2.3.3
+				 * emulator********************************** Most likely, the
+				 * parser isn't handling it correctly and it's returning a null
+				 * val. If you look in the rar string.xml long desc is the only
+				 * one with html tags. I'm guess older versions of android
+				 * didn't carry the support for HTML tags and that's why it's
+				 * not seeing it as a valid xml string at all.
+				 * 
+				 */
+
 				String longDesc = parser.getValue(e, "longDesc");
 
 				// evidence images
 				NodeList ei = e.getElementsByTagName("evImg");
-				
-				//img string names
+
+				// img string names
 				List<String> evImgStr = new ArrayList<String>();
-				for (int j = 0; j < ei.getLength(); j++){
+				for (int j = 0; j < ei.getLength(); j++) {
 					String imgName = parser.getElementValue(ei.item(j));
 					evImgStr.add(imgName);
 				}
@@ -238,9 +251,9 @@ public class TitleScreenActivity extends Activity {
 				}
 
 				Log.d("Added site", name);
-				
-				listOfSites.put(name, new HistoricSite(name, new LatLng(lat, lon),
-						mainImg, desc, longDesc, evImgStr, evDesc));
+
+				listOfSites.put(name, new HistoricSite(name, new LatLng(lat,
+						lon), mainImg, desc, longDesc, evImgStr, evDesc));
 			}
 
 			// populate for use throughout the app
@@ -277,14 +290,15 @@ public class TitleScreenActivity extends Activity {
 				LinkedList<HistoricSite> tourRoute = new LinkedList<HistoricSite>();
 				for (int j = 0; j < sites.getLength(); j++) {
 					if (sites.item(j) != null)
-						tourRoute.add(mapOfSites.get(parser.getElementValue(sites
-								.item(j))));
+						tourRoute.add(mapOfSites.get(parser
+								.getElementValue(sites.item(j))));
 				}
-				
-				mapOfTours.put(tourName, new Tour(tourName, tourDesc, tourRoute, tourImg));
+
+				mapOfTours.put(tourName, new Tour(tourName, tourDesc,
+						tourRoute, tourImg));
 			}
 			new TourManager(mapOfTours);
 		}
-  }  
-	 
+	}
+
 }
