@@ -124,7 +124,7 @@ public class SiteDescriptionActivity extends Activity implements
 	public void onItemSelected(AdapterView<?> arg0, View v, int position,
 			long id) {
 		try {
-			tvSiteDesc.setText(mDescs.get(position));
+			tvSiteDesc.setText(Html.fromHtml(mDescs.get(position).toString()));
 			tvImageNumber.setText("Image " + (position + 1) + " of "
 					+ myImageIds.size() + " (Swipe for more!)");
 		} catch (IndexOutOfBoundsException e) {
