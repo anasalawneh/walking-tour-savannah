@@ -8,7 +8,7 @@
         <img>battlefieldpark</img>
         <desc>The site of the bloodiest battle of the American Revolution.</desc>
         <longDesc>
-&lt;b&gt;Time period:&lt;/b&gt; American Revolution&lt;br/&gt;&lt;br/&gt;
+<![CDATA[&lt;b&gt;Time period:&lt;/b&gt; American Revolution&lt;br/&gt;&lt;br/&gt;
 &lt;b&gt;Type of site:&lt;/b&gt; Military&lt;br/&gt;&lt;br/&gt;
 &lt;b&gt;History:&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
 &lt;p&gt;
@@ -17,7 +17,7 @@
 &lt;b&gt;Archaeology:&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
 &lt;p&gt;
 	Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about 3/4ths its original size. A few hundred feet down Louisville Road, a memorial marks the remains of the original Spring Hill Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques around the park that give a detailed history of the battle and a column of stones commemorating the Allies’ casualties.
-&lt;/p&gt;
+&lt;/p&gt;]]>
 		</longDesc>
         <!-- Image followed by description -->
         <evImg>battlefield_ev1</evImg>

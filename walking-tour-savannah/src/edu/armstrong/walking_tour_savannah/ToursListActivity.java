@@ -19,7 +19,7 @@ import edu.armstrong.util.HistoricSite;
 import edu.armstrong.util.Tour;
 
 /**
- * This activity will hold the list of avilable tours, when a tour is clicked,
+ * This activity will hold the list of available tours, when a tour is clicked,
  * the activity TourActivity will launch and show the sites on the route.
  * 
  * contentView: activity_tours_list
