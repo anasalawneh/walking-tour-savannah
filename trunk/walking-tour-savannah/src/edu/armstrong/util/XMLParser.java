@@ -44,6 +44,7 @@ public class XMLParser {
 	public Document getDomElement(String xml){
         Document doc = null;
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setCoalescing(true);
         
         try {
  
@@ -73,7 +74,7 @@ public class XMLParser {
 	         if( elem != null){
 	             if (elem.hasChildNodes()){
 	                 for( child = elem.getFirstChild(); child != null; child = child.getNextSibling() ){
-	                     if( child.getNodeType() == Node.TEXT_NODE  ){
+	                     if( child.getNodeType() == Node.TEXT_NODE || child.getNodeType() == Node.CDATA_SECTION_NODE){
 	                         return child.getNodeValue();
 	                     }
 	                 }
