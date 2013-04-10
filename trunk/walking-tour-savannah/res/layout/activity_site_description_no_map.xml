@@ -7,14 +7,15 @@
     android:weightSum="1.0"
     tools:context=".SiteDescriptionActivity" >
 
-    <Gallery
+    <edu.armstrong.util.ExtendedGallery
         android:id="@+id/gallerySiteDesc"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
         android:background="@drawable/maroon_gradiant2"
         android:gravity="center_vertical"
-        android:spacing="16dp" />
+        android:spacing="16dp" >
+    </edu.armstrong.util.ExtendedGallery>
 
     <TextView
         android:id="@+id/textViewImageNumber"

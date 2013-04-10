@@ -8,14 +8,15 @@
     android:weightSum="1.0"
     tools:context=".SiteDescriptionActivity" >
 
-    <Gallery
+    <edu.armstrong.util.ExtendedGallery
         android:id="@+id/gallerySiteDesc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
         android:background="@drawable/maroon_gradiant2"
         android:gravity="center_vertical"
-        android:spacing="16dp" />
+        android:spacing="16dp" >
+    </edu.armstrong.util.ExtendedGallery>
 
     <TextView
         android:id="@+id/textViewImageNumber"
@@ -32,35 +33,34 @@
         android:layout_height="12sp"
         android:src="@drawable/black_white_gradient" />
 
-      <ScrollView
-          android:id="@+id/scrollView1"
-          style="android:scrollViewStyle"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight=".425"
-          android:background="@drawable/paper_bg"
-          android:fadeScrollbars="false"
-          android:fillViewport="true"
-          android:scrollbarAlwaysDrawVerticalTrack="true"
-          android:scrollbars="vertical"
-          android:tileMode="repeat" >
+    <ScrollView
+        android:id="@+id/scrollView1"
+        style="android:scrollViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".425"
+        android:background="@drawable/paper_bg"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical"
+        android:tileMode="repeat" >
 
-       <EditText
-           android:id="@+id/imageSwitcherTextView"
-           android:layout_width="fill_parent"
-           android:layout_height="match_parent"
-           android:layout_marginLeft="10dp"
-           android:layout_marginRight="10dp"
-           android:layout_marginTop="10dp"
-           android:gravity="left"
-           android:linksClickable="true"
-           android:text="@string/noEvidence"
-           android:textAppearance="?android:attr/textAppearanceMedium"
-           android:clickable="false" 
-           android:cursorVisible="false" 
-           android:focusable="false" 
-           android:focusableInTouchMode="false" />
-
+        <EditText
+            android:id="@+id/imageSwitcherTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="left"
+            android:linksClickable="true"
+            android:text="@string/noEvidence"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </ScrollView>
 
     <RelativeLayout
@@ -89,7 +89,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="Directions" />
-
     </RelativeLayout>
 
 </LinearLayout>

@@ -1,18 +1,12 @@
 package edu.armstrong.walking_tour_savannah;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -24,14 +18,13 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.util.ExtendedGallery;
 import edu.armstrong.util.HistoricSite;
-import edu.armstrong.util.XMLParser;
 
 /**
  * This will hold the information about each site. There will be an image
@@ -58,8 +51,7 @@ public class SiteDescriptionActivity extends Activity implements
 	private TextView tvImageNumber = null;
 	private Button mapButton = null;
 	private Button dirButton = null;
-	Gallery g = null;
-
+	ExtendedGallery g = null;
 	private Context mContext;
 
 	@Override
@@ -107,12 +99,15 @@ public class SiteDescriptionActivity extends Activity implements
 				startActivity(intent);
 			}
 		});
-
-		g = (Gallery) findViewById(R.id.gallerySiteDesc);
+		
+		g = (ExtendedGallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
+		
 	}
+	
 
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -169,11 +164,11 @@ public class SiteDescriptionActivity extends Activity implements
 			ImageView i = new ImageView(mContext);
 			i.setImageBitmap(myImageIds.get(position));
 			i.setAdjustViewBounds(true);
-			i.setLayoutParams(new Gallery.LayoutParams(
+			i.setLayoutParams(new ExtendedGallery.LayoutParams(
 					LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 			return i;
 		}
-
+		
 	}// ImageAdapter
 
 	/**
