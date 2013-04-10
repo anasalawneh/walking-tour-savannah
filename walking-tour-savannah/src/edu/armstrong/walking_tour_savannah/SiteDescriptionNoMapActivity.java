@@ -1,17 +1,11 @@
 package edu.armstrong.walking_tour_savannah;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -27,8 +21,8 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
+import edu.armstrong.util.ExtendedGallery;
 import edu.armstrong.util.HistoricSite;
-import edu.armstrong.util.XMLParser;
 
 /**
  * This will hold the information about each site. There will be an image
@@ -53,7 +47,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 	private HistoricSite hs = null;
 	private TextView tvSiteDesc = null;
 	private TextView tvImageNumber = null;
-	Gallery g = null;
+	ExtendedGallery g = null;
 
 	private Context mContext;
 
@@ -74,7 +68,7 @@ public class SiteDescriptionNoMapActivity extends Activity implements
 				.DroidSans(SiteDescriptionNoMapActivity.this));
 		tvSiteDesc.setMovementMethod(LinkMovementMethod.getInstance());
 
-		g = (Gallery) findViewById(R.id.gallerySiteDesc);
+		g = (ExtendedGallery) findViewById(R.id.gallerySiteDesc);
 		g.setAdapter(new ImageAdapter(this));
 		g.setOnItemSelectedListener(this);
 	}

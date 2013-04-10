@@ -221,16 +221,16 @@ public class TitleScreenActivity extends Activity {
 
 				/**
 				 * This is where longDesc is being filld as empty in 2.3.3
-				 * emulator********************************** Most likely, the
-				 * parser isn't handling it correctly and it's returning a null
-				 * val. If you look in the rar string.xml long desc is the only
-				 * one with html tags. I'm guess older versions of android
-				 * didn't carry the support for HTML tags and that's why it's
-				 * not seeing it as a valid xml string at all.
+				 * emulator. Most likely, the parser isn't handling it correctly
+				 * and it's returning a null val. If you look in the rar
+				 * string.xml long desc is the only one with html tags. I'm
+				 * guess older versions of android didn't carry the support for
+				 * HTML tags and that's why it's not seeing it as a valid xml
+				 * string at all.
 				 * 
 				 */
-
 				String longDesc = parser.getValue(e, "longDesc");
+
 
 				// evidence images
 				NodeList ei = e.getElementsByTagName("evImg");
