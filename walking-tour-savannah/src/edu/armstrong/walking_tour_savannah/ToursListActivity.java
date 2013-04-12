@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -34,6 +35,7 @@ public class ToursListActivity extends Activity {
 
 	TableLayout tableLayoutTourList;
 	LinkedHashMap<String, Tour> tours;
+	Typeface trashed, droid;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +48,9 @@ public class ToursListActivity extends Activity {
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
 		 */
+		
+		trashed = FontManager.Trashed(ToursListActivity.this);
+		droid = FontManager.DroidSans(ToursListActivity.this);
 
 		for (final Tour tour : tours.values()) {
 
@@ -57,13 +62,12 @@ public class ToursListActivity extends Activity {
 
 			TextView tvName = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourName));
-
-			tvName.setTypeface(FontManager.Trashed(ToursListActivity.this));
 			
 			TextView tvDesc = ((TextView) tourListItem
 					.findViewById(R.id.textViewTourDesc));
 			
-			tvDesc.setTypeface(FontManager.DroidSans(ToursListActivity.this));
+			tvName.setTypeface(trashed);
+			tvDesc.setTypeface(droid);
 
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,8 @@ public class SiteListActivity extends Activity {
 	TableLayout tableLayoutSiteList;
 	HistoricSiteManager hsmgr;
 	private HistoricSite hs = null;
+	
+	Typeface trashed, droid;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -45,6 +48,10 @@ public class SiteListActivity extends Activity {
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
 		 */
+		
+		trashed = FontManager.Trashed(SiteListActivity.this);
+		droid = FontManager.DroidSans(SiteListActivity.this);
+		
 		for (final HistoricSite hs : hsmgr.getMapOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
@@ -55,11 +62,13 @@ public class SiteListActivity extends Activity {
 
 			TextView tvName = ((TextView) siteListItem
 					.findViewById(R.id.textViewSiteTableRowName));
-			tvName.setTypeface(FontManager.Trashed(SiteListActivity.this));
+			
 
 			TextView tvDesc = ((TextView) siteListItem
 					.findViewById(R.id.textViewSiteTableRowDesc));
-			tvDesc.setTypeface(FontManager.DroidSans(SiteListActivity.this));
+			
+			tvName.setTypeface(trashed);
+			tvDesc.setTypeface(droid);
 
 			/**
 			 * when we have desc we can just call hs.getDesc() to populate the
