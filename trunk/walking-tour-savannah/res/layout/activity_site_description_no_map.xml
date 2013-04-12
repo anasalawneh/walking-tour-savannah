@@ -60,15 +60,14 @@
            android:layout_marginLeft="10dp"
            android:layout_marginRight="10dp"
            android:layout_marginTop="10dp"
+           android:clickable="false"
+           android:cursorVisible="false"
+           android:focusable="false"
+           android:focusableInTouchMode="false"
            android:gravity="left"
            android:linksClickable="true"
            android:text="@string/noEvidence"
-           android:textAppearance="?android:attr/textAppearanceMedium" 
-           android:clickable="false" 
-           android:cursorVisible="false" 
-           android:focusable="false" 
-           android:inputType="textNoSuggestions"
-           android:focusableInTouchMode="false"/>
+           android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </ScrollView>
 
