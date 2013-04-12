@@ -74,14 +74,11 @@ public class HistoricSite{
 	}
 
 	public Bitmap getImg(Context c) {
-		Bitmap image;
 		
 		Resources res = c.getResources();
 		int resID;
 		resID = res.getIdentifier(img, "drawable",c.getPackageName());
-		image = decodeBitmapFromResource(res, resID, 300, 300);
-		
-		return image;
+		return decodeBitmapFromResource(res, resID, 300, 300);
 	}
 
 	public void setImg(String img) {
