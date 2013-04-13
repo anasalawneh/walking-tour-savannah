@@ -13,9 +13,11 @@ import android.widget.TextView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
+import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -48,19 +50,6 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 		goTo = getIntent().getStringExtra("siteName");
 	}
 
-	protected void onStart(Bundle savedInstanceState) {
-		// if the parent is SiteDescription, then center on that site
-		if (goTo != null) {
-			Marker m = markerMap.get(goTo);
-			m.showInfoWindow();
-			map.animateCamera(CameraUpdateFactory.newLatLng(m.getPosition()));
-
-			// else, center the map
-		} else {
-			map.animateCamera(CameraUpdateFactory.newLatLngBounds(bc.build(),
-					30));
-		}
-	}
 
 	private void setUpMapIfNeeded() {
 		// Do a null check to confirm that we have not already instantiated the
@@ -84,6 +73,25 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 					markerMap.put(m.getTitle(), m);
 					bc.include(hs.getLl());
 				}
+				
+				map.setOnCameraChangeListener(new OnCameraChangeListener() {
+
+				    @Override
+				    public void onCameraChange(CameraPosition arg0) {
+				    	// if the parent is SiteDescription, then center on that site
+						if (goTo != null) {
+							Marker m = markerMap.get(goTo);
+							m.showInfoWindow();
+							map.animateCamera(CameraUpdateFactory.newLatLngZoom(m.getPosition(), 16));
+
+							// else, center the map
+						} else {
+							map.animateCamera(CameraUpdateFactory.newLatLngBounds(bc.build(),
+									30));
+						}
+						map.setOnCameraChangeListener(null);
+				    }
+				});
 
 				map.setOnInfoWindowClickListener(new OnInfoWindowClickListener() {
 					@Override
