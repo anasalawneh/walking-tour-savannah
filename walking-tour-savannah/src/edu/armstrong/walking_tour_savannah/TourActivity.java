@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
@@ -94,7 +95,6 @@ public class TourActivity extends Activity {
 			tourListItem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					
 					hs.setIsVisited(true);
 					cb.setChecked(hs.getIsVisited());
 					Intent toursActivityIntent = new Intent(TourActivity.this,

@@ -28,6 +28,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
@@ -68,10 +69,6 @@ public class TitleScreenActivity extends Activity {
 		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
 		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
 
-		TextView armstrongView = (TextView) findViewById(R.id.armstrongView);
-		armstrongView.setTypeface(FontManager
-				.DroidSans(TitleScreenActivity.this));
-
 		// Button definitions
 		btnToursList = (ImageButton) findViewById(R.id.buttonTours);
 		// btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
@@ -94,6 +91,8 @@ public class TitleScreenActivity extends Activity {
 		btnToursList.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), "List of Tours Loading...",
+						Toast.LENGTH_SHORT).show();
 				Intent toursActivityIntent = new Intent(
 						TitleScreenActivity.this, ToursListActivity.class);
 				startActivity(toursActivityIntent);
@@ -105,6 +104,8 @@ public class TitleScreenActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(), "List of Sites Loading...",
+						Toast.LENGTH_SHORT).show();
 				// TODO Auto-generated method stub
 				Intent siteListActivityIntent = new Intent(
 						TitleScreenActivity.this, SiteListActivity.class);
