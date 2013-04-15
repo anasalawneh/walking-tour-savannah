@@ -2,17 +2,15 @@ package edu.armstrong.walking_tour_savannah;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.HistoricSiteManager;
 import edu.armstrong.util.HistoricSite;
@@ -34,7 +32,7 @@ public class SiteListActivity extends Activity {
 	TableLayout tableLayoutSiteList;
 	HistoricSiteManager hsmgr;
 	private HistoricSite hs = null;
-	
+
 	Typeface trashed, droid;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +46,10 @@ public class SiteListActivity extends Activity {
 		 * this adds the tablerows to the tablelayout dynamically, depending on
 		 * the list of sites.
 		 */
-		
+
 		trashed = FontManager.Trashed(SiteListActivity.this);
 		droid = FontManager.DroidSans(SiteListActivity.this);
-		
+
 		for (final HistoricSite hs : hsmgr.getMapOfSites().values()) {
 
 			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
@@ -62,11 +60,10 @@ public class SiteListActivity extends Activity {
 
 			TextView tvName = ((TextView) siteListItem
 					.findViewById(R.id.textViewSiteTableRowName));
-			
 
 			TextView tvDesc = ((TextView) siteListItem
 					.findViewById(R.id.textViewSiteTableRowDesc));
-			
+
 			tvName.setTypeface(trashed);
 			tvDesc.setTypeface(droid);
 
@@ -96,6 +93,8 @@ public class SiteListActivity extends Activity {
 
 				@Override
 				public void onClick(View v) {
+					Toast.makeText(getApplicationContext(), "Site Loading...",
+							Toast.LENGTH_SHORT).show();
 					Intent toursActivityIntent = new Intent(
 							SiteListActivity.this,
 							SiteDescriptionActivity.class);

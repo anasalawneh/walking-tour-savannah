@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.armstrong.manager.FontManager;
 import edu.armstrong.manager.TourManager;
 import edu.armstrong.util.HistoricSite;
@@ -92,6 +93,8 @@ public class ToursListActivity extends Activity {
 			tourListItem.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					Toast.makeText(getApplicationContext(), "Tour Loading...",
+							Toast.LENGTH_SHORT).show();
 					Intent toursActivityIntent = new Intent(
 							ToursListActivity.this, TourActivity.class);
 					toursActivityIntent.putExtra("tour", tour.getTourName());
