@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sites>
+    <!-- 
+    	Flow <site>:
+    	
+    	<name>nameOfSite</name>
+    	<lat>latitude</lat>
+    	<lon>longitude</lon>
+    	<img>main image name</img>
+    	<desc>brief Desc</desc>
+    	<longDesc><![CDATA[some html to markup text]]>
+    	<evImg> name of evidence image </evImg>
+    	<evDesc> description of evidence </evDesc>
+    	... repeat for # of evidence	
+     -->
+    
     <!-- #1 -->
+    <site>
+        <name>Andrew Low House</name>
+        <lat>32.073027</lat>
+        <lon>-81.092484</lon>
+        <img>lowhouse</img>
+        <desc>Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 1840s to present<br/><br/>
+<b>Type of site: Domestic</b><br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	John Norris designed Andrew Low’s house in 1848. Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905. After Mrs. Low’s 1927 death, The National Society of The Colonial Dames of America bought the home from the Gordon family and opened the house as a museum in 1950. Note: The <a href='http://www.andrewlowhouse.com'>Andrew Low House</a> is a museum open to the public. Fees apply for entry and tours.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+	In 2001 when Environmental Services, Inc. (ESI) investigated an area of the southwestern downspout in the dry “moat” that surrounds the Andrew Low house. The excavation was located in the south portion of the moat and uncovered a brick floor approximately one meter below the moat surface (Kratzer 2001). Archeologists also uncovered a portion of a brick arch.In 2005 Brockington and Associates conducted a ground penetrating radar (GPR) survey at the Andrew Low House in an effort to locate archeological features and identify existing drainage patterns (Weaver 2005).
+</p>]]>
+        </longDesc>
+ 		<evImg>lowhouse_ev1</evImg>
+ 		<evDesc>The dry "moat" surrounding the sides of the Andrew Low House</evDesc>
+ 		<evImg>lowhouse_ev2</evImg>
+ 		<evDesc>Detailed ironwork on the windows at the Andrew Low House</evDesc>
+ 	</site>
+    
+    <!--  #2 -->
     <site>
         <name>Battlefield Park</name>
         <lat>32.075611</lat>
@@ -19,7 +58,6 @@
 	Along Martin Luther King Jr. Blvd rises a reconstructed Spring Hill Redoubt, about 3/4ths its original size. A few hundred feet down Louisville Road, a memorial marks the remains of the original Spring Hill Redoubt discovered in 2005 by Coastal Heritage Society archaeologists. Look for plaques around the park that give a detailed history of the battle and a column of stones commemorating the Allies’ casualties.
 </p>]]>
 		</longDesc>
-        <!-- Image followed by description -->
         <evImg>battlefield_ev1</evImg>
         <evDesc>Brass barrel band from a Charleville pistol.</evDesc>
         <evImg>battlefield_ev2</evImg>
@@ -29,8 +67,9 @@
         <evImg>battlefield_ev4</evImg>
         <evDesc>A column of 800 stones memorialize the casualties of the 1779 Battle of Savannah.</evDesc>
  	</site>
-    <!--  #2 -->
-    <site>
+ 	
+    <!-- #3 -->
+ 	<site>
         <name>Central of Georgia Railroad</name>
         <lat>32.075666</lat>
         <lon>-81.09913</lon>
@@ -63,177 +102,39 @@
     	<evImg>central_ev4</evImg>
     	<evDesc>The roundhouse had many bays for quick repairs to rolling stock (train cars). The smokestack from the Blacksmith’s Shop can be seen in the background.</evDesc>
     </site>
-    <!-- #3 -->
+    
+ 	<!-- #4 -->
     <site>
-        <name>Railroad Ward</name>
-        <lat>32.075193</lat>
-        <lon>-81.100342</lon>
-        <img>placeholder</img>
-        <desc>The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.</desc>
-		<longDesc>
-<![CDATA[<b>Time period:</b> 1830s-present<br/><br/>
-<b>Type of site:</b> Domestic<br/><br/>
+        <name>Clusky Embankment Stores</name>
+        <lat>32.080947</lat>
+        <lon>-81.089981</lon>
+        <img>ces</img>
+        <desc>Named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 1840 to present<br/><br/>
+<b>Type of site:</b> Industrial<br/><br/>
 <b>History:</b><br/><br/>
 <p>
-	Savannah is a carefully designed city, divided up into wards. Each ward consists of a central square surrounded by 4 tythings (or 40 town lots) and four Trust Lots for the public good, which often held public buildings. The earliest white, male settlers received a town lot (60x90 ft), a farm south of town (44 acres) and a garden lot west of town (5 acres).
-</p>
-<p>
-	The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.
+	The <a href='http://www.savannahga.gov/index.aspx?NID=1097'>Cluskey Embankment Stores</a> are named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage. The four open Cluskey Embankment Stores were used for parking until historical interest was sparked. A detailed history of the embankments stores is available <a href='http://www.savannahga.gov/index.aspx?NID=1097'>here</a>.
 </p>
 <b>Archaeology:</b><br/><br/>
 <p>
-	Prior to the construction to the Marriott Hotel, archaeologists were able to excavate part of the hotel’s footprint. Many of the residents left behind items from their everyday lives such as toys, plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their dinners. The current Marriott Hotel “cottages” are made to resemble the original Railroad Ward houses.
+	Researchers do not know how the embankments stores were used, so Georgia Southern University archaeologists are currently excavating (Fall 2013).
 </p>]]>
 		</longDesc>
-		<evImg>railward_ev1</evImg>
-		<evDesc>Brick-lined privy excavated at the Railroad Ward</evDesc>
-		<evImg>railward_ev2</evImg>
-		<evDesc>Bone, teeth, and oyster shell found at the site tell us what the residents were eating. Look for the butchery cut marks.</evDesc>
-		<evImg>railward_ev3</evImg>
-		<evDesc>Plate and bowl fragments found on the site.</evDesc>
-		<evImg>railward_ev4</evImg>
-		<evDesc>Personal items recovered include a heating comb for straightening hair, a partial buckle, straight pin, and hook from a hook-and-eye clothing closure.</evDesc>
-		<evImg>railward_ev5</evImg>
-		<evDesc>Many children’s toys were found on site. Clockwise from top left: marble, plate and cup from a doll-size tea set, child-size knife and spoon, and a porcelain doll foot.</evDesc>
+		<evImg>ces_ev1</evImg>
+		<evDesc>Visitors try their hand at screening for artifacts at a Public Day.</evDesc>
+		<evImg>ces_ev2</evImg>
+		<evDesc>A Georgia Southern University archaeologist digs a unit at the entrance to the embankment stores while visitors watch.</evDesc>
+    	<evImg>ces_ev3</evImg>
+    	<evDesc>The interior of a vault.</evDesc>
+    	<evImg>ces_ev4</evImg>
+    	<evDesc>One of the vaults was sealed.</evDesc>
+    	<evImg>ces_ev5</evImg>
+    	<evDesc>The Cluskey Embankment Stores sit directly east of City Hall.</evDesc>
     </site>
-    <!-- #4 -->
-    <site>
-        <name>The Marriott and Liberty Garage</name>
-        <lat>32.074573</lat>
-        <lon>-81.093437</lon>
-        <img>marriottlib</img>
-        <desc>The tragedy of destroying historic dig sites</desc>
-        <longDesc>
-<![CDATA[<b>Time period:</b> Late 1700s-1800s<br/><br/>
-<b>Type of site:</b> Domestic<br/><br/>
-<b>History:</b><br/><br/>
-<p>
-	Most archaeological sites in the United States do not have any legal protection. However, for projects conducted on federal land or projects using federal permits or funding, the National Historic Preservation Act of 1966 (NHPA) requires an archaeological survey to be conducted. If important archaeological sites are found, they are either preserved or (more likely) excavated to recover the data contained in the site. The NHPA covers very few of the development projects in the United States.
-</p>           	
-<b>Archaeology:</b><br/><br/>
-<p>
-	At the southeast corner of Martin Luther King Jr. Blvd and Liberty Street, two projects were conducted under the NHPA. A small brick cellar dating to the earliest decades of the 19 th century was identified prior to the construction of the Marriott hotel.            	
-</p>
-<p>
-	A late-18th and 19th century site was found before the Liberty Street Parking Garage was built. This site was designated 9Ch696. The 9 is for Georgia, Ch for Chatham County, and it is the 696 archaeological site recorded in Chatham County. The 19th century features and building ruins were considered eligible for the National Register of Historic Places, which was created by the NHPA of 1966.
-</p>]]>
-        </longDesc>
-		<evImg>marriottlib_ev1</evImg>
-		<evDesc>The Liberty Street Parking Garage is next to the Marriott on Liberty Street. Enormous buildings like hotels and parking garages require massive earth moving during construction, which destroys archaeology sites.</evDesc>
-	</site>
+    
     <!-- #5 -->
-    <site>
-        <name>Madison Square</name>
-        <lat>32.073575</lat>
-        <lon>-81.093877</lon>
-        <img>madisonsquare</img>
-        <desc>Location of a military ditch dug by British forces in 1779 identified as the West-Central redoubt.</desc>
-		<longDesc>
-<![CDATA[<b>Time period:</b> American Revolution<br/><br/>
-<b>Type of site:</b> Military<br/><br/>
-<b>History:</b><br/><br/>
-<p>
-	Bull Street is one of the first streets in Savannah, bisecting the city north/south. During the American Revolution, this area was the location of two Central Redoubts (small forts) and just inside the fortification was a brick barracks. Shortly before the 1779 battle, the barracks were torn down and the bricks were used to reinforce the fortifications. Sgt. William Jasper’s monument stands in the middle of Madison Square. Sgt. Jasper is pictured just after he climbed the Spring Hill Redoubt and planted the 2nd South Carolina Regiment company’s flag. Notice he is grasping his side. He died that day from his wounds.
-</p>
-<b>Archaeology:</b><br/><br/>
-<p>
-	In 2008, archaeologists discovered a military ditch dug by British forces in 1779. Angling northwest-southeast, this ditch was identified as part of the West-Central redoubt, which was the location of Allies’ feint before real attack at Spring Hill at dawn October 9, 1779.
-</p>
-<p>
-	After the British left Savannah in the summer of 1782, the Americans filled in the ditches, burying many artifacts as well. Brick from the barracks was also found in the ditch. Many of these artifacts tell us about the lives of the soldiers, including how they spent their free time.
-</p>]]>
-		</longDesc>
-        <evImg>maddison_ev1</evImg>
-        <evDesc>Archaeologists excavating in Madison Square.</evDesc>
-        <evImg>maddison_ev2</evImg>
-        <evDesc>Military button found in Madison Square excavation, note the faint “V”.</evDesc>
-       	<evImg>maddison_ev3</evImg>
-    	<evDesc>Guncock from a British Brown Bess musket recovered from the Madison Square excavation.</evDesc>    	    
-    	<evImg>maddison_ev4</evImg>
-    	<evDesc>Looking south into Madison Square from Bull Street. The excavation was in the northeast corner of the square, left side of this picture.</evDesc>
-	</site>
-    <!-- #6 -->
-    <site>
-        <name>Lafayette Square</name>
-        <lat>32.073084</lat>
-        <lon>-81.091912</lon>
-		<img>lafayettesquare</img>
-		<desc>Historical maps suggest this is the location of the East-Central redoubt</desc>
-		<longDesc>
-<![CDATA[<b>Time period:</b> American Revolution<br/><br/>
-<b>Type of site:</b> Military<br/><br/>
-<b>History:</b><br/><br/>
-<p>
-	During the American Revolution, this area was outside of the city. Lafayette Square and the surrounding ward were not developed until the 1840s and 1850s.
-</p>
-<b>Archaeology:</b><br/><br/>
-<p>
-	Historic map analysis suggested that the East-Central Redoubt was located in Lafayette Square, so archaeologists conducted a ground penetrating radar survey and dug several test pits (holes) in the northwest quadrant of the square. Archaeologists found many artifacts from the 1730s to 1770s including a .28 caliber lead ball, some gunflint fragments, and ceramics. Since this area was outside of the town during the Revolutionary War, it is likely these artifacts were used by the soldiers or workers(likely slaves) building the fortifications. Another possibility is that citizens were camped here to avoid the Allies’ bombing.
-</p>
-<p>
-	Later trash deposits were found above the 1700s material and were likely left behind during the completion of War of 1812 defenses and later construction of houses as the town encroached in the 1840s and 1850s. Several Catholic religious medals were lost over the years as well.
-</p>]]>
-		</longDesc>
-		<evImg>lafayette_ev1</evImg>
-		<evDesc>Archaeologists digging, mapping, screening for artifacts, and talking to students from St. Vincent’s Academy in Lafayette Square.</evDesc>
-		<evImg>lafayette_ev2</evImg>
-		<evDesc>The northwest corner of Lafayette Square, looking towards the west.</evDesc>
-	</site>
-    <!-- #7 -->
-    <site>
-        <name>Andrew Low House</name>
-        <lat>32.073027</lat>
-        <lon>-81.092484</lon>
-        <img>lowhouse</img>
-        <desc>Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905.</desc>
-        <longDesc>
-<![CDATA[<b>Time period:</b> 1840s to present<br/><br/>
-<b>Type of site: Domestic</b><br/><br/>
-<b>History:</b><br/><br/>
-<p>
-	John Norris designed Andrew Low’s house in 1848. Andrew Low was an extremely wealthy cotton factor and father-in-law to Girl Scouts Founder Juliette Gordon Low, who inherited the house upon her husband’s death in 1905. After Mrs. Low’s 1927 death, The National Society of The Colonial Dames of America bought the home from the Gordon family and opened the house as a museum in 1950. Note: The <a href='http://www.andrewlowhouse.com'>Andrew Low House</a> is a museum open to the public. Fees apply for entry and tours.
-</p>
-<b>Archaeology:</b><br/><br/>
-<p>
-	In 2001 when Environmental Services, Inc. (ESI) investigated an area of the southwestern downspout in the dry “moat” that surrounds the Andrew Low house. The excavation was located in the south portion of the moat and uncovered a brick floor approximately one meter below the moat surface (Kratzer 2001). Archeologists also uncovered a portion of a brick arch.In 2005 Brockington and Associates conducted a ground penetrating radar (GPR) survey at the Andrew Low House in an effort to locate archeological features and identify existing drainage patterns (Weaver 2005).
-</p>]]>
-        </longDesc>
- 		<evImg>lowhouse_ev1</evImg>
- 		<evDesc>The dry "moat" surrounding the sides of the Andrew Low House</evDesc>
- 		<evImg>lowhouse_ev2</evImg>
- 		<evDesc>Detailed ironwork on the windows at the Andrew Low House</evDesc>
- 	</site>
-    <!-- #8 -->
-    <site>
-        <name>Owens Thomas House</name>
-        <lat>32.077314</lat>
-        <lon>-81.089668</lon>
-        <img>thomashouse</img>
-        <desc>A lot with rich history and many archaeological digs that is currently a part of the Telfair Academy</desc>
-        <longDesc>
-<![CDATA[<b>Time period:</b> 1700s to present<br/><br/>
-<b>Type of site:</b> Domestic<br/><br/>
-<b>History:</b><br/><br/>
-<p>
-	Royal surveyor William DeBraham built his 1760 house on the lot currently occupied by the Owens-Thomas House. In 1816, Richard Richardson bought the lot and hired architect William Jay build the existing house, carriage house, and slave quarters. Richardson sold the house in 1822, and Mary Maxwell operated a boarding house for several years, entertaining guests such as the Marquis de Lafayette during his 1825 American tour. George Welschman Owens bought the property in 1830, and it remained with his heirs until 1951, when the family donated it to the Telfair Academy.
-</p>
-<b>Archaeology:</b><br/><br/>
-<p>
-	Many archaeological digs have taken place at the Owens-Thomas House. Starting in 1965, J. Everette Fauber dug in the southwest basement rooms. Staff were told Boy Scouts dug on the property at one time, but, if so, there is no documentation and no artifacts were saved. The Coastal Georgia Archaeological Society dug approximately 300 square feet, finding artifacts from the 1700s DeBraham occupation.
-</p>
-<p>
-	The Chicora Foundation’s 1993 excavation was focused on the architecture of the carriage house and slave quarters and the nature of urban slave life. The archaeologists found surprisingly many clothing and personal items, showing that slaves had access to more material goods and suggesting urban slaves had more control over their lives than rural slaves. Archaeologists also found many plates, rather than bowls. Bowls are often found on slaves sites because slaves usually made slow-cooking soups and stews that can be started in the morning and simmered all day, breaking down poor, tough cuts of meat. The presence of more plates may suggest a diet of less soups and more "meat-and sides". Archaeologists could not determine if the plates were purchased by the slaves or were hand-me-downs from the main house.
-</p>
-<p>
-<b>Note:</b> The <a href='http://telfair.org/owens-thomas'>Owens-Thomas House</a> is a museum open to the public. Fees apply for entry and tours.
-</p>]]>
-		</longDesc>
-    	<evImg>thomashouse_ev1</evImg>
-    	<evDesc>The carriage house and slave quarters for the Owens-Thomas House.</evDesc>
-    	<evImg>thomashouse_ev2</evImg>
-    	<evDesc>The southern side of the Owens-Thomas House. The white, cast-iron balcony is where the Marquis de Lafayette gave a speech during his tour of America in 1825. The Marquis de Lafayette was a general and important French ally during in the American Revolution.</evDesc>
-    </site>
-    <!-- #9 -->
     <site>
         <name>Colonial Cemetery</name>
         <lat>32.076011</lat>
@@ -276,7 +177,47 @@
     	<evImg>colcemetery_ev7</evImg>
     	<evDesc>The southeastern portion of Colonial Park Cemetery.</evDesc>   
     </site>
-    <!-- #10 -->
+    
+    <!-- #6 -->
+    <site>
+        <name>CSS Georgia</name>
+        <lat>32.083429</lat>
+        <lon>-81.035757</lon>
+        <img>placeholder</img>
+        <desc>The second major public cemetery of Savannah established in 1750</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> Civil War<br/><br/>
+<b>Type of site:</b> Military<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     The CSS Georgia was built at Harding’s Shipyard on Savannah’s eastern edge. Built with money raised by the Ladies Gunboat Association, the CSS Georgia was floating opposite Fort Jackson by late October 1862. The vessel was one of the new ironclads, ships with a low profile, shallow draught, and protective iron plating over every inch that rose above the water. While plate iron was the preferred material for ironcladding, none was available for the Georgia, so local railroad tracks were interlocked over the surface of the vessel.
+</p>
+<p>
+     There is very little historical information about the design and construction of the CSS Georgia, which makes the archaeological evidence invaluable. Reports vary the vessel’s length between 150 and 250 feet. We also know the Georgia was seriously underpowered and had a top speed of two knots under full steam. This was inadequate to even fight the Savannah River tides and currents. So the ship was anchored off Fort Jackson as a floating battery with guns aimed downstream. The engine ran continuously to bail water because the Georgia leaked terribly. As Union General Sherman’s forces approached Savannah, the Georgia was scuttled and sunk on December 20, 1864.
+</p> 
+<p>
+     In 1868, Henry Welles dynamited the ship, and 80 tons of iron was recovered and sold through a contract with the Treasury Department. The Georgia was forgotten again until 1968 when dredge operations “rediscovered” the vessel.
+</p> 
+<b>Archaeology:</b><br/><br/>
+<p>
+     Texas A&M University conducted an archaeological and engineering assessment in 1979, after four separate dredging operations had impacted the Georgia. They found a site 300 by 150 feet that was elevated seven to nine feet above the river bottom. Sections of armor plate, hull, and deck areas appeared intact, and the site had good artifact preservation. Two cannons were removed: a 32-pounder reworked as a rifled gun and a 24-pounder howitzer. Brooke projectiles, percussion fuses, and spherical shot were also recovered and preserved. Many of these objects are now on display at the Savannah History Museum.
+</p>
+<p>
+     A second site assessment was conducted in 2003 because of proposed harbor deepening and dredging activities that will destroy the site. This survey found the remains are very limited: two large and one small section of iron casemate, a propeller and shaft, three cannon, a possible boiler, and miscellaneous artifacts. The lower hull is entirely gone.  Dredging operations have cut into the site, removing the surrounding sediments that protected the vessel.
+</p>
+<p>
+     Based on this latest data, archaeologists estimate the CSS Georgia was 120 by 44 feet with an unknown type of hull, but likely similar to the CSS Louisiana, CSS Jackson, or CSS Neuse. The Georgia probably had six cannons: two cannons have been recovered, three are mapped near the wreck, leaving one more to be discovered. Archaeologists are recommending a full archaeological excavation and data recovery.
+</p> ]]>
+		</longDesc>
+    	<evImg>cssga_ev1</evImg>
+    	<evDesc>Ironstone serving bowl recovered from the CSS Georgia, on display at the Savannah History Museum</evDesc>
+    	<evImg>cssga_ev2</evImg>
+    	<evDesc>Artifacts recovered from the CSS Georgia in 1980, clockwise from top left: Carpenter’s adze; bearing plate, threaded bolt, and nut from a vessel timber; iron spike and cap (not conserved); iron leg shackles used to punish crew.</evDesc>
+    	<evImg>cssga_ev3</evImg>
+    	<evDesc>The view from Old Fort Jackson upriver towards Savannah. The CSS Georgia lies on the riverbed just northwest of the fort.</evDesc>   
+    </site>
+    
+    <!-- #6 -->
     <site>
         <name>Emmet Park</name>
         <lat>32.079447</lat>
@@ -307,34 +248,408 @@
     	<evImg>emmet_ev2</evImg>
     	<evDesc>Close-up of artifacts in the screen from digging a shovel test pit. The oyster shell was left by Native Americans living here. </evDesc>
     </site>
-    <!-- #11 -->
+    
+    <!-- #7 -->
     <site>
-        <name>Clusky Embankment Stores</name>
-        <lat>32.080947</lat>
-        <lon>-81.089981</lon>
-        <img>ces</img>
-        <desc>Named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage. A detailed history of the embankments stores is available <a href="http://www.savannahga.gov/index.aspx?NID=1097">here</a>.</desc>
-        <longDesc>
-<![CDATA[<b>Time period:</b> 1840 to present<br/><br/>
-<b>Type of site:</b> Industrial<br/><br/>
+        <name>Fahm Street</name>
+        <lat>32.078288</lat>
+        <lon>-81.10137</lon>
+        <img>placeholder</img>
+        <desc>The extension of Savannah's borders that came to house industrial expansion of the Central Railroad of Georgia.</desc>
+ 		<longDesc>
+<![CDATA[<b>Time period:</b> Late 1700s to 1900s<br/><br/>
+<b>Type of site:</b> Domestic, Industrial<br/><br/>
 <b>History:</b><br/><br/>
 <p>
-	The <a href='http://www.savannahga.gov/index.aspx?NID=1097'>Cluskey Embankment Stores</a> are named after architect Charles B. Cluskey, who designed a retaining wall four brick arched vaults for storage. The four open Cluskey Embankment Stores were used for parking until historical interest was sparked. A detailed history of the embankments stores is available <a href='http://www.savannahga.gov/index.aspx?NID=1097'>here</a>.
+     The City of Savannah wanted to extend Fahm Street, which then ended at Hull Street (now Turner Boulevard). Since the City was using federal funding, the National Historic Preservation Act required that the federal funding agency (in this case the Department of Housing and Urban Development) and City protect the National Historic Landmark District.
+</p>
+<p>
+     In the late eighteenth century and early nineteenth century, this area of Savannah was “New Leeds”, an early community on the western side of Savannah. The site had light industry (mostly tanning and shoe making) and houses for the workers. In the mid-1800s, the Central Railroad of Georgia started to dominate the area, constructing a Passenger Depot, cotton warehouse, and offices that front Martin Luther King Jr. Blvd.
+</p> 
+<b>Archaeology:</b><br/><br/>
+<p>
+     The 1984 archaeological investigation found the buried, former ground surface where people were living in the late eighteenth and early nineteenth centuries. Backhoes removed large amounts of recent soil, revealing a rock foundation, burned layer, and a rich midden zone (trash pits).
+</p>
+<p>
+     Archaeologists found differences between people living in the core of Savannah and here at the edge of town. The animal bones show Savannahians had a similar diet to other urbanites along the Southeastern coast, with a heavy emphasis on beef. However people in New Leeds were eating much more goat and sheep than their coastal, urban contemporaries. Historic research revealed that a number of bootmakers and tanners had lived in the site area. Archaeologists identified John Gardiner, a shoemaker and tanner, who owned his lot and lived on site. It is rare that archaeologists are able to directly connect an individual to the artifacts they leave behind!
+</p> ]]>
+		</longDesc>   
+    </site>
+    
+    <!-- #7 -->
+    <site>
+        <name>Fort Stewart</name>
+        <lat>31.88</lat>
+        <lon>-81.6075</lon>
+        <img>placeholder</img>
+        <desc>Fort Stewart (originally Camp Stewart) was created in June 1940, just before World War II on 5,000 acres southwest of Savannah, GA.</desc>
+ 		<longDesc>
+<![CDATA[<b>Time period:</b> Late 1700s to 1900s<br/><br/>
+<b>Type of site:</b> Domestic, Industrial<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     Fort Stewart (originally Camp Stewart) was created in June 1940, just before World War II on 5,000 acres southwest of Savannah, GA. Today Fort Stewart is over 280,000 acres. Named after Brigadier General Daniel Stewart, an American Revolutionary from Liberty County and the great grandfather of Theodore Roosevelt, Camp Stewart was used as a Nation Guard Training camp after World War II. Camp Stewart was renamed Fort Stewart and became a permanent military installation in 1956.
+</p>
+<b>Archaeology:</b><br/><br/>   
+<p>
+     The most significant prehistoric Native American site on Fort Stewart is Lewis Mound, an Indian burial mound, dating from 2200 to 1700 BC during the Late Archaic. This site was occupied occasionally through 1000 AD, during the Woodland Period. Native American would have stayed briefly to hunt or gather plants.
+</p>
+<p>
+      Lewis Mound itself was constructed around 1200 to 1300 AD to bury and commemorate a respected leader during the Savannah Period. Many similar Mississippian-era mounds were excavated in the 1930s in Chatham County.  There are also three contemporary sites near Lewis Mound. This area was probably home to a chief and a seasonal home to the Native Americans practicing slash and burn cultivation from the late spring into the fall. During the winter and early spring, the group would move to the coast to fish and gather shellfish.
+</p>
+<p>
+     Georgia founder James Oglethorpe established a number of military outposts and settlements surrounding Savannah, including Fort Argyle, the first known European settlement on Fort Stewart. The fort was occupied sporadically until 1767. Archaeologists found evidence of the fort’s location including a palisade ditch, a moat, two corner bastions, and several buildings. Small gunflints and lead balls .60 caliber and smaller were found showing that Rangers guarding the fort were issued pistols and carbines rather than larger muskets like the British regulars.
+</p>
+<p>
+     Also on Fort Stewart is the 14-acre Taylors Creek Camp Ground, a Methodist camp meeting place from 1819 to 1941. The campground consisted of the Tabernacle, a large building for church services, surrounded by cabins with clay-lined hearths, chimneys, and a small kitchen in the rear. Recent excavations at Taylors Creek Campground found artifacts dating from 1800 to 1850. 
+</p>
+<p>
+     See some of the recovered artifacts at the <a href='http://tinyurl.com/crkrzat'>Fort Stewart Online Museum</a>
+</p>]]>
+		</longDesc>   
+    </site>
+    
+    <!-- #7 -->
+     <site>
+        <name>HAAF</name>
+        <lat>32.011112</lat>
+        <lon>-81.145836</lon>
+       	<img>placeholder</img>
+        <desc>In September 1929, a municipal airport was opened on 730 acres that is now Hunter Army Airfield.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 500 BC - present<br/><br/>
+<b>Type of site:</b> Native American, Rural Farmsteads, Cemeteries<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     This area was sparsely populated until the 1920s. In September 1929, a municipal airport was opened on 730 acres that is now Hunter Army Airfield. Dubbed the Savannah Airport in 1930, by 1932, it was already the Hunter Airfield/Savannah Airport. The Works Progress Administration built a hangar, three runways, and an administration building in 1935. After World War II, the base was briefly inactive but became a permanent base in 1950. 
 </p>
 <b>Archaeology:</b><br/><br/>
 <p>
-	Researchers do not know how the embankments stores were used, so Georgia Southern University archaeologists are currently excavating (Fall 2013).
+     Many people do not realize that archaeologists work on military bases! Section 109 of the National Historic Preservation Act states that all federal land must be surveyed for historic resources. Hunter Army Airfield and Fort Stewart have a combined team of archaeologists and preservationists.
+</p>
+<p>
+     The initial 1984 survey of Hunter Army Airfield found 2 prehistoric sites, 6 historic sites, and one site containing both prehistoric and historic component. Today, there are approximately 4,000 known sites on both “Hunter”, as the base is known locally, and Fort Stewart, Hunter’s larger neighbor. The initial 9 sites are representative of the types of sites found on the base: a Native American, Deptford Period (500 BC-700 AD) campsite, a Savannah Period (1000-1400 AD) shellfish gathering camp, and small rural farmsteads operated by tenant farmers (circa 1775-1850 AD).
+</p>
+<p>
+     Recently, archaeologists excavated two African American cemeteries eligible for listing on the National Register. Both cemeteries date from the 1880s to 1910s. Approximately 400 individuals were excavated, analyzed, and reburied with input from the local community. A full listing of cemeteries on Hunter and Fort Stewart are available <a href='http://tinyurl.com/clf3nra'>here</a>
+</p> ]]>
+		</longDesc>
+    </site>
+    
+    <!-- #7 -->
+    <site>
+        <name>Jewish Cemeteries</name>
+        <lat>32.072502</lat>
+        <lon>-81.103091</lon>
+       	<img>placeholder</img>
+        <desc>The site of Fort Prevost and Fort Wayne due to strategic position over the Savannah River</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> early 1700s, American Revolution<br/><br/>
+<b>Type of site:</b> Cemetery, Military<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     Five months after James Oglethorpe founded Savannah, the first Jewish colonists arrived in Georgia. Amongst these colonists was a doctor, Samuel Nunes, whose help was invaluable later during a yellow fever epidemic.
+</p>
+<p>
+     The smaller Jewish Cemetery is the Levi Sheftall family plot, which was in use by 1765. The larger Jewish Cemetery, approximately 180 feet to the south, was created in 1770 by Mordecai Sheftall, Levi’s older half brother, who donated 1.5 acres of his garden lot for use as community cemetery.
+</p>
+<p>
+     During the 1779 Battle of Spring Hill, the Haitian reserve troops waited at the Jewish Cemeteries (south of Spring Hill Redoubt and outside of town). As the Americans and their allies retreated in chaos, the Haitian reserve proved invaluable, and the British did not pursue the retreating rebels.
+</p>
+<p>
+     After the war, this area was developed, extensively so in the later 1800s. Housing, railroad development, and a large cotton mill were located directly west of the cemeteries.
+</p> 
+<b>Archaeology:</b><br/><br/>
+<p>
+     The Levi Sheftall Cemetery was the subject of archaeological investigation in 1990. No graves were excavated, but accumulated soil around the headstones was excavated, and the cemetery was mapped. Lots of children’s marbles were found as well as bullets. The bullets ranged from 18th century lead musket balls to a modern .45 caliber automatic.
+</p>
+<p>
+     Today the cemeteries sit behind Esther Garrison Elementary School. Heavy excavation equipment was used in constructing the school and surrounding playgrounds. Archaeologists working in 2010 found that these areas have been scraped clean of archaeological evidence.  Areas of higher elevation did have soil layers from the domestic and industrial period after the 1779 Battle of Savannah. Archaeologists also interviewed several relic collectors who collected artifacts during the school’s construction. They found extensive Revolutionary War-era materials including cannon balls, lead balls (bullets), and gunflints.
+</p>
+<p>
+     Archaeologists believe (and hope!) the high elevation areas may still contain a very deeply buried Revolutionary War layer, which could tell the Haitian Reserve soldier’s story. However, much of the site has been destroyed.
 </p>]]>
 		</longDesc>
-		<evImg>ces_ev1</evImg>
-		<evDesc>Visitors try their hand at screening for artifacts at a Public Day.</evDesc>
-		<evImg>ces_ev2</evImg>
-		<evDesc>A Georgia Southern University archaeologist digs a unit at the entrance to the embankment stores while visitors watch.</evDesc>
-    	<evImg>ces_ev3</evImg>
-    	<evDesc>The interior of a vault.</evDesc>
-    	<evImg>ces_ev4</evImg>
-    	<evDesc>One of the vaults were sealed.</evDesc>
-    	<evImg>ces_ev5</evImg>
-    	<evDesc>The Cluskey Embankment Stores sit directly east of City Hall.</evDesc>
+        <evImg>jewishcem_ev1</evImg>
+        <evDesc>Mordecai Sheftall cemetery</evDesc>
+    	<evImg>jewishcem_ev2</evImg>
+        <evDesc>Levi Sheftall cemetery</evDesc>
+    	<evImg>jewishcem_ev3</evImg>
+        <evDesc>Archaeologists conduct a systematic metal detector survey near the Jewish Cemeteries.</evDesc>
+    	<evImg>jewishcem_ev4</evImg>
+        <evDesc>Just because Revolutionary War artifacts weren’t found, doesn’t mean that fun artifacts weren’t found.</evDesc>
+    	<evImg>jewishcem_ev5</evImg>
+        <evDesc>All metal detector finds are mapped using a laser transit. All excavations and ground penetrating radar survey areas are also mapped.</evDesc>
+    	<evImg>jewishcem_ev6</evImg>
+        <evDesc>Conducting a ground penetrating radar survey with the larger cemetery in the background.</evDesc>
+    	<evImg>jewishcem_ev7</evImg>
+        <evDesc>Digging shovel test pits near the Jewish Cemeteries. Archaeologists use shovel test pits to sample an area and search for archaeological sites. All soil is put through a screen to find artifacts, and the soil examined for cultural features.</evDesc>
+    	<evImg>jewishcem_ev8</evImg>
+        <evDesc>Decorative gate on the Levi Sheftall cemetery</evDesc>
     </site>
+    
+    
+    <!-- #7 -->
+    <site>
+        <name>Lafayette Square</name>
+        <lat>32.073084</lat>
+        <lon>-81.091912</lon>
+		<img>lafayettesquare</img>
+		<desc>Historical maps suggest this is the location of the East-Central redoubt</desc>
+		<longDesc>
+<![CDATA[<b>Time period:</b> American Revolution<br/><br/>
+<b>Type of site:</b> Military<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	During the American Revolution, this area was outside of the city. Lafayette Square and the surrounding ward were not developed until the 1840s and 1850s.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+	Historic map analysis suggested that the East-Central Redoubt was located in Lafayette Square, so archaeologists conducted a ground penetrating radar survey and dug several test pits (holes) in the northwest quadrant of the square. Archaeologists found many artifacts from the 1730s to 1770s including a .28 caliber lead ball, some gunflint fragments, and ceramics. Since this area was outside of the town during the Revolutionary War, it is likely these artifacts were used by the soldiers or workers(likely slaves) building the fortifications. Another possibility is that citizens were camped here to avoid the Allies’ bombing.
+</p>
+<p>
+	Later trash deposits were found above the 1700s material and were likely left behind during the completion of War of 1812 defenses and later construction of houses as the town encroached in the 1840s and 1850s. Several Catholic religious medals were lost over the years as well.
+</p>]]>
+		</longDesc>
+		<evImg>lafayette_ev1</evImg>
+		<evDesc>Archaeologists digging, mapping, screening for artifacts, and talking to students from St. Vincent’s Academy in Lafayette Square.</evDesc>
+		<evImg>lafayette_ev2</evImg>
+		<evDesc>The northwest corner of Lafayette Square, looking towards the west.</evDesc>
+	</site>
+	    
+    <!-- #8 -->
+    <site>
+        <name>Madison Square</name>
+        <lat>32.073575</lat>
+        <lon>-81.093877</lon>
+        <img>madisonsquare</img>
+        <desc>Location of a military ditch dug by British forces in 1779 identified as the West-Central redoubt.</desc>
+		<longDesc>
+<![CDATA[<b>Time period:</b> American Revolution<br/><br/>
+<b>Type of site:</b> Military<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	Bull Street is one of the first streets in Savannah, bisecting the city north/south. During the American Revolution, this area was the location of two Central Redoubts (small forts) and just inside the fortification was a brick barracks. Shortly before the 1779 battle, the barracks were torn down and the bricks were used to reinforce the fortifications. Sgt. William Jasper’s monument stands in the middle of Madison Square. Sgt. Jasper is pictured just after he climbed the Spring Hill Redoubt and planted the 2nd South Carolina Regiment company’s flag. Notice he is grasping his side. He died that day from his wounds.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+	In 2008, archaeologists discovered a military ditch dug by British forces in 1779. Angling northwest-southeast, this ditch was identified as part of the West-Central redoubt, which was the location of Allies’ feint before real attack at Spring Hill at dawn October 9, 1779.
+</p>
+<p>
+	After the British left Savannah in the summer of 1782, the Americans filled in the ditches, burying many artifacts as well. Brick from the barracks was also found in the ditch. Many of these artifacts tell us about the lives of the soldiers, including how they spent their free time.
+</p>]]>
+		</longDesc>
+        <evImg>maddison_ev1</evImg>
+        <evDesc>Archaeologists excavating in Madison Square.</evDesc>
+        <evImg>maddison_ev2</evImg>
+        <evDesc>Military button found in Madison Square excavation, note the faint “V”.</evDesc>
+       	<evImg>maddison_ev3</evImg>
+    	<evDesc>Guncock from a British Brown Bess musket recovered from the Madison Square excavation.</evDesc>    	    
+    	<evImg>maddison_ev4</evImg>
+    	<evDesc>Looking south into Madison Square from Bull Street. The excavation was in the northeast corner of the square, left side of this picture.</evDesc>
+	</site>
+	
+    <!-- #9 -->
+    <site>
+        <name>Owens Thomas House</name>
+        <lat>32.077314</lat>
+        <lon>-81.089668</lon>
+        <img>thomashouse</img>
+        <desc>A lot with rich history and many archaeological digs that is currently a part of the Telfair Academy</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 1700s to present<br/><br/>
+<b>Type of site:</b> Domestic<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	Royal surveyor William DeBraham built his 1760 house on the lot currently occupied by the Owens-Thomas House. In 1816, Richard Richardson bought the lot and hired architect William Jay build the existing house, carriage house, and slave quarters. Richardson sold the house in 1822, and Mary Maxwell operated a boarding house for several years, entertaining guests such as the Marquis de Lafayette during his 1825 American tour. George Welschman Owens bought the property in 1830, and it remained with his heirs until 1951, when the family donated it to the Telfair Academy.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+	Many archaeological digs have taken place at the Owens-Thomas House. Starting in 1965, J. Everette Fauber dug in the southwest basement rooms. Staff were told Boy Scouts dug on the property at one time, but, if so, there is no documentation and no artifacts were saved. The Coastal Georgia Archaeological Society dug approximately 300 square feet, finding artifacts from the 1700s DeBraham occupation.
+</p>
+<p>
+	The Chicora Foundation’s 1993 excavation was focused on the architecture of the carriage house and slave quarters and the nature of urban slave life. The archaeologists found surprisingly many clothing and personal items, showing that slaves had access to more material goods and suggesting urban slaves had more control over their lives than rural slaves. Archaeologists also found many plates, rather than bowls. Bowls are often found on slaves sites because slaves usually made slow-cooking soups and stews that can be started in the morning and simmered all day, breaking down poor, tough cuts of meat. The presence of more plates may suggest a diet of less soups and more "meat-and sides". Archaeologists could not determine if the plates were purchased by the slaves or were hand-me-downs from the main house.
+</p>
+<p>
+<b>Note:</b> The <a href='http://telfair.org/owens-thomas'>Owens-Thomas House</a> is a museum open to the public. Fees apply for entry and tours.
+</p>]]>
+		</longDesc>
+    	<evImg>thomashouse_ev1</evImg>
+    	<evDesc>The carriage house and slave quarters for the Owens-Thomas House.</evDesc>
+    	<evImg>thomashouse_ev2</evImg>
+    	<evDesc>The southern side of the Owens-Thomas House. The white, cast-iron balcony is where the Marquis de Lafayette gave a speech during his tour of America in 1825. The Marquis de Lafayette was a general and important French ally during in the American Revolution.</evDesc>
+    </site>
+    
+    <!-- #10 -->
+    <site>
+        <name>The Marriott and Liberty Garage</name>
+        <lat>32.074573</lat>
+        <lon>-81.093437</lon>
+        <img>marriottlib</img>
+        <desc>The tragedy of destroying historic dig sites</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> Late 1700s-1800s<br/><br/>
+<b>Type of site:</b> Domestic<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	Most archaeological sites in the United States do not have any legal protection. However, for projects conducted on federal land or projects using federal permits or funding, the National Historic Preservation Act of 1966 (NHPA) requires an archaeological survey to be conducted. If important archaeological sites are found, they are either preserved or (more likely) excavated to recover the data contained in the site. The NHPA covers very few of the development projects in the United States.
+</p>           	
+<b>Archaeology:</b><br/><br/>
+<p>
+	At the southeast corner of Martin Luther King Jr. Blvd and Liberty Street, two projects were conducted under the NHPA. A small brick cellar dating to the earliest decades of the 19 th century was identified prior to the construction of the Marriott hotel.            	
+</p>
+<p>
+	A late-18th and 19th century site was found before the Liberty Street Parking Garage was built. This site was designated 9Ch696. The 9 is for Georgia, Ch for Chatham County, and it is the 696 archaeological site recorded in Chatham County. The 19th century features and building ruins were considered eligible for the National Register of Historic Places, which was created by the NHPA of 1966.
+</p>]]>
+        </longDesc>
+		<evImg>marriottlib_ev1</evImg>
+		<evDesc>The Liberty Street Parking Garage is next to the Marriott on Liberty Street. Enormous buildings like hotels and parking garages require massive earth moving during construction, which destroys archaeology sites.</evDesc>
+	</site>
+	
+    <!-- #11 -->
+    <site>
+        <name>Railroad Ward</name>
+        <lat>32.075193</lat>
+        <lon>-81.100342</lon>
+        <img>railroadward</img>
+        <desc>The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.</desc>
+		<longDesc>
+<![CDATA[<b>Time period:</b> 1830s-present<br/><br/>
+<b>Type of site:</b> Domestic<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	Savannah is a carefully designed city, divided up into wards. Each ward consists of a central square surrounded by 4 tythings (or 40 town lots) and four Trust Lots for the public good, which often held public buildings. The earliest white, male settlers received a town lot (60x90 ft), a farm south of town (44 acres) and a garden lot west of town (5 acres).
+</p>
+<p>
+	The Railroad Ward is bounded by MLK Jr. Boulevard and West Harris, Purse, and Charlton streets. From the 1830s, the ward held small houses often owned or rented by people working at the adjacent Central of Georgia and their families.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+	Prior to the construction to the Marriott Hotel, archaeologists were able to excavate part of the hotel’s footprint. Many of the residents left behind items from their everyday lives such as toys, plates, bowls, tea pots, bathroom tiles, buttons, and animal bones from their dinners. The current Marriott Hotel “cottages” are made to resemble the original Railroad Ward houses.
+</p>]]>
+		</longDesc>
+		<evImg>railward_ev1</evImg>
+		<evDesc>Brick-lined privy excavated at the Railroad Ward</evDesc>
+		<evImg>railward_ev2</evImg>
+		<evDesc>Bone, teeth, and oyster shell found at the site tell us what the residents were eating. Look for the butchery cut marks.</evDesc>
+		<evImg>railward_ev3</evImg>
+		<evDesc>Plate and bowl fragments found on the site.</evDesc>
+		<evImg>railward_ev4</evImg>
+		<evDesc>Personal items recovered include a heating comb for straightening hair, a partial buckle, straight pin, and hook from a hook-and-eye clothing closure.</evDesc>
+		<evImg>railward_ev5</evImg>
+		<evDesc>Many children’s toys were found on site. Clockwise from top left: marble, plate and cup from a doll-size tea set, child-size knife and spoon, and a porcelain doll foot.</evDesc>
+    </site>
+    
+    <!-- #12 -->
+    <site>
+        <name>Railroad Ward House</name>
+        <lat>32.07487</lat>
+        <lon>-81.101174</lon>
+        <img>placeholder</img>
+        <desc>Prior to its development as the Railroad Ward, this area was part of Garden Lots 9 and 10, as established by James Oglethorpe, founder of Georgia.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 1830 to present<br/><br/>
+<b>Type of site:</b> Domestic<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	Prior to its development as the Railroad Ward, this area was part of Garden Lots 9 and 10, as established by James Oglethorpe, founder of Georgia. Each of the original settlers received a town lot on which to build a home, a garden lot for producing food on the outskirts of town, and an outlying farm lot of 45 acres.
+</p>
+<p>
+	In the early 1880s, several factors led to a big expansion of the Railroad Ward’s residential section. The post-Reconstruction economy was finally booming, and the railroad was doing well financially. An 1883 fire devastated the nearby Yamacraw Ward, and many of its residents relocated to the Railroad Ward. There is very little historical information available on the Railroad Ward residents, making the archaeology invaluable.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+     In 2008, Coastal Heritage Society purchased the two of the remaining original houses in Savannah’s Railroad Ward to prevent their demolition. As part of the purchase agreement, one house was moved to an adjacent lot. Prior to the move, archaeologists excavated small, backyard trash pits and one privy, or outhouse, all dating to the late nineteenth and early twentieth century when the neighborhood was mostly working class families, including Central of Georgia employees.
+</p> 
+<p>
+     The excellent faunal preservation hints at a varied diet; egg shells, animal bones, fish bones, oyster shells, and crab shells were all found. There is ample evidence for children living here: slate pencils, ceramic and glass marbles, toy jacks, a child’s ring, and a miniature porcelain teapot were discovered.
+</p>
+<p>
+     It is the personal artifacts found on this site that most speak to the people’s lives. Archaeologists recovered many clothing and personal grooming artifacts (buckles; a hook from a hook and eye; clothing rivets; part of a shoe heel; a pocketknife; and buttons made of porcelain, bone, shell, rubber, glass, and metal). Fragments of Bakelite combs and a jar that contained Dixie Peach Hair Pomade show how these residents liked to style their hair. Several fragments of mirror glass in different thicknesses were also found. A round pendant, probably from a necklace, and many tobacco pipe fragments were uncovered. Only one bottle was identifiable as a medicine bottle, embossed with Masonic Temple Pharmacy in Savannah.
+</p>]]>
+		</longDesc>
+		<evImg>railwardhouse_ev1</evImg>
+		<evDesc>Utilitarian metal buttons and clothing rivets that have snagged some fabric contrast with a child’s porcelain tea pot.</evDesc>
+		<evImg>railwardhouse_ev2</evImg>
+		<evDesc>A teaspoon, shoe heel fragment, and pocketknife (from top to bottom).</evDesc>
+    	<evImg>railwardhouse_ev3</evImg>
+    	<evDesc>Railroad Ward artifacts clockwise from top left: Small fragments of plates, a tobacco pipe bowl missing its stem, a thimble, bone and glass buttons, and a pendant (perhaps for a necklace?)</evDesc>
+    	<evImg>railwardhouse_ev4</evImg>
+    	<evDesc>The privy, or outhouse, with the southern half excavated. After photographing and mapping the profile, or vertical wall, the second half was also excavated.</evDesc>
+    	<evImg>railwardhouse_ev5</evImg>
+    	<evDesc>A small plate as it is being excavated from its trash pit. The two pieces cross-mend, or fit together.</evDesc>
+    </site>
+    
+    <!-- #13 -->
+    <site>
+        <name>Riverfront Hotel</name>
+        <lat>32.083541</lat>
+        <lon>-81.099834</lon>
+        <img>placeholder</img>
+        <desc>A shipyard, cotton press and warehouse, saw mill, and iron foundry are some of the businesses that operated here.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> 1830s-1930s<br/><br/>
+<b>Type of site:</b> Industrial<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     In the 1830s and 1840s, Savannah’s eastern riverfront was developed into wharves and a bustling commercial area. A shipyard, cotton press and warehouse, saw mill, and iron foundry are some of the businesses that operated here. In the late 1880s, the railroads connected to the area allowing for greater volume of commerce. 
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+     Prior to the hotel construction, archaeology was conducted. Circa World War I-era shipways and a dock were found as well as a late 1920s/early 1930s vessel. The vessel was possibly a large harbor tug. The finds were under a great deal of modern fill, and although much archaeological material was found, nothing “significant”, or eligible for the National Register of Historic Places, was found. 
+</p> 
+]]>
+		</longDesc>
+	</site>
+    
+    <!-- #13 -->
+    <site>
+        <name>Wormsloe</name>
+        <lat>31.980356</lat>
+        <lon>-81.06894</lon>
+        <img>wormsloe</img>
+        <desc>Wormsloe is best known as Noble Jones’ 500 acre colonial plantation on the Isle of Hope, but Native American occupied the area long before colonization.</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> Native American, Colonial, Civil War<br/><br/>
+<b>Type of site:</b> Domestic, Military<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+     Wormsloe is best known as Noble Jones’ 500 acre colonial plantation on the Isle of Hope, but Native American occupied the area long before colonization. Creek Indians lived along the coast during the Mississippian Period (1,100-500 years before present) taking advantage of the delicious, rich coastal resources such as oyster and crabs.
+</p>
+<p>
+     A doctor, carpenter, and surveyor, Noble Jones (1702-1775) was among the Georgia colonists who arrived with James Oglethorpe, the founder of Georgia. Jones played many roles in Georgia’s early history including constable, surveyor, soldier, Royal Councilor, Justice of the Province, and more.  Jones’ son, Noble W. Jones, was a member of the Second Continental Congress and the Georgia House of Assembly.
+</p>
+<p>
+     On his plantation, Wormsloe, Jones had corn, potatoes, rice, oranges, figs, peaches, and mulberry trees (for silk worms), as well as cattle. The house complex was started in 1737 and took six years to build. The five-room, 1 ½ story house was large for its time, but tiny by today’s standards. Eight-foot high walls surrounded the house and courtyard area with bastions (diamond-shaped points) at each corner. The walls were meant to protect the family from the Spanish during the War of Jenkins’ Ear (1739-1748).  A separate cellar and water well were also in the enclosure.
+</p>
+<p>
+     Noble Jones’ descendants still live on 80 acres of the original plantation. In 1972 the family donated 822 acres to the Nature Conservancy, who sold the land the next year to the State of Georgia. Note: Wormsloe Historic Site is a Georgia State Park. Fees for entry apply.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+     Shell middens from the Savannah and Irene periods of Native American history are present at Wormsloe. These are Mississippian era sites (1,100-500 years before present). Shell middens are common in coastal areas and are essentially trash mounds from early oyster roasts.
+</p> 
+<p>
+     The remnants of Noble Jones’ tabby plantation house were excavated in 1969. Tabby is a building material used like concrete. The mix of lime, sand, oyster shell, and water is poured into molds and hardened. The lime comes from burning oyster shell to create lime and ash. Shell for making tabby was often harvested from nearby Native American shell middens.  Today, you can visit the ruined house compound and defensive wall. Artifacts from the 1969 dig are on display in the on-site museum.
+</p>
+<p>
+South of Jones’ plantation house, the Civil War earthwork Battery Wimberly (or Wymberley) overlooks the Moon River. Battery Wimberly was built in two stages, 1862-1863 and 1864. When mapped and surveyed in the early 1990s, parapets, traverses, and terrepleins were still present. A well was also found. Archaeologist Larry Babits described the battery as some of “the finest extant remaining examples of Confederate earthen fortifications”.
+</p>]]>
+		</longDesc>
+		<evImg>wormsloe_ev1</evImg>
+		<evDesc>The famous live oak avenue is lined with more than 400 live oak trees. The avenue probably dates to the mid-1700s, but the oaks were planted in the late 1800s.</evDesc>
+		<evImg>wormsloe_ev2</evImg>
+		<evDesc>The tabby ruins of Noble Jones’ plantation house. Eight foot high walls surrounded the 5-room house and courtyard. Tabby is a building material used like concrete. The mix of lime, sand, oyster shell, and water is poured into molds and hardened.  Shell was often harvested from Native American shell middens, trash deposits from ancient meals.</evDesc>
+    	<evImg>wormsloe_ev3</evImg>
+    	<evDesc>The brick double-hearth chimney and house walls surrounded by the enclosure walls.</evDesc>
+    	<evImg>wormsloe_ev4</evImg>
+    	<evDesc>The northeast bastion and cellar with palmettos growing out of the cellar</evDesc>
+    	<evImg>wormsloe_ev5</evImg>
+    	<evDesc>The southeast bastion looking across to the northwest bastion</evDesc>
+    	<evImg>wormsloe_ev6</evImg>
+    	<evDesc>The diamond shape of the bastion can seen in the southwest bastion (foreground)</evDesc>
+    	<evImg>wormsloe_ev7</evImg>
+    	<evDesc>Battery Wimberly rises very suddenly from the flat, coastal landscape.</evDesc>
+    </site>
+    
 </sites>
