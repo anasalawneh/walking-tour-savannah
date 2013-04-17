@@ -2,13 +2,17 @@ package edu.armstrong.walking_tour_savannah;
 
 import java.util.HashMap;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -46,11 +50,24 @@ public class MapOfHistoricPointsActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map);
 
-		setUpMapIfNeeded();
-		goTo = getIntent().getStringExtra("siteName");
+		if(isNetworkConnected()){
+			setUpMapIfNeeded();
+			goTo = getIntent().getStringExtra("siteName");
+		}else{
+			Toast.makeText(getApplicationContext(), "No Internet Connection Found",Toast.LENGTH_SHORT).show();
+		}
 	}
 
-
+	private boolean isNetworkConnected() {
+		  ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		  NetworkInfo ni = cm.getActiveNetworkInfo();
+		  if (ni == null) {
+		   // There are no active networks.
+		   return false;
+		  } else
+		   return true;
+		 }
+	
 	private void setUpMapIfNeeded() {
 		// Do a null check to confirm that we have not already instantiated the
 		// map.
