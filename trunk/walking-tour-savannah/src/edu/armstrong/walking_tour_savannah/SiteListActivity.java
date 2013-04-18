@@ -29,10 +29,7 @@ import edu.armstrong.util.HistoricSite;
  */
 public class SiteListActivity extends Activity {
 
-	TableLayout tableLayoutSiteList;
-	HistoricSiteManager hsmgr;
-	private HistoricSite hs = null;
-
+	private TableLayout tableLayoutSiteList;
 	Typeface trashed, droid;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,61 +37,42 @@ public class SiteListActivity extends Activity {
 		setContentView(R.layout.activity_site_list);
 
 		tableLayoutSiteList = (TableLayout) findViewById(R.id.TableLayoutSiteList);
-		hsmgr = HistoricSiteManager.getInstanceOf();
+		HistoricSiteManager hsmgr = HistoricSiteManager.getInstanceOf();
 
-		/**
-		 * this adds the tablerows to the tablelayout dynamically, depending on
-		 * the list of sites.
-		 */
 
+		//fonts
 		trashed = FontManager.Trashed(SiteListActivity.this);
 		droid = FontManager.DroidSans(SiteListActivity.this);
 
+		
+		//for each site
 		for (final HistoricSite hs : hsmgr.getMapOfSites().values()) {
 
-			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(
-					R.layout.table_row_site, null);
-			siteListItem.setLayoutParams(new TableRow.LayoutParams(
-					TableRow.LayoutParams.MATCH_PARENT,
-					TableRow.LayoutParams.WRAP_CONTENT));
+			//create a new table row
+			TableRow siteListItem = (TableRow) getLayoutInflater().inflate(R.layout.table_row_site, null);
+			siteListItem.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
-			TextView tvName = ((TextView) siteListItem
-					.findViewById(R.id.textViewSiteTableRowName));
-
-			TextView tvDesc = ((TextView) siteListItem
-					.findViewById(R.id.textViewSiteTableRowDesc));
+			//set references to text views
+			TextView tvName = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowName));
+			TextView tvDesc = ((TextView) siteListItem.findViewById(R.id.textViewSiteTableRowDesc));
 
 			tvName.setTypeface(trashed);
 			tvDesc.setTypeface(droid);
 
-			/**
-			 * when we have desc we can just call hs.getDesc() to populate the
-			 * info
-			 */
 			tvName.setText(hs.getName());
 			tvDesc.setText(hs.getDesc());
 
-			/**
-			 * Update the image of the tablerow to the image of the historic
-			 * site
-			 */
-
+			//set image of site
 			Bitmap img = hs.getImg(SiteListActivity.this);
-			ImageView ivSite = (ImageView) siteListItem
-					.findViewById(R.id.imageViewSiteTableRowImg);
+			ImageView ivSite = (ImageView) siteListItem.findViewById(R.id.imageViewSiteTableRowImg);
 			ivSite.setImageBitmap(img);
 
-			/**
-			 * set the onclick listener to take us to the map position of the
-			 * site (not implelements yet, thus the toast notification for
-			 * testing)
-			 */
+			//go to site when site entry is clicked
 			siteListItem.setOnClickListener(new View.OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(getApplicationContext(), "Site Loading...",
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Site Loading...", Toast.LENGTH_SHORT).show();
 					Intent toursActivityIntent = new Intent(
 							SiteListActivity.this,
 							SiteDescriptionActivity.class);

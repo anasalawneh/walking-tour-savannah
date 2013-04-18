@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -91,13 +92,24 @@ public class SiteDescriptionActivity extends Activity implements
 
 			@Override
 			public void onClick(View v) {
-				final Intent intent = new Intent(Intent.ACTION_VIEW,
-				/** Using the web based turn by turn directions url. */
-				Uri.parse("http://maps.google.com/maps?" + "saddr=" + "&daddr="
-						+ hs.getLl().latitude + "," + hs.getLl().longitude));
-				intent.setClassName("com.google.android.apps.maps",
-						"com.google.android.maps.MapsActivity");
+				if(isNetworkConnected()){
+					final Intent intent = new Intent(Intent.ACTION_VIEW,
+							/** Using the web based turn by turn directions url. */
+							Uri.parse("http://maps.google.com/maps?" + "saddr=" + "&daddr="
+									+ hs.getLl().latitude + "," + hs.getLl().longitude));
+						intent.setClassName("com.google.android.apps.maps",
+								"com.google.android.maps.MapsActivity");
 				startActivity(intent);
+				}
+				else{
+					Toast.makeText(getApplicationContext(), "No Internet Connection Found",Toast.LENGTH_SHORT).show();
+				}
+			}			
+		
+
+			private boolean isNetworkConnected() {
+			  ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+			  return (cm.getActiveNetworkInfo() != null);
 			}
 		});
 		

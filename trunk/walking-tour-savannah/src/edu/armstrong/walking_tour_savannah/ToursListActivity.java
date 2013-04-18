@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
@@ -34,13 +35,17 @@ import edu.armstrong.util.Tour;
  */
 public class ToursListActivity extends Activity {
 
-	TableLayout tableLayoutTourList;
-	LinkedHashMap<String, Tour> tours;
-	Typeface trashed, droid;
+	private TableLayout tableLayoutTourList;
+	private LinkedHashMap<String, Tour> tours;
+	private Typeface trashed, droid;
+	
+	private Handler h;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tours_list);
+		
+		h = new Handler();
 
 		tableLayoutTourList = (TableLayout) findViewById(R.id.TableLayoutTourList);
 		tours = TourManager.getInstanceOf().getMapOfTours();
@@ -95,10 +100,17 @@ public class ToursListActivity extends Activity {
 				public void onClick(View v) {
 					Toast.makeText(getApplicationContext(), "Tour Loading...",
 							Toast.LENGTH_SHORT).show();
-					Intent toursActivityIntent = new Intent(
-							ToursListActivity.this, TourActivity.class);
-					toursActivityIntent.putExtra("tour", tour.getTourName());
-					startActivity(toursActivityIntent);
+					
+					Runnable r = new Runnable(){
+						public void run(){
+							Intent toursActivityIntent = new Intent(
+									ToursListActivity.this, TourActivity.class);
+							toursActivityIntent.putExtra("tour", tour.getTourName());
+							startActivity(toursActivityIntent);
+						}
+					};
+					h.post(r);
+					
 				}
 			});
 			tableLayoutTourList.addView(tourListItem);
