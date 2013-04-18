@@ -14,18 +14,11 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Html;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,81 +35,95 @@ import edu.armstrong.util.XMLParser;
 /**
  * 
  * @author Dakota Brown, Sean Clapp
- * @since 01/14/13
+ * @since 04/18/13
  * 
  *        Title screen activity that transitions to the different sections of
  *        the app. It is also responsible for parsing the .xml file containing
- *        archaeological locations
+ *        archaeological locations and tours
  */
 public class TitleScreenActivity extends Activity {
 
-	ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo;
+	//navigation buttons
+	private ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo;
+	//splash screen
 	private Dialog mSplashDialog;
+	private  Toast tourToast;
+	private  Toast siteToast;
+
 	boolean showSplash = true;
+	
+	private Handler h;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+		//show splash screen if the historic site manager hasn't been populated
 		if (HistoricSiteManager.getInstanceOf() == null) {
 			showSplash = true;
 			showSplashScreen();
+			//Async task to populate the historic site and tour managers
 			new PopulateSites().execute();
 		}
 
 		setContentView(R.layout.activity_title_screen);
 
+		h = new Handler();
+		
+		tourToast = Toast.makeText(getApplicationContext(), "List of Tours Loading...",Toast.LENGTH_SHORT);
+		siteToast = Toast.makeText(getApplicationContext(), "List of Site Loading...",Toast.LENGTH_SHORT);
+		
 		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
 		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
 
 		// Button definitions
 		btnToursList = (ImageButton) findViewById(R.id.buttonTours);
-		// btnToursList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnSitesList = (ImageButton) findViewById(R.id.buttonSites);
-		// btnSitesList.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnMap = (ImageButton) findViewById(R.id.buttonMap);
-		// btnMap.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 		btnMoreInfo = (ImageButton) findViewById(R.id.buttonMoreInfo);
-		// btnMoreInfo.setTypeface(FontManager.DroidSans(TitleScreenActivity.this));
 
-		btnToursList.getBackground().setColorFilter(
-				Color.parseColor("#d76969"), PorterDuff.Mode.MULTIPLY);
-		btnSitesList.getBackground().setColorFilter(
-				Color.parseColor("#4ea956"), PorterDuff.Mode.MULTIPLY);
-		btnMap.getBackground().setColorFilter(Color.parseColor("#4887ab"),
-				PorterDuff.Mode.MULTIPLY);
-
-		// On click open the ToursListActivity, a list of all the available
-		// tours
+		//show list of all available tours
 		btnToursList.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "List of Tours Loading...",
-						Toast.LENGTH_SHORT).show();
-				Intent toursActivityIntent = new Intent(
-						TitleScreenActivity.this, ToursListActivity.class);
-				startActivity(toursActivityIntent);
+				siteToast.show();
+				
+				Runnable r = new Runnable(){
+				
+					public void run(){
+						tourToast.show();
+						Intent toursActivityIntent = new Intent(
+								TitleScreenActivity.this, ToursListActivity.class);
+						startActivity(toursActivityIntent);
+					}
+				};
+				
+				h.post(r);
+				
 			}
 		});
 
-		// on click open the SiteListActivity, a list of all the sites
+		//show list of all available sites
 		btnSitesList.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "List of Sites Loading...",
-						Toast.LENGTH_SHORT).show();
-				// TODO Auto-generated method stub
-				Intent siteListActivityIntent = new Intent(
+				siteToast.show();
+				
+				Runnable r = new Runnable(){
+				
+					public void run(){
+						Intent siteListActivityIntent = new Intent(
 						TitleScreenActivity.this, SiteListActivity.class);
-				startActivity(siteListActivityIntent);
+						startActivity(siteListActivityIntent);
+					}
+				};
+				
+				h.post(r);
+				
 			}
 		});
 
-		// on click open the MapActivity, a map of Savannah with points of
-		// interest.
+		//show map of all sites
 		btnMap.setOnClickListener(new View.OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				Intent mapActivityIntent = new Intent(TitleScreenActivity.this,
@@ -125,6 +132,7 @@ public class TitleScreenActivity extends Activity {
 			}
 		});
 
+		//show more info page
 		btnMoreInfo.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -135,29 +143,23 @@ public class TitleScreenActivity extends Activity {
 		});
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_title_screen, menu);
-		return true;
-	}
-
+	//method to display the splash screen
 	protected void showSplashScreen() {
+		//set the layout of the dialog
 		mSplashDialog = new Dialog(this, R.style.SplashScreen);
 		mSplashDialog.setContentView(R.layout.splash);
 
 		// changed font
-		TextView splashTitle = (TextView) mSplashDialog
-				.findViewById(R.id.splashTitle);
+		TextView splashTitle = (TextView) mSplashDialog.findViewById(R.id.splashTitle);
 		splashTitle.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
 
 		mSplashDialog.setCancelable(false);
 		mSplashDialog.show();
 
-		// Set Runnable to remove splash screen just in case
+		// check if the splash screen is still needed
 		final Handler handler = new Handler();
 
-		handler.postDelayed(new Runnable() {
+ 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
 				if (showSplash) {
@@ -176,12 +178,14 @@ public class TitleScreenActivity extends Activity {
 		}
 	}
 
+	//populate the HistoricSiteManager and ToursManager
 	private class PopulateSites extends AsyncTask<Void, Void, Void> {
 		@Override
 		protected Void doInBackground(Void... arg0) {
 			populateSites();
 			populateTours();
 
+			//set the splash screen to false after finished
 			TitleScreenActivity.this.showSplash = false;
 			return null;
 		}
@@ -204,12 +208,11 @@ public class TitleScreenActivity extends Activity {
 			// get all tags named "site"
 			NodeList nl = doc.getElementsByTagName("site");
 
+
 			// looping through all sites
 			for (int i = 0; i < nl.getLength(); i++) {
 				Element e = (Element) nl.item(i);
-
-				Resources res = getResources();
-				int resID;
+				
 
 				// children tag values
 				String name = parser.getValue(e, "name");
@@ -217,25 +220,11 @@ public class TitleScreenActivity extends Activity {
 				double lon = Double.parseDouble(parser.getValue(e, "lon"));
 
 				String mainImg = parser.getValue(e, "img");
-
 				String desc = parser.getValue(e, "desc");
-
-				/**
-				 * This is where longDesc is being filld as empty in 2.3.3
-				 * emulator. Most likely, the parser isn't handling it correctly
-				 * and it's returning a null val. If you look in the rar
-				 * string.xml long desc is the only one with html tags. I'm
-				 * guess older versions of android didn't carry the support for
-				 * HTML tags and that's why it's not seeing it as a valid xml
-				 * string at all.
-				 * 
-				 */
 				String longDesc = parser.getValue(e, "longDesc");
-
 
 				// evidence images
 				NodeList ei = e.getElementsByTagName("evImg");
-
 				// img string names
 				List<String> evImgStr = new ArrayList<String>();
 				for (int j = 0; j < ei.getLength(); j++) {
