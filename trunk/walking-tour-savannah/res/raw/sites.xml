@@ -289,7 +289,7 @@
         <name>Fort Stewart</name>
         <lat>31.88</lat>
         <lon>-81.6075</lon>
-        <img>placeholder</img>
+        <img>classified</img>
         <desc>Fort Stewart (originally Camp Stewart) was created in June 1940, just before World War II on 5,000 acres southwest of Savannah, GA.</desc>
  		<longDesc>
 <![CDATA[<b>Time period:</b> Late 1700s to 1900s<br/><br/>
@@ -319,7 +319,7 @@
     	
     <!-- #10 -->
     <site>
-        <name>Fort Jackson</name>
+        <name>Old Fort Jackson</name>
         <lat>32.081933</lat>
         <lon>-81.035786</lon>
         <img>ftjackson</img>
@@ -437,7 +437,7 @@
         <name>HAAF</name>
         <lat>32.011112</lat>
         <lon>-81.145836</lon>
-       	<img>placeholder</img>
+       	<img>classified</img>
         <desc>In September 1929, a municipal airport was opened on 730 acres that is now Hunter Army Airfield.</desc>
         <longDesc>
 <![CDATA[<b>Time period:</b> 500 BC - present<br/><br/>
@@ -694,7 +694,7 @@
         <name>Railroad Ward House</name>
         <lat>32.07487</lat>
         <lon>-81.101174</lon>
-        <img>placeholder</img>
+        <img>rrwardhouse</img>
         <desc>Prior to its development as the Railroad Ward, this area was part of Garden Lots 9 and 10, as established by James Oglethorpe, founder of Georgia.</desc>
         <longDesc>
 <![CDATA[<b>Time period:</b> 1830 to present<br/><br/>
@@ -734,7 +734,7 @@
         <name>Riverfront Hotel</name>
         <lat>32.083541</lat>
         <lon>-81.099834</lon>
-        <img>placeholder</img>
+        <img>riverfronthotel</img>
         <desc>A shipyard, cotton press and warehouse, saw mill, and iron foundry are some of the businesses that operated here.</desc>
         <longDesc>
 <![CDATA[<b>Time period:</b> 1830s-1930s<br/><br/>
