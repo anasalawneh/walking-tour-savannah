@@ -10,13 +10,14 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
-        <edu.armstrong.util.AutoFitTextView
+        <TextView
             android:id="@+id/moreInfoText"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
+            android:text="TextView"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
     </ScrollView>
 
