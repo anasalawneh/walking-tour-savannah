@@ -85,12 +85,9 @@ public class TitleScreenActivity extends Activity {
 		//show list of all available tours
 		btnToursList.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				siteToast.show();
-				
+				tourToast.show();
 				Runnable r = new Runnable(){
-				
 					public void run(){
-						tourToast.show();
 						Intent toursActivityIntent = new Intent(
 								TitleScreenActivity.this, ToursListActivity.class);
 						startActivity(toursActivityIntent);
@@ -107,9 +104,7 @@ public class TitleScreenActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				siteToast.show();
-				
 				Runnable r = new Runnable(){
-				
 					public void run(){
 						Intent siteListActivityIntent = new Intent(
 						TitleScreenActivity.this, SiteListActivity.class);
