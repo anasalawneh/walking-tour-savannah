@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -44,7 +45,7 @@ import edu.armstrong.util.XMLParser;
 public class TitleScreenActivity extends Activity {
 
 	//navigation buttons
-	private ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo;
+	private ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo, btnDonate;
 	//splash screen
 	private Dialog mSplashDialog;
 	private  Toast tourToast;
@@ -81,7 +82,19 @@ public class TitleScreenActivity extends Activity {
 		btnSitesList = (ImageButton) findViewById(R.id.buttonSites);
 		btnMap = (ImageButton) findViewById(R.id.buttonMap);
 		btnMoreInfo = (ImageButton) findViewById(R.id.buttonMoreInfo);
+		btnDonate = (ImageButton) findViewById(R.id.buttonDonate);
 
+		btnDonate.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("https://armstrong15271.thankyou4caring.org/archaeology-mobile-donation-page");
+				 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+				 startActivity(intent);				
+			}
+		});
+		
+		
 		//show list of all available tours
 		btnToursList.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
