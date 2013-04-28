@@ -72,7 +72,7 @@ public class TitleScreenActivity extends Activity {
 		h = new Handler();
 		
 		tourToast = Toast.makeText(getApplicationContext(), "List of Tours Loading...",Toast.LENGTH_SHORT);
-		siteToast = Toast.makeText(getApplicationContext(), "List of Site Loading...",Toast.LENGTH_SHORT);
+		siteToast = Toast.makeText(getApplicationContext(), "List of Sites Loading...",Toast.LENGTH_SHORT);
 		
 		TextView tv = (TextView) findViewById(R.id.textViewDigSavTitleText);
 		tv.setTypeface(FontManager.Trashed(TitleScreenActivity.this));
