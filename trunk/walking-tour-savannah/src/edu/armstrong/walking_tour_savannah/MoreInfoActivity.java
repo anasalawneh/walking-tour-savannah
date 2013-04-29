@@ -24,7 +24,7 @@ public class MoreInfoActivity extends Activity {
 //
 		String string = "<p>	Although Savannah is known for its historic preservation, the archaeology, unseen by most, has been mostly forgotten. As a result, many archaeological sites have been destroyed. Digging Savannah, a grant-funded program at Armstrong Atlantic State University, (<a href='http://tinyurl.com/boj5yrx'>www.armstrong.edu</a>) engages students in solving the problem of archaeological site loss in Savannah. This app allows you to visit archaeology sites that have been explored and are on property open to the public. This is only a small sampling of archaeological sites around Savannah, as nearly every historic building sits on an archaeological site." +
 				"</p>" + 
-				"<p>	Learn more about the <u>Digging Savannah project</u> (<a href='https://diggingsavannah.wordpress.com'>https://diggingsavannah.wordpress.com</a>) or find us on Facebook (<a href='https://www.facebook.com/DiggingSavannah'>https://www.facebook.com/DiggingSavannah</a>). Support this program and the Meredith Avery Memorial Anthropology Fund here: " +
+				"<p>	Learn more about the <a href='https://diggingsavannah.wordpress.com'>Digging Savannah project</a> or find us on <a href='https://www.facebook.com/DiggingSavannah'>Facebook </a>. Support this program and the Meredith Avery Memorial Anthropology Fund here: " +
 				"</p>" + 
 				"<p>	<a href='https://armstrong15271.thankyou4caring.org/archaeology-mobile-donation-page'>Donate Here!</a>" +
 				"</p>" + 
