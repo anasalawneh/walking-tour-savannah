@@ -111,12 +111,16 @@
             android:layout_height="0dp"
             android:layout_weight="1" >
 
-            <ImageButton
+            <Button
                 android:id="@+id/buttonDonate"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/black_white_gradient" />
+                android:alpha=".6"
+                android:background="#8C0C04"
+                android:text="Donate Here!"
+                android:textColor="#f6cf46"
+                android:textSize="22sp" />
 
             <ImageView
                 android:id="@+id/imageView1"
