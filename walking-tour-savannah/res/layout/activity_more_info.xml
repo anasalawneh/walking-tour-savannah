@@ -17,7 +17,8 @@
             android:layout_margin="10dp"
             android:text="TextView"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="22sp" />
+            android:textSize="22sp" 
+            android:textColorLink="#2028cd"/>
 
     </ScrollView>
 

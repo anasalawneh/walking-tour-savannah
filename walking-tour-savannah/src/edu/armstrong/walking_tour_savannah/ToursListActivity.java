@@ -110,7 +110,6 @@ public class ToursListActivity extends Activity {
 						}
 					};
 					h.post(r);
-					
 				}
 			});
 			tableLayoutTourList.addView(tourListItem);

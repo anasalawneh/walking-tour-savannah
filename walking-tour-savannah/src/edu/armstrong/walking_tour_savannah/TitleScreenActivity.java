@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,7 +46,8 @@ import edu.armstrong.util.XMLParser;
 public class TitleScreenActivity extends Activity {
 
 	//navigation buttons
-	private ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo, btnDonate;
+	private ImageButton btnToursList, btnSitesList, btnMap, btnMoreInfo;
+	private Button btnDonate;
 	//splash screen
 	private Dialog mSplashDialog;
 	private  Toast tourToast;
@@ -82,8 +84,9 @@ public class TitleScreenActivity extends Activity {
 		btnSitesList = (ImageButton) findViewById(R.id.buttonSites);
 		btnMap = (ImageButton) findViewById(R.id.buttonMap);
 		btnMoreInfo = (ImageButton) findViewById(R.id.buttonMoreInfo);
-		btnDonate = (ImageButton) findViewById(R.id.buttonDonate);
+		btnDonate = (Button) findViewById(R.id.buttonDonate);
 
+		
 		btnDonate.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
