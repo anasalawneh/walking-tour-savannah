@@ -59,13 +59,13 @@
         </activity>
 
         
-         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAf17wSbrMVyUBoYCnF_iTbKmki3_50ZPU" /> 
-        
-<!--         <meta-data -->
+<!--          <meta-data -->
 <!--             android:name="com.google.android.maps.v2.API_KEY" -->
-<!--             android:value="AIzaSyD6l3V2-_Ozv4MyspL0w7mVlCbaMzKoxOM" /> -->
+<!--             android:value="AIzaSyAf17wSbrMVyUBoYCnF_iTbKmki3_50ZPU" />  -->
+        
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyD6l3V2-_Ozv4MyspL0w7mVlCbaMzKoxOM" />
 
         <activity
             android:name="edu.armstrong.walking_tour_savannah.SiteDescriptionActivity"

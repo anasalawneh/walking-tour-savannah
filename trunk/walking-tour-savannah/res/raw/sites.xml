@@ -206,7 +206,9 @@
 </p> 
 <p>
      In 1868, Henry Welles dynamited the ship, and 80 tons of iron was recovered and sold through a contract with the Treasury Department. The Georgia was forgotten again until 1968 when dredge operations “rediscovered” the vessel.
-</p> 
+</p>
+<p>
+	The picture is the view from Old Fort Jackson upriver towards Savannah. The CSS Georgia lies on the riverbed just northwest of the fort.</p>
 <b>Archaeology:</b><br/><br/>
 <p>
      Texas A&M University conducted an archaeological and engineering assessment in 1979, after four separate dredging operations had impacted the Georgia. They found a site 300 by 150 feet that was elevated seven to nine feet above the river bottom. Sections of armor plate, hull, and deck areas appeared intact, and the site had good artifact preservation. Two cannons were removed: a 32-pounder reworked as a rifled gun and a 24-pounder howitzer. Brooke projectiles, percussion fuses, and spherical shot were also recovered and preserved. Many of these objects are now on display at the Savannah History Museum.
@@ -219,9 +221,9 @@
 </p> ]]>
 		</longDesc>
     	<evImg>cssga_ev1</evImg>
-    	<evDesc>Ironstone serving bowl recovered from the CSS <i>Georgia</i>, on display at the Savannah History Museum</evDesc>
+    	<evDesc><![CDATA[Ironstone serving bowl recovered from the CSS <i>Georgia</i>, on display at the Savannah History Museum]]></evDesc>
     	<evImg>cssga_ev2</evImg>
-    	<evDesc>Artifacts recovered from the CSS <i>Georgia</i> in 1980, clockwise from top left: Carpenter’s adze; bearing plate, threaded bolt, and nut from a vessel timber; iron spike and cap (not conserved); iron leg shackles used to punish crew.</evDesc>
+    	<evDesc><![CDATA[Artifacts recovered from the CSS <i>Georgia</i> in 1980, clockwise from top left: Carpenter’s adze; bearing plate, threaded bolt, and nut from a vessel timber; iron spike and cap (not conserved); iron leg shackles used to punish crew.]]></evDesc>
     	
     </site>
     
@@ -624,6 +626,33 @@
     	<evDesc>Looking south into Madison Square from Bull Street. The excavation was in the northeast corner of the square, left side of this picture.</evDesc>
 	</site>
 	
+        <site>
+        <name>Marine Railway</name>
+        <lat>32.112117</lat>
+        <lon>-81.092518</lon>
+        <img>hutch</img>
+        <desc>A marine railway that was used to pull large ships from the water into dry dock</desc>
+        <longDesc>
+<![CDATA[<b>Time period:</b> late 1800s<br/><br/>
+<b>Type of site:</b> Industrial<br/><br/>
+<b>History:</b><br/><br/>
+<p>
+	 Hutchinson Island was first used by Colonial Georgians for wet rice cultivation. Later the island was used as a docking space for ships and became a spoil dumping ground when dredging the river. 
+</p>
+<p>
+     H.F. Willink’s marine railway and shipyard operated on Hutchinson Island from 1873-1898. H. F. Willink was a Civil War contractor who built ships for the Confederate Navy including the CSS Savannah and CSS Milledgeville, which were ironclads, and the gunboat CSS Macon. Willink was arrested during the Union occupation and after the Civil War became involved in local politics and the fire department. In 1873-1874, he built his marine railway and shipyard complex on Hutchinson. In 1898 the Georgia and Alabama Terminal Company bought out much of Hutchinson Island’s wharf property (including Willink’s). 
+</p>
+<p>
+     A marine railway is used to pull large ships from the water into dry dock for inspection and repair and was vital for Savannah shipping. The system was essentially rail tracks extending into the water, a carriage that ran along the track, and a power source. The carriage was lowered into the water, the ship positioned over the carriage at high tide and settled onto the carriage as the tide lowered. Finally, the carriage and ship were pulled out.
+</p>
+<b>Archaeology:</b><br/><br/>
+<p>
+     Willink’s marine railway is the earliest known on the Savannah River. Structural remains including the railway track, plank flooring, and a brick scatter, as well as 2,242 artifacts were found on the site. The planks may be the dock remains. The brick scatter is likely a floor. Archaeologists were unable to determine exactly how this space was used. Brick flooring suggests a specialized purpose, such as a smithy.
+</p>
+]]>
+        </longDesc>
+    </site>
+	
     <!-- #18 -->
     <site>
         <name>Owens Thomas House</name>
@@ -732,8 +761,8 @@
     <!-- #21 -->
     <site>
         <name>Riverfront Hotel</name>
-        <lat>32.083541</lat>
-        <lon>-81.099834</lon>
+        <lat>32.078498</lat>
+        <lon>-81.081398</lon>
         <img>riverfronthotel</img>
         <desc>A shipyard, cotton press and warehouse, saw mill, and iron foundry are some of the businesses that operated here.</desc>
         <longDesc>
